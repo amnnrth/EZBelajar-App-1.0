@@ -113,6 +113,16 @@
       <path value="$PROJECT_DIR$/laravel/vendor/sebastian/object-reflector" />
       <path value="$PROJECT_DIR$/laravel/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/laravel/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/laravel/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel/jetstream" />
+      <path value="$PROJECT_DIR$/laravel/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/laravel/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/laravel/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/laravel/vendor/jenssegers/agent" />
+      <path value="$PROJECT_DIR$/laravel/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/laravel/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/laravel/vendor/livewire/livewire" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
