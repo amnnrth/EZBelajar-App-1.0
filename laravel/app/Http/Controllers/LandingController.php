@@ -81,4 +81,36 @@ class LandingController extends Controller
     {
         //
     }
+
+    // Custom
+
+    public function belajar()
+    {
+        return view('pages.Landing.video.belajar');
+    }
+
+    public function detailBelajar()
+    {
+        return view('pages.Landing.video.detail-belajar');
+    }
+
+    public function banksoal()
+    {
+        return view('pages.Landing.banksoal.bank-soal');
+    }
+
+    public function detailBanksoal()
+    {
+        return view('pages.Landing.banksoal.detail-bank-soal');
+    }
+
+    public function tentangkami()
+    {
+        return view('pages.Landing.tentang-kami');
+    }
+
+    public function artikel()
+    {
+        return view('pages.Landing.artikel.artikel');
+    }
 }

@@ -22,14 +22,14 @@
                     class="lg:space-x-12 space-x-0 lg:flex items-center justify-between text-base pt-8 lg:pt-0 lg:space-y-0 space-y-6">
                     <a href="{{ route('index') }}"
                        class="block {{ request()->is('/') ? 'nav-link active font-medium' : 'nav-link text-ezb-text' }}">Beranda</a>
-                    <a href="#"
-                       class="block {{ request()->is('explore') ? 'nav-link active font-medium' : 'nav-link text-ezb-text' }}">Belajar</a>
-                    <a href="#" class="block nav-link text-ezb-text">Bank
-                        Soal</a>
-                    <a href="#" class="block nav-link text-ezb-text">Tentang
-                        Kami</a>
-                    <a href="#"
-                       class="block nav-link text-ezb-text">Artikel</a>
+                    <a href="{{ route('belajar.index')}}"
+                       class="block {{ request()->is('belajar') ? 'nav-link active font-medium' : 'nav-link text-ezb-text' }}">Belajar</a>
+                    <a href="{{ route('banksoal.index') }}"
+                       class="block {{ request()->is('banksoal') ? 'nav-link active font-medium' : 'nav-link text-ezb-text' }}">Bank Soal</a>
+                    <a href="{{ route('tentangkami') }}"
+                       class="block {{ request()->is('tentangkami') ? 'nav-link active font-medium' : 'nav-link text-ezb-text' }}">Tentang Kami</a>
+                    <a href="{{ route('artikel') }}"
+                       class="block {{ request()->is('artikel') ? 'nav-link active font-medium' : 'nav-link text-ezb-text' }}">Artikel</a>
 
                     @auth
                         <hr class="block lg:hidden">
@@ -100,7 +100,7 @@
 
                         <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
                             <a class="block px-4 py-2 mt-2 text-sm bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                               href="{{ route('edit.profile.navbar.pages') }}">Edit Profile</a>
+                               href="#">Edit Profile</a>
 
                             <a class="block px-4 py-2 mt-2 text-sm bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                                href="{{ route('logout') }}"

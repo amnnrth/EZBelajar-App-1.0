@@ -57,7 +57,7 @@
                 <div class="px-6 pb-6 rounded-b-xl mx-10">
                     <input type="hidden" name="auth" value="true">
 
-                    <button class="lg:bg-ezb-services-bg text-white text-lg ml-23 py-3 px-12 my-2 rounded-lg w-36" type="submit">Masuk
+                    <button class="lg:bg-ezb-services-bg text-white text-lg ml-23 py-3 px-12 my-2 rounded-lg w-36 ml-21" type="submit">Masuk
                     </button>
 
                     <p href="#" class="ml-23 py-5">

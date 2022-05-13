@@ -44,3 +44,28 @@ use App\Http\Controllers\BelajarController;
 
 
 Route::resource('/', LandingController::class);
+
+Route::get('belajar', [LandingController::class, 'belajar'])->name('belajar.index');
+Route::get('detailbelajar', [LandingController::class, 'detailbelajar'])->name('detailbelajar');
+
+Route::get('banksoal', [LandingController::class, 'banksoal'])->name('banksoal.index');
+Route::get('detailbanksoal', [LandingController::class, 'detailbanksoal'])->name('detailbanksoal');
+
+Route::get('artikel', [LandingController::class, 'artikel'])->name('artikel');
+Route::get('detailartikel', [LandingController::class, 'detailartikel'])->name('detailartikel');
+
+Route::get('tentangkami', [LandingController::class, 'tentangkami'])->name('tentangkami');
+
+Route::group(['prefix' => 'member', 'as' => 'admin.', 'middleware' => ['auth:sanctum', 'verified']], function() {
+
+    // dashboard
+    Route::resource('dashboard', AdminController::class);
+    // Belajar
+    Route::resource('service', BelajarController::class);
+    // Bank Soal
+    Route::resource('banksoal', BankSoalController::class);
+    // Artikel
+    Route::resource('artikel', ArtikelController::class);
+
+});
+

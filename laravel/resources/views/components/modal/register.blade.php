@@ -80,7 +80,7 @@
                 <div class="px-6 pb-6 rounded-b-xl mx-10">
                     <input type="hidden" name="auth" value="true">
 
-                    <button class="block text-center lg:bg-ezb-services-bg text-white text-lg py-3 px-12 my-2 ml-23 rounded-lg w-36">
+                    <button class="block text-center lg:bg-ezb-services-bg text-white text-lg py-3 px-12 my-2 ml-23 rounded-lg w-36 ml-21">
                         Daftar
                     </button>
 
