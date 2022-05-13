@@ -13,7 +13,7 @@
                     Akun Sudah Terbuat
                 </h3>
             </div>
-            <form action="index.php" method="GET">
+            <form action="#" method="GET">
                 <!--footer-->
                 <div class="px-6 pb-6 rounded-b-xl mx-10">
                     <input type="hidden" name="auth" value="true">

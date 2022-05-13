@@ -18,26 +18,29 @@ use App\Http\Controllers\BelajarController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//
+//Auth::routes();
+//
+//Route::get('/home', [LandingController::class, 'index'])->name('home');
+//
+//Route::group(['middleware' => ['auth']], function() {
+//    Route::resource('roles', RoleController::class);
+//    Route::resource('users', UserController::class);
+//    Route::resource('products', BelajarController::class);
+//});
+//
+//Route::middleware([
+//    'auth:sanctum',
+//    config('jetstream.auth_session'),
+//    'verified'
+//])->group(function () {
+//    Route::get('/dashboard', function () {
+//        return view('dashboard');
+//    })->name('dashboard');
+//});
 
-Auth::routes();
 
-Route::get('/home', [LandingController::class, 'index'])->name('home');
-
-Route::group(['middleware' => ['auth']], function() {
-    Route::resource('roles', RoleController::class);
-    Route::resource('users', UserController::class);
-    Route::resource('products', BelajarController::class);
-});
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+Route::resource('/', LandingController::class);

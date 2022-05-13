@@ -22,8 +22,6 @@
 
     @yield('content')
 
-    @include('includes.landing.footer')
-
     @stack('before-script')
 
     @include('includes.landing.script')
