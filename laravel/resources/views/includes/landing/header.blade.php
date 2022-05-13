@@ -21,22 +21,22 @@
                 <nav
                     class="lg:space-x-12 space-x-0 lg:flex items-center justify-between text-base pt-8 lg:pt-0 lg:space-y-0 space-y-6">
                     <a href="{{ route('index') }}"
-                       class="block {{ request()->is('/') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Beranda</a>
+                       class="block {{ request()->is('/') ? 'nav-link active font-medium' : 'nav-link text-ezb-text' }}">Beranda</a>
                     <a href="#"
-                       class="block {{ request()->is('explore') ? 'nav-link active font-medium' : 'nav-link text-serv-text' }}">Belajar</a>
-                    <a href="#" class="block nav-link text-serv-text">Bank
+                       class="block {{ request()->is('explore') ? 'nav-link active font-medium' : 'nav-link text-ezb-text' }}">Belajar</a>
+                    <a href="#" class="block nav-link text-ezb-text">Bank
                         Soal</a>
-                    <a href="#" class="block nav-link text-serv-text">Tentang
+                    <a href="#" class="block nav-link text-ezb-text">Tentang
                         Kami</a>
                     <a href="#"
-                       class="block nav-link text-serv-text">Artikel</a>
+                       class="block nav-link text-ezb-text">Artikel</a>
 
                     @auth
                         <hr class="block lg:hidden">
                         <a href="#"
-                           class="block lg:hidden nav-link text-serv-text">Dashboard</a>
+                           class="block lg:hidden nav-link text-ezb-text">Dashboard</a>
 
-                        <a href="{{ route('logout') }}" class="block lg:hidden nav-link text-serv-text"
+                        <a href="{{ route('logout') }}" class="block lg:hidden nav-link text-ezb-text"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout
                             <form action="{{ route('logout') }}" id="logout-form" method="POST" style="display: none;">
                                 @csrf
@@ -50,12 +50,12 @@
             @guest
                 <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
                     <button onclick="toggleModal('loginModal')"
-                            class="text-serv-login-text items-center border-0 block lg:inline-block lg:py-3 lg:px-10 focus:outline-none rounded-2xl font-medium text-base mt-6 lg:mt-0">
+                            class="text-ezb-login-text items-center border-0 block lg:inline-block lg:py-3 lg:px-10 focus:outline-none rounded-2xl font-medium text-base mt-6 lg:mt-0">
                         Masuk
                     </button>
 
                     <button onclick="toggleModal('registerModal')"
-                            class="lg:bg-serv-services-bg text-serv-regis-text items-center border-0 block lg:inline-block  lg:py-3 lg:px-10 focus:outline-none rounded-2xl font-medium text-base mt-6 lg:mt-0">
+                            class="lg:bg-ezb-services-bg text-ezb-regis-text items-center border-0 block lg:inline-block  lg:py-3 lg:px-10 focus:outline-none rounded-2xl font-medium text-base mt-6 lg:mt-0">
                         Daftar
                     </button>
                 </div>

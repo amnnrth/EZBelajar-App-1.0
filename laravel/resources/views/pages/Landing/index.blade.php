@@ -19,7 +19,7 @@
                             class="text-black-1 lg:leading-normal sm:text-4xl lg:text-5xl text-3xl mb-5 font-semibold lg:mt-20">
                             Memberikan Kebutuhan Belajar lebih Mudah
                         </h1>
-                        <p class="text-lg leading-relaxed text-serv-text font-light tracking-wide mb-10 lg:mb-18 ">
+                        <p class="text-lg leading-relaxed text-ezb-text font-light tracking-wide mb-10 lg:mb-18 ">
                             Bingung mencari materi kuliah? Ez belajar adalah solusinya!
                             Materi kuliah apapun bisa kalian temukan disini. Kalian juga bisa
                             Berdiskusi tanya jawab seputar materi kuliah yang belum di mengerti,
@@ -28,7 +28,7 @@
                         </p>
                         <div
                             class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">
-                            <button class="lg:bg-serv-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" onclick="toggleModal('registerModal')">
+                            <button class="lg:bg-ezb-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" onclick="toggleModal('registerModal')">
                                 YUK BELAJAR!
                             </button>
                         </div>
@@ -55,21 +55,21 @@
                         <div class="container">
                             <div class="my-3 md:flex gap-4 ml-24">
                                 <img src="{{ asset('assets/images/iconkeuntungan/diskusi.svg')}}" class="w-10 h-10" alt="Diskusi">
-                                <p class="text-black font-semibold">Diskusi Bersama <br/> <span class="text-serv-text font-medium">Berdiskusi bersama user lain </br> untuk membahas pembelajaran</span></p>
+                                <p class="text-black font-semibold">Diskusi Bersama <br/> <span class="text-ezb-text font-medium">Berdiskusi bersama user lain </br> untuk membahas pembelajaran</span></p>
                             </div>
                             <div class="my-3 md:flex gap-4 ml-24">
                                 <img src="{{ asset('assets/images/iconkeuntungan/materi.svg')}}" class="w-10 h-10" alt="Materi">
-                                <p class="text-black font-semibold">Materi Sesuai<br/> <span class="text-serv-text font-medium">Materi yang diberikan </br>sesuai dengan kebutuhan</span></p>
+                                <p class="text-black font-semibold">Materi Sesuai<br/> <span class="text-ezb-text font-medium">Materi yang diberikan </br>sesuai dengan kebutuhan</span></p>
                             </div>
                         </div>
                         <div class="container">
                             <div class="my-3 md:flex gap-4 ml-24">
                                 <img src="{{ asset('assets/images/iconkeuntungan/filter.svg')}}" class="w-10 h-10" alt="Terfilterisasi">
-                                <p class="text-black font-semibold">Terfilterisasi<br/> <span class="text-serv-text font-medium">Materi video yang diberikan </br>sudah terfilter oleh tim kami untuk di sajikan</span></p></p>
+                                <p class="text-black font-semibold">Terfilterisasi<br/> <span class="text-ezb-text font-medium">Materi video yang diberikan </br>sudah terfilter oleh tim kami untuk di sajikan</span></p></p>
                             </div>
                             <div class="my-3 md:flex gap-4 ml-24">
                                 <img src="{{ asset('assets/images/iconkeuntungan/banksoal.svg')}}" class="w-10 h-10" alt="Bank Soal">
-                                <p class="text-black font-semibold">Bank Soal<br/> <span class="text-serv-text font-medium">Tersedia beraneka ragam macam </br>
+                                <p class="text-black font-semibold">Bank Soal<br/> <span class="text-ezb-text font-medium">Tersedia beraneka ragam macam </br>
                                         soal untuk mengasah kemampuan </br>
                                         dan pengetahuan kalian</span></p>
                             </div>
@@ -77,11 +77,11 @@
                         <div class="container">
                             <div class="my-3 md:flex gap-4 ml-24">
                                 <img src="{{ asset('assets/images/iconkeuntungan/access.svg')}}" class="w-10 h-10" alt="Access">
-                                <p class="text-black font-semibold">Mudah di Akses<br/><span class="text-serv-text font-medium">Dapat di akses dengan mudah</br> oleh kalangan pelajar dan pekerja</span></p>
+                                <p class="text-black font-semibold">Mudah di Akses<br/><span class="text-ezb-text font-medium">Dapat di akses dengan mudah</br> oleh kalangan pelajar dan pekerja</span></p>
                             </div>
                             <div class="my-3 md:flex gap-4 ml-24">
                                 <img src="{{ asset('assets/images/iconkeuntungan/artikel.svg')}}" class="w-10 h-10" alt="Artikel">
-                                <p class="text-black font-semibold">Artikel<br/> <span class="text-serv-text font-medium">Banyak Artikel yang </br>mudah untuk di akses</span></p>
+                                <p class="text-black font-semibold">Artikel<br/> <span class="text-ezb-text font-medium">Banyak Artikel yang </br>mudah untuk di akses</span></p>
                             </div>
                         </div>
                     </div>
@@ -91,31 +91,31 @@
                 <!-- <div class="lg:flex">
                         <div class="my-3 md:flex gap-4 ml-24">
                             <img src="{{ asset('assets/images/iconkeuntungan/diskusi.svg')}}" class="w-10 h-10" alt="Diskusi">
-                            <p class="text-black font-semibold">Diskusi Bersama <br/> <span class="text-serv-text font-medium">Berdiskusi bersama user lain </br> untuk membahas pembelajaran</span></p>
+                            <p class="text-black font-semibold">Diskusi Bersama <br/> <span class="text-ezb-text font-medium">Berdiskusi bersama user lain </br> untuk membahas pembelajaran</span></p>
                         </div>
                         <div class="my-3 md:flex gap-4 ml-24">
                             <img src="{{ asset('assets/images/iconkeuntungan/filter.svg')}}" class="w-10 h-10" alt="Terfilterisasi">
-                            <p class="text-black font-semibold">Terfilterisasi<br/> <span class="text-serv-text font-medium">Materi video yang diberikan </br>sudah terfilter oleh tim kami untuk di sajikan</span></p></p>
+                            <p class="text-black font-semibold">Terfilterisasi<br/> <span class="text-ezb-text font-medium">Materi video yang diberikan </br>sudah terfilter oleh tim kami untuk di sajikan</span></p></p>
                     </div>
                     <div class="my-3 md:flex gap-4 ml-24">
                         <img src="{{ asset('assets/images/iconkeuntungan/access.svg')}}" class="w-10 h-10" alt="Access">
-                        <p class="text-black font-semibold">Mudah di Akses<br/><span class="text-serv-text font-medium">Dapat di akses dengan mudah</br> oleh kalangan pelajar dan pekerja</span></p>
+                        <p class="text-black font-semibold">Mudah di Akses<br/><span class="text-ezb-text font-medium">Dapat di akses dengan mudah</br> oleh kalangan pelajar dan pekerja</span></p>
                     </div>
                 </div>
                    <div class="lg:flex mt-2">
                        <div class="flex gap-4 ml-24">
                            <img src="{{ asset('assets/images/iconkeuntungan/materi.svg')}}" class="w-10 h-10" alt="Materi">
-                           <p class="text-black font-semibold">Materi Sesuai<br/> <span class="text-serv-text font-medium">Materi yang diberikan </br>sesuai dengan kebutuhan</span></p>
+                           <p class="text-black font-semibold">Materi Sesuai<br/> <span class="text-ezb-text font-medium">Materi yang diberikan </br>sesuai dengan kebutuhan</span></p>
                         </div>
                         <div class="md:flex gap-4 pl-14">
                             <img src="{{ asset('assets/images/iconkeuntungan/banksoal.svg')}}" class="w-10 h-10" alt="Bank Soal">
-                            <p class="text-black font-semibold">Bank Soal<br/> <span class="text-serv-text font-medium">Tersedia beraneka ragam macam </br>
+                            <p class="text-black font-semibold">Bank Soal<br/> <span class="text-ezb-text font-medium">Tersedia beraneka ragam macam </br>
                                 soal untuk mengasah kemampuan </br>
                                 dan pengetahuan kalian</span></p>
                             </div>
                             <div class="md:flex gap-4 pl-17">
                                 <img src="{{ asset('assets/images/iconkeuntungan/artikel.svg')}}" class="w-10 h-10" alt="Artikel">
-                                <p class="text-black font-semibold">Artikel<br/> <span class="text-serv-text font-medium">Banyak Artikel yang </br>mudah untuk di akses</span></p>
+                                <p class="text-black font-semibold">Artikel<br/> <span class="text-ezb-text font-medium">Banyak Artikel yang </br>mudah untuk di akses</span></p>
                             </div>
                         </div> -->
                 </div>
@@ -149,7 +149,7 @@
                 </h2>
                 <a
                     href="#"
-                    class="lg:bg-serv-services-bg px-10 py-4 text-base text-white font-semibold rounded-xl cursor-pointer focus:outline-none tracking-wide">
+                    class="lg:bg-ezb-services-bg px-10 py-4 text-base text-white font-semibold rounded-xl cursor-pointer focus:outline-none tracking-wide">
                     Mulai
                 </a>
             </div>

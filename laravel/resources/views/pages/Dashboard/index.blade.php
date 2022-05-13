@@ -268,7 +268,7 @@
                                     </div>
                                 </td>
                                 <td class="w-1/2 px-1 py-5 text-xs text-right text-red-500">
-<!--                                    --><?php //include '../components/dashboard/rating.php'; ?>
+{{--<!--                                    --><?php //include '../components/dashboard/rating.php'; ?>--}}
                                 </td>
                             </tr>
                             <tr class="text-gray-700">
@@ -285,7 +285,7 @@
                                     </div>
                                 </td>
                                 <td class="w-1/2 px-1 py-5 text-xs text-right text-red-500">
-<!--                                    --><?php //include '../components/dashboard/rating.php'; ?>
+{{--<!--                                    --><?php //include '../components/dashboard/rating.php'; ?>--}}
                                 </td>
                             </tr>
                             <tr class="text-gray-700">
@@ -302,7 +302,7 @@
                                     </div>
                                 </td>
                                 <td class="w-1/2 px-1 py-5 text-xs text-right text-red-500">
-<!--                                    --><?php //include '../components/dashboard/rating.php'; ?>
+{{--<!--                                    --><?php //include '../components/dashboard/rating.php'; ?>--}}
                                 </td>
                             </tr>
                             <tr class="text-gray-700">
@@ -319,7 +319,7 @@
                                     </div>
                                 </td>
                                 <td class="w-1/2 px-1 py-5 text-xs text-right text-red-500">
-<!--                                    --><?php //include '../components/dashboard/rating.php'; ?>
+{{--<!--                                    --><?php //include '../components/dashboard/rating.php'; ?>--}}
                                 </td>
                             </tr>
                             <tr class="text-gray-700">
@@ -336,7 +336,7 @@
                                     </div>
                                 </td>
                                 <td class="w-1/2 px-1 py-5 text-xs text-right text-red-500">
-<!--                                    --><?php //include '../components/dashboard/rating.php'; ?>
+{{--<!--                                    --><?php //include '../components/dashboard/rating.php'; ?>--}}
                                 </td>
                             </tr>
 

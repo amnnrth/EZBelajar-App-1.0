@@ -1,5 +1,5 @@
 <!-- footer -->
-<footer class="footer bg-serv-bg relative py-2">
+<footer class="footer bg-ezb-bg relative py-2">
     <div class="mx-auto lg:px-16 md:px-20 px-8 py-8 ">
         <div class="sm:flex sm:mt-16">
             <div class="mt-8 sm:mt-0 sm:w-full flex flex-col md:flex-row justify-between">
@@ -49,32 +49,32 @@
         </div>
     </div>
     <!-- <div class="mx-auto lg:px-16 md:px-20 px-8 py-8 ">
-        <div class="mt-16 border-t border-serv-border sm:flex justify-between w-100 ">
+        <div class="mt-16 border-t border-ezb-border sm:flex justify-between w-100 ">
             <div class="flex items-left mt-8">
                 <h1 class="text-white text-3xl font-bold">
-                    SERV
+                    ezb
                 </h1>
             </div>
             <div class="sm:flex items-center justify-center mt-8 lg:ml-24">
-                <p class="text-serv-text">
+                <p class="text-ezb-text">
                 <div class="sm:flex sm:space-x-6">
                     <span class="sm:flex block">
-                        <a href="#" class="text-serv-text">Terms</a>
+                        <a href="#" class="text-ezb-text">Terms</a>
                     </span>
                     <span class="sm:flex block">
-                        <a href="#" class="text-serv-text">Privacy</a>
+                        <a href="#" class="text-ezb-text">Privacy</a>
                     </span>
                     <span class="sm:flex block">
-                        <a href="#" class="text-serv-text">Updates</a>
+                        <a href="#" class="text-ezb-text">Updates</a>
                     </span>
                     <span class="sm:flex block">
-                        <a href="#" class="text-serv-text">Contact us</a>
+                        <a href="#" class="text-ezb-text">Contact us</a>
                     </span>
                 </div>
                 </p>
             </div> -->
     <div class="flex items-center justify-center flex-end mt-8">
-        <p class="text-serv-text">
+        <p class="text-ezb-text">
             Copyright 2022 • All rights reserved • EZBelajar
         </p>
     </div>

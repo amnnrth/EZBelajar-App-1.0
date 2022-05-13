@@ -23,7 +23,7 @@
                     <div class="mb-4">
                         <label class="block text-grey-darker text-sm mb-2" for="email">Email</label>
 
-                        <input name="email" class="appearance-none border border-gray-300 rounded-lg w-80 py-3 px-4 placeholder-serv-text text-xs" id="email" type="text" placeholder="Email" required autofocus>
+                        <input name="email" class="appearance-none border border-gray-300 rounded-lg w-80 py-3 px-4 placeholder-ezb-text text-xs" id="email" type="text" placeholder="Email" required autofocus>
 
                         @if ($errors->has('email'))
                             <p class="text-red-500 mb-3 text-sm">{{ $errors->first('email') }}</p>
@@ -33,7 +33,7 @@
                     <div>
                         <label class="block text-grey-darker text-sm mb-2" for="password">Kata Sandi</label>
 
-                        <input name="password" class="appearance-none border border-gray-300 rounded-lg w-80 py-3 px-4 placeholder-serv-text text-xs mb-3" id="password" type="password" placeholder="Password" required autocomplete="current-password">
+                        <input name="password" class="appearance-none border border-gray-300 rounded-lg w-80 py-3 px-4 placeholder-ezb-text text-xs mb-3" id="password" type="password" placeholder="Password" required autocomplete="current-password">
 
                         @if ($errors->has('password'))
                             <p class="text-red-500 mb-3 text-sm">{{ $errors->first('password') }}</p>
@@ -43,7 +43,7 @@
                     <div class="flex items-center justify-between">
                         <div class="inline-block text-xs text-gray-400">
                             <label class="inline-flex items-center mt-3">
-                                <input type="checkbox" class="form-checkbox h-5 w-5 text-serv-button rounded border-serv-text"><span class="ml-2 text-gray-400">Ingat Saya</span>
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-ezb-button rounded border-ezb-text"><span class="ml-2 text-gray-400">Ingat Saya</span>
                             </label>
                         </div>
 
@@ -57,7 +57,7 @@
                 <div class="px-6 pb-6 rounded-b-xl mx-10">
                     <input type="hidden" name="auth" value="true">
 
-                    <button class="lg:bg-serv-services-bg text-white text-lg ml-23 py-3 px-12 my-2 rounded-lg w-36" type="submit">Masuk
+                    <button class="lg:bg-ezb-services-bg text-white text-lg ml-23 py-3 px-12 my-2 rounded-lg w-36" type="submit">Masuk
                     </button>
 
                     <p href="#" class="ml-23 py-5">

@@ -83,7 +83,7 @@
             <li class="relative px-6 py-3">
 
 {{--                @if (request()->is('member/request') || request()->is('member/request/*') || request()->is('member/*/request') || request()->is('member/*/request/*'))--}}
-{{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"--}}
+{{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
 {{--                          aria-hidden="true"></span>--}}
 {{--                @endif--}}
 
@@ -103,7 +103,7 @@
                     <img src="{{ asset('/assets/icondashboard/book-open.svg') }}" alt="Bank Soal">
                     <span class="ml-4">Bank Soal</span>
                     <span
-                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">
+                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
 {{--                        {{ auth()->user()->order_buyer()->count() }}--}}
                     </span>
 
@@ -113,7 +113,7 @@
             <li class="relative px-6 py-3">
 
 {{--                @if (request()->is('member/order') || request()->is('member/order/*') || request()->is('member/*/order') || request()->is('member/*/order/*'))--}}
-{{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"--}}
+{{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
 {{--                          aria-hidden="true"></span>--}}
 {{--                @endif--}}
 
@@ -135,7 +135,7 @@
                     <img src="{{ asset('/assets/icondashboard/users.svg') }}" alt="users">
                     <span class="ml-4">Users</span>
                     <span
-                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">
+                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
 {{--                        {{ auth()->user()->order_freelancer()->count() }}--}}
                     </span>
 
@@ -145,12 +145,12 @@
             <li class="relative px-6 py-3">
 
                 {{--                @if (request()->is('member/profile') || request()->is('member/profile/*') || request()->is('member/*/profile') || request()->is('member/*/profile/*'))--}}
-                {{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"--}}
+                {{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
                 {{--                        aria-hidden="true"></span>--}}
                 {{--                @endif--}}
 
 {{--                @if (request()->is('member/artikel') || request()->is('member/artikel/*') || request()->is('member/*/artikel') || request()->is('member/*/artikel/*'))--}}
-{{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"--}}
+{{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
 {{--                          aria-hidden="true"></span>--}}
 {{--                @endif--}}
 
@@ -198,7 +198,7 @@
             <li class="relative px-6 py-3">
 
                 @if (request()->is('member/dashboard') || request()->is('member/dashboard/*') || request()->is('member/*/dashboard') || request()->is('member/*/dashboard/*'))
-                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                         aria-hidden="true"></span>
                 @endif
 
@@ -218,7 +218,7 @@
             <li class="relative px-6 py-3">
 
                 @if (request()->is('member/service') || request()->is('member/service/*') || request()->is('member/*/service') || request()->is('member/*/service/*'))
-                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                         aria-hidden="true"></span>
                 @endif
 
@@ -239,7 +239,7 @@
                     </svg> -->
                     <span class="ml-4">My Services</span>
                     <span
-                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">
+                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
                         {{ auth()->user()->service()->count() }}
                     </span>
 
@@ -249,7 +249,7 @@
             <li class="relative px-6 py-3">
 
                 @if (request()->is('member/request') || request()->is('member/request/*') || request()->is('member/*/request') || request()->is('member/*/request/*'))
-                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                         aria-hidden="true"></span>
                 @endif
 
@@ -270,7 +270,7 @@
                     </svg> -->
                     <span class="ml-4">My Request</span>
                     <span
-                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">
+                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
                         {{ auth()->user()->order_buyer()->count() }}
                     </span>
 
@@ -280,7 +280,7 @@
             <li class="relative px-6 py-3">
 
                 @if (request()->is('member/order') || request()->is('member/order/*') || request()->is('member/*/order') || request()->is('member/*/order/*'))
-                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                         aria-hidden="true"></span>
                 @endif
 
@@ -305,7 +305,7 @@
                     </svg> -->
                     <span class="ml-4">My Orders</span>
                     <span
-                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">
+                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
                         {{ auth()->user()->order_freelancer()->count() }}
                     </span>
 
@@ -315,7 +315,7 @@
             <li class="relative px-6 py-3">
 
                 @if (request()->is('member/profile') || request()->is('member/profile/*') || request()->is('member/*/profile') || request()->is('member/*/profile/*'))
-                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                         aria-hidden="true"></span>
                 @endif
 

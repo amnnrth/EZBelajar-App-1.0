@@ -6,7 +6,7 @@
 
     <div class="content">
         <!-- services -->
-        <div class="bg-serv-bg-explore overflow-hidden">
+        <div class="bg-ezb-bg-explore overflow-hidden">
             <div class="pt-16 pb-16 lg:pb-20 lg:px-24 md:px-16 sm:px-8 px-8 mx-auto">
                 <div class="text-center mb-5">
                     <img src=" {{ asset('/assets/images/logo.svg') }}" alt="About Us Image">
