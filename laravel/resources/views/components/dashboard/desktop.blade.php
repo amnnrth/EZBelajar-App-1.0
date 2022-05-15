@@ -1,6 +1,6 @@
 <!-- Desktop sidebar -->
 <aside class="z-20 flex-shrink-0 hidden w-64 overflow-y-auto bg-white md:block" aria-label="aside">
-    <div class="text-serv-bg">
+    <div class="text-ezb-bg">
 
         <div class="" href="#">
             <img src="{{ asset('/assets/images/logo.svg') }}" alt="" class="object-center mx-auto my-8 ">
@@ -24,7 +24,7 @@
             <div>
                 <!--Author name-->
                 <p class="font-semibold text-gray-900 text-md">{{ Auth::user()->name ?? '' }}</p>
-                <p class="text-sm font-light text-serv-text">
+                <p class="text-sm font-light text-ezb-text">
                     Role
 {{--                    {{ auth()->user()->detail_user()->first()->role ?? '' }}--}}
                 </p>
@@ -34,13 +34,13 @@
         <ul class="mt-6">
             <li class="relative px-6 py-3">
 
-{{--                @if (request()->is('member/dashboard') || request()->is('member/dashboard/*') || request()->is('member/*/dashboard') || request()->is('member/*/dashboard/*'))--}}
-{{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"--}}
-{{--                          aria-hidden="true"></span>--}}
-{{--                @endif--}}
+                @if (request()->is('admin/dashboard') || request()->is('admin/dashboard/*') || request()->is('admin/*/dashboard') || request()->is('admin/*/dashboard/*'))
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
+                          aria-hidden="true"></span>
+                @endif
 
                 <a class="inline-flex items-center w-full text-sm font-medium text-gray-800 transition-colors duration-150 hover:text-gray-800 "
-                   href="{{ route('#') }}">
+                   href="#">
                     <img src="{{ asset('assets/icondashboard/home.svg') }}" alt="home">
                     <span class="ml-4">Dashboard</span>
                 </a>
@@ -50,13 +50,13 @@
         <ul>
             <li class="relative px-6 py-3">
 
-{{--                @if (request()->is('member/service') || request()->is('member/service/*') || request()->is('member/*/service') || request()->is('member/*/service/*'))--}}
-{{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-serv-bg"--}}
-{{--                          aria-hidden="true"></span>--}}
-{{--                @endif--}}
+                @if (request()->is('admin/belajar') || request()->is('admin/belajar/*') || request()->is('admin/*/belajar') || request()->is('admin/*/belajar/*'))
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
+                          aria-hidden="true"></span>
+                @endif
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
-                   href="#">
+                   href="{{ route('admin.belajar.index') }}">
                     <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="3" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
@@ -73,8 +73,8 @@
                     <img src="{{ asset('/assets/icondashboard/film.svg') }}" alt="Video">
                     <span class="ml-4">Video</span>
                     <span
-                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-serv-green-badge">
-{{--                        {{ auth()->user()->service()->count() }}--}} Count
+                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
+                        {{ auth()->user()->belajar()->count() }} Count
                     </span>
 
                 </a>
@@ -88,7 +88,7 @@
 {{--                @endif--}}
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
-                   href="{{ route('#') }}">
+                   href="#">
                     <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2.25" y="1.25" width="19.5" height="21.5" rx="4.75" stroke="#082431" stroke-width="1.5" />
                         <rect x="11.3" y="7" width="1.4" height="10" rx="0.7" fill="#082431" />
@@ -118,7 +118,7 @@
 {{--                @endif--}}
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
-                   href="{{ route('#') }}">
+                   href="#">
                     <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3.25" y="2.25" width="17.5" height="19.5" rx="4.75" stroke="#082431" stroke-width="1.5" />
                         <line x1="7.75" y1="7.25" x2="10.25" y2="7.25" stroke="#082431" stroke-width="1.5" stroke-linecap="round" />
@@ -155,7 +155,7 @@
 {{--                @endif--}}
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
-                   href="{{ route('#') }}">
+                   href="#">
                     <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="24" height="24" fill="white" />
                         <circle cx="10.5" cy="5.5" r="2.75" stroke="#082431" stroke-width="1.5" />

@@ -27,7 +27,7 @@ class BelajarController extends Controller
     public function index()
     {
         $belajars = Belajar::latest()->paginate(5);
-        return view('belajar.index', compact('belajars'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('pages.Dashboard.belajar.index', compact('belajars'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -37,7 +37,7 @@ class BelajarController extends Controller
      */
     public function create()
     {
-        return view('belajar.create');
+        return view('pages.dashboard.belajar.create');
     }
 
     /**
@@ -54,11 +54,14 @@ class BelajarController extends Controller
             'link' => 'required',
         ]);
 
+        $user_id = auth()->user()->id;  // get the user id
+
         $path = $request->file('cover')->store('public/assets/cover-images');
         $post = new Belajar();
         $post->title = $request->title;
         $post->cover = $path;
         $post->link = $request->link;
+        $post->user_id = $user_id;
         $post->save();
 
 //        $request->validate([
@@ -79,7 +82,7 @@ class BelajarController extends Controller
 //        Belajar::create($input);
 
 
-        return redirect()->route('belajar.index')->with('success', 'Berhasil menambahkan data');
+        return redirect()->route('admin.belajar.index')->with('success', 'Berhasil menambahkan data');
     }
 
     /**
@@ -90,7 +93,7 @@ class BelajarController extends Controller
      */
     public function show(Belajar $belajar)
     {
-        return view('belajar.show', compact('belajar'));
+        return view('pages.dashboard.belajar.show', compact('belajar'));
     }
 
     /**
@@ -101,7 +104,7 @@ class BelajarController extends Controller
      */
     public function edit(Belajar $belajar)
     {
-        return view('belajar.edit', compact('belajar'));
+        return view('pages.dashboard.belajar.edit', compact('belajar'));
     }
 
     /**
@@ -125,6 +128,7 @@ class BelajarController extends Controller
         }
 
         $post = Belajar::find($belajar->id);
+        $user_id = auth()->user()->id;  // get the user id
         $post->title = $request->title;
         if($request->hasFile('cover')){
 //            if(File::exists($paths)) {
@@ -138,6 +142,7 @@ class BelajarController extends Controller
             $post->cover = $path;
         }
         $post->link = $request->link;
+        $post->user_id = $user_id;
         $post->save();
 
 //        $request->validate([
@@ -166,7 +171,7 @@ class BelajarController extends Controller
 //
 //        $belajar->update($input);
 
-        return redirect()->route('belajar.index')->with('success', 'Berhasil mengubah data');
+        return redirect()->route('pages.dashboard.belajar.index')->with('success', 'Berhasil mengubah data');
     }
 
     /**
@@ -183,6 +188,6 @@ class BelajarController extends Controller
 //        $belajar->find($belajar->id)->delete();
         $belajar->delete();
 
-        return redirect()->route('belajar.index')->with('success', 'Berhasil menghapus data');
+        return redirect()->route('pages.Dashboard.belajar.index')->with('success', 'Berhasil menghapus data');
     }
 }

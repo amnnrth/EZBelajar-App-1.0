@@ -12,4 +12,8 @@ class Belajar extends Model
     protected $fillable = [
         'title','cover', 'link',
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

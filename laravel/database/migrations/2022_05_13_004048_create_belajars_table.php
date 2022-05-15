@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('cover');
             $table->string('link');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

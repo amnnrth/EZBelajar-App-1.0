@@ -66,4 +66,10 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Models\DetailUser', 'user_id');
     }
+
+    // one to many
+    public function belajar()
+    {
+        return $this->hasMany('App\Models\Belajar', 'id');
+    }
 }

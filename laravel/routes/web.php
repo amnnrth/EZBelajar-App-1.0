@@ -7,6 +7,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BelajarController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,16 +57,16 @@ Route::get('detailartikel', [LandingController::class, 'detailartikel'])->name('
 
 Route::get('tentangkami', [LandingController::class, 'tentangkami'])->name('tentangkami');
 
-Route::group(['prefix' => 'member', 'as' => 'admin.', 'middleware' => ['auth:sanctum', 'verified']], function() {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth:sanctum', 'verified']], function() {
 
     // dashboard
-    Route::resource('dashboard', AdminController::class);
+    Route::resource('dashboard', DashboardController::class);
     // Belajar
-    Route::resource('service', BelajarController::class);
+    Route::resource('belajar', BelajarController::class);
     // Bank Soal
-    Route::resource('banksoal', BankSoalController::class);
+//    Route::resource('banksoal', BankSoalController::class);
     // Artikel
-    Route::resource('artikel', ArtikelController::class);
+//    Route::resource('artikel', ArtikelController::class);
 
 });
 
