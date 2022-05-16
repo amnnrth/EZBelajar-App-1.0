@@ -61,8 +61,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth:sanc
 
     // dashboard
     Route::resource('dashboard', DashboardController::class);
+
     // Belajar
     Route::resource('belajar', BelajarController::class);
+
+    // User
+    Route::resource('user', UserController::class);
+
+    // Role
+    Route::resource('role', RoleController::class);
+
     // Bank Soal
 //    Route::resource('banksoal', BankSoalController::class);
     // Artikel

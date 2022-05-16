@@ -2,7 +2,7 @@
 <aside class="z-20 flex-shrink-0 hidden w-64 overflow-y-auto bg-white md:block" aria-label="aside">
     <div class="text-ezb-bg">
 
-        <div class="" href="#">
+        <div class="" href="admin.dashboard.index">
             <img src="{{ asset('/assets/images/logo.svg') }}" alt="" class="object-center mx-auto my-8 ">
         </div>
 
@@ -40,7 +40,7 @@
                 @endif
 
                 <a class="inline-flex items-center w-full text-sm font-medium text-gray-800 transition-colors duration-150 hover:text-gray-800 "
-                   href="#">
+                   href="{{ route('admin.dashboard.index') }}">
                     <img src="{{ asset('assets/icondashboard/home.svg') }}" alt="home">
                     <span class="ml-4">Dashboard</span>
                 </a>
@@ -82,7 +82,7 @@
 
             <li class="relative px-6 py-3">
 
-{{--                @if (request()->is('member/request') || request()->is('member/request/*') || request()->is('member/*/request') || request()->is('member/*/request/*'))--}}
+{{--                @if (request()->is('admin/request') || request()->is('admin/request/*') || request()->is('admin/*/request') || request()->is('admin/*/request/*'))--}}
 {{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
 {{--                          aria-hidden="true"></span>--}}
 {{--                @endif--}}
@@ -112,13 +112,13 @@
 
             <li class="relative px-6 py-3">
 
-{{--                @if (request()->is('member/order') || request()->is('member/order/*') || request()->is('member/*/order') || request()->is('member/*/order/*'))--}}
-{{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
-{{--                          aria-hidden="true"></span>--}}
-{{--                @endif--}}
+                @if (request()->is('admin/user') || request()->is('admin/user/*') || request()->is('admin/*/user') || request()->is('admin/*/user/*'))
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
+                          aria-hidden="true"></span>
+                @endif
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
-                   href="#">
+                   href="{{ route('admin.user.index') }}">
                     <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3.25" y="2.25" width="17.5" height="19.5" rx="4.75" stroke="#082431" stroke-width="1.5" />
                         <line x1="7.75" y1="7.25" x2="10.25" y2="7.25" stroke="#082431" stroke-width="1.5" stroke-linecap="round" />
@@ -144,12 +144,44 @@
 
             <li class="relative px-6 py-3">
 
-                {{--                @if (request()->is('member/profile') || request()->is('member/profile/*') || request()->is('member/*/profile') || request()->is('member/*/profile/*'))--}}
+                @if (request()->is('admin/roles') || request()->is('admin/roles/*') || request()->is('admin/*/roles') || request()->is('admin/*/roles/*'))
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
+                          aria-hidden="true"></span>
+                @endif
+
+                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
+                   href="{{ route('admin.role.index') }}">
+                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3.25" y="2.25" width="17.5" height="19.5" rx="4.75" stroke="#082431" stroke-width="1.5" />
+                        <line x1="7.75" y1="7.25" x2="10.25" y2="7.25" stroke="#082431" stroke-width="1.5" stroke-linecap="round" />
+                        <line x1="7.75" y1="11.25" x2="16.25" y2="11.25" stroke="#082431" stroke-width="1.5" stroke-linecap="round" />
+                        <line x1="7.75" y1="15.25" x2="16.25" y2="15.25" stroke="#082431" stroke-width="1.5" stroke-linecap="round" />
+                    </svg> -->
+                    <!-- Active Icons -->
+                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="2" width="18" height="20" rx="4" fill="#082431" />
+                        <line x1="7.75" y1="7.25" x2="10.25" y2="7.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                        <line x1="7.75" y1="11.25" x2="16.25" y2="11.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                        <line x1="7.75" y1="15.25" x2="16.25" y2="15.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                    </svg> -->
+                    <img src="{{ asset('/assets/icondashboard/users.svg') }}" alt="users">
+                    <span class="ml-4">Role</span>
+                    <span
+                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
+{{--                        {{ auth()->user()->order_freelancer()->count() }}--}}
+                    </span>
+
+                </a>
+            </li>
+
+            <li class="relative px-6 py-3">
+
+                {{--                @if (request()->is('admin/profile') || request()->is('admin/profile/*') || request()->is('admin/*/profile') || request()->is('admin/*/profile/*'))--}}
                 {{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
                 {{--                        aria-hidden="true"></span>--}}
                 {{--                @endif--}}
 
-{{--                @if (request()->is('member/artikel') || request()->is('member/artikel/*') || request()->is('member/*/artikel') || request()->is('member/*/artikel/*'))--}}
+{{--                @if (request()->is('admin/artikel') || request()->is('admin/artikel/*') || request()->is('admin/*/artikel') || request()->is('admin/*/artikel/*'))--}}
 {{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
 {{--                          aria-hidden="true"></span>--}}
 {{--                @endif--}}
@@ -197,13 +229,13 @@
         {{-- <ul class="mt-6">
             <li class="relative px-6 py-3">
 
-                @if (request()->is('member/dashboard') || request()->is('member/dashboard/*') || request()->is('member/*/dashboard') || request()->is('member/*/dashboard/*'))
+                @if (request()->is('admin/dashboard') || request()->is('admin/dashboard/*') || request()->is('admin/*/dashboard') || request()->is('admin/*/dashboard/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                         aria-hidden="true"></span>
                 @endif
 
                 <a class="inline-flex items-center w-full text-sm font-medium text-gray-800 transition-colors duration-150 hover:text-gray-800 "
-                    href="{{ route('member.dashboard.index') }}">
+                    href="{{ route('admin.dashboard.index') }}">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M19.5 16V9.02123C19.5 7.75027 18.896 6.55494 17.8728 5.80101L12.3728 1.74838C10.9618 0.708674 9.03823 0.708675 7.6272 1.74838L2.1272 5.80101C1.10401 6.55494 0.5 7.75027 0.5 9.02123V16C0.5 18.2091 2.29086 20 4.5 20H5.75C6.57843 20 7.25 19.3284 7.25 18.5V16C7.25 15.1716 7.92157 14.5 8.75 14.5H11.25C12.0784 14.5 12.75 15.1716 12.75 16V18.5C12.75 19.3284 13.4216 20 14.25 20H15.5C17.7091 20 19.5 18.2091 19.5 16Z"
@@ -217,13 +249,13 @@
         <ul>
             <li class="relative px-6 py-3">
 
-                @if (request()->is('member/service') || request()->is('member/service/*') || request()->is('member/*/service') || request()->is('member/*/service/*'))
+                @if (request()->is('admin/service') || request()->is('admin/service/*') || request()->is('admin/*/service') || request()->is('admin/*/service/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                         aria-hidden="true"></span>
                 @endif
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
-                    href="{{ route('member.service.index') }}">
+                    href="{{ route('admin.service.index') }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
                         <rect x="3" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
@@ -248,13 +280,13 @@
 
             <li class="relative px-6 py-3">
 
-                @if (request()->is('member/request') || request()->is('member/request/*') || request()->is('member/*/request') || request()->is('member/*/request/*'))
+                @if (request()->is('admin/request') || request()->is('admin/request/*') || request()->is('admin/*/request') || request()->is('admin/*/request/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                         aria-hidden="true"></span>
                 @endif
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
-                    href="{{ route('member.request.index') }}">
+                    href="{{ route('admin.request.index') }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2.25" y="1.25" width="19.5" height="21.5" rx="4.75" stroke="#082431"
                             stroke-width="1.5" />
@@ -279,13 +311,13 @@
 
             <li class="relative px-6 py-3">
 
-                @if (request()->is('member/order') || request()->is('member/order/*') || request()->is('member/*/order') || request()->is('member/*/order/*'))
+                @if (request()->is('admin/order') || request()->is('admin/order/*') || request()->is('admin/*/order') || request()->is('admin/*/order/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                         aria-hidden="true"></span>
                 @endif
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
-                    href="{{ route('member.order.index') }}">
+                    href="{{ route('admin.order.index') }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="3.25" y="2.25" width="17.5" height="19.5" rx="4.75" stroke="#082431"
                             stroke-width="1.5" />
@@ -314,13 +346,13 @@
 
             <li class="relative px-6 py-3">
 
-                @if (request()->is('member/profile') || request()->is('member/profile/*') || request()->is('member/*/profile') || request()->is('member/*/profile/*'))
+                @if (request()->is('admin/profile') || request()->is('admin/profile/*') || request()->is('admin/*/profile') || request()->is('admin/*/profile/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                         aria-hidden="true"></span>
                 @endif
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
-                    href="{{ route('member.profile.index') }}">
+                    href="{{ route('admin.profile.index') }}">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="24" height="24" fill="white" />
                         <circle cx="10.5" cy="5.5" r="2.75" stroke="#082431" stroke-width="1.5" />

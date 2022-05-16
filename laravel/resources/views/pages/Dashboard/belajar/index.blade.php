@@ -47,9 +47,9 @@
                                         <td class="w-2/6 px-1 py-5">
                                             <div class="flex items-center text-sm">
                                                 <div>
-                                                    <a href="{{ '#' }}" class="font-medium text-black">
+                                                    <p class="font-medium text-black">
                                                         {{ ++$i }}
-                                                    </a>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </td>
