@@ -57,7 +57,7 @@ Route::get('detailartikel', [LandingController::class, 'detailartikel'])->name('
 
 Route::get('tentangkami', [LandingController::class, 'tentangkami'])->name('tentangkami');
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth:sanctum', 'verified']], function() {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'verified']], function() {
 
     // dashboard
     Route::resource('dashboard', DashboardController::class);

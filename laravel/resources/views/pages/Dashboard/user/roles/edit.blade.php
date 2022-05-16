@@ -38,7 +38,8 @@
                 <main class="col-span-12 p-4 md:pt-0">
                     <div class="px-2 py-2 mt-2 bg-white rounded-xl">
 
-                        <form action="{{ route('admin.role.update', $role->id) }}" method="POST" enctype="multipart/form-data">
+                        {!! Form::model($role, ['method' => 'PATCH','route' => ['admin.role.update', $role->id]]) !!}
+{{--                        <form action="{{ route('admin.role.update', $role->id) }}" method="POST" enctype="multipart/form-data">--}}
 
                             @csrf
                             @method('PUT')
@@ -53,22 +54,29 @@
                                             <input placeholder="name" type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ $role->name }}" required>
 
                                             @if ($errors->has('name'))
-                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('name') }}</p>
+                                                <p class="text-red-500 mb-3 text-sm">
+                                                    {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                                                </p>
                                             @endif
 
                                         </div>
 
                                         <div class="col-span-6">
-                                            <label for="permission" class="block mb-3 font-medium text-gray-700 text-md">Permission</label>
+                                            @foreach($permission as $value)
+                                                <label for="permission" class="block mb-3 font-medium text-gray-700 text-md">Permission</label>
 
-{{--                                            <input placeholder="Link" type="text" name="link" id="link" autocomplete="link" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ $belajar->link }}" required>--}}
+    {{--                                            <input placeholder="Link" type="text" name="link" id="link" autocomplete="link" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ $belajar->link }}" required>--}}
 
-                                            <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="{{ $role->id }}" id="permission[]">
-                                            <label class="form-check-label inline-block text-gray-800" for="permission[]">
+    {{--                                            <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="{{ $role->id }}" id="permission[]">--}}
+                                                <label class="form-check-label inline-block text-gray-800" for="permission[]">
+                                                    {{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'name')) }}
+                                                    {{ $value->name }}
+                                                </label>
 
-                                            @if ($errors->has('permission[]'))
-                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('permission[]') }}</p>
-                                            @endif
+                                                @if ($errors->has('permission[]'))
+                                                    <p class="text-red-500 mb-3 text-sm">{{ $errors->first('permission[]') }}</p>
+                                                @endif
+                                            @endforeach
                                         </div>
 
                                     </div>
@@ -86,11 +94,12 @@
 
                             </div>
                         </form>
-
                     </div>
+                    {!! Form::close() !!}
                 </main>
             </div>
         </section>
     </main>
+
 
 @endsection

@@ -54,26 +54,40 @@
                                         <td class="px-1 py-5 text-sm">
                                             {{ $role->name ?? '' }}
                                         </td>
-                                        <form action="{{ route('admin.role.destroy',$role['id']) }}" method="POST">
-                                            <td class="px-1 py-5 text-sm">
-                                                <a href="{{ route('admin.role.edit', $role['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
-                                                    Show Role
-                                                </a>
-                                            </td>
-                                            <td class="px-1 py-5 text-sm">
-                                                <a href="{{ route('admin.role.edit', $role['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
-                                                    Edit Role
-                                                </a>
-                                            </td>
+                                        <td class="px-1 py-5 text-sm">
+                                            {{ $role->name ?? '' }}
+                                        <td class="px-1 py-5 text-sm">
+                                            <a class="btn btn-info" href="{{ route('admin.role.show',$role->id) }}">Show</a>
+                                            @can('role-edit')
+                                                <a class="btn btn-primary" href="{{ route('admin.role.edit',$role->id) }}">Edit</a>
+                                            @endcan
+                                            @can('role-delete')
+                                                {!! Form::open(['method' => 'DELETE','route' => ['admin.role.destroy', $role->id],'style'=>'display:inline']) !!}
+                                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                                {!! Form::close() !!}
+                                            @endcan
+                                        </td>
+{{--                                        </td>--}}
+{{--                                        <form action="{{ route('admin.role.destroy',$role['id']) }}" method="POST">--}}
+{{--                                            <td class="px-1 py-5 text-sm">--}}
+{{--                                                <a href="{{ route('admin.role.show', $role['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">--}}
+{{--                                                    Show Role--}}
+{{--                                                </a>--}}
+{{--                                            </td>--}}
+{{--                                            <td class="px-1 py-5 text-sm">--}}
+{{--                                                <a href="{{ route('admin.role.edit', $role['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">--}}
+{{--                                                    Edit Role--}}
+{{--                                                </a>--}}
+{{--                                            </td>--}}
 
-                                            @csrf
-                                            @method('DELETE')
-                                            <td class="px-1 py-5 text-sm">
-                                                <a>
-                                                    Delete Role
-                                                </a>
-                                            </td>
-                                        </form>
+{{--                                            @csrf--}}
+{{--                                            @method('DELETE')--}}
+{{--                                            <td class="px-1 py-5 text-sm">--}}
+{{--                                                <a href="{{ route('admin.role.destroy', $role['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">--}}
+{{--                                                    Delete Role--}}
+{{--                                                </a>--}}
+{{--                                            </td>--}}
+{{--                                        </form>--}}
                                     </tr>
                                 @empty
 
@@ -83,6 +97,8 @@
 
                                 </tbody>
                             </table>
+
+                            {!! $roles->render() !!}
                         </div>
                     </main>
                 </div>

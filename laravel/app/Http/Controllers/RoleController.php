@@ -63,7 +63,7 @@ class RoleController extends Controller
         $role->save();
 
 
-        return redirect()->route('pages.Dashboard.user.roles.index')
+        return redirect()->route('admin.role.index')
             ->with('success','Role created successfully');
     }
     /**
@@ -119,7 +119,7 @@ class RoleController extends Controller
 
         $role->syncPermissions($request->input('permission'));
 
-        return redirect()->route('pages.Dashboard.user.roles.index')
+        return redirect()->route('admin.role.index')
             ->with('success','Role updated successfully');
     }
     /**
@@ -131,7 +131,7 @@ class RoleController extends Controller
     public function destroy($id)
     {
         DB::table("roles")->where('id',$id)->delete();
-        return redirect()->route('pages.Dashboard.user.roles.index')
+        return redirect()->route('admin.role.index')
             ->with('success','Role deleted successfully');
     }
 }

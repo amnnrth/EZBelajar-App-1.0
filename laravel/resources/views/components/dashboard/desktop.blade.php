@@ -144,7 +144,7 @@
 
             <li class="relative px-6 py-3">
 
-                @if (request()->is('admin/roles') || request()->is('admin/roles/*') || request()->is('admin/*/roles') || request()->is('admin/*/roles/*'))
+                @if (request()->is('admin/role') || request()->is('admin/role/*') || request()->is('admin/*/role') || request()->is('admin/*/role/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                           aria-hidden="true"></span>
                 @endif
@@ -162,13 +162,13 @@
                         <rect x="3" y="2" width="18" height="20" rx="4" fill="#082431" />
                         <line x1="7.75" y1="7.25" x2="10.25" y2="7.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
                         <line x1="7.75" y1="11.25" x2="16.25" y2="11.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                        <line x1="7.75" y1="15.25" x2="16.25" y2="15.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                      A  <line x1="7.75" y1="15.25" x2="16.25" y2="15.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
                     </svg> -->
                     <img src="{{ asset('/assets/icondashboard/users.svg') }}" alt="users">
                     <span class="ml-4">Role</span>
                     <span
                         class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
-{{--                        {{ auth()->user()->order_freelancer()->count() }}--}}
+                        {{ auth()->user()->roles()->count() }}
                     </span>
 
                 </a>
