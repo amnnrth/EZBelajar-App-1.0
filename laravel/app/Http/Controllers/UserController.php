@@ -54,6 +54,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
+//            'occupation' => 'required',
             'roles' => 'required'
         ]);
 
@@ -63,7 +64,7 @@ class UserController extends Controller
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
 
-        return redirect()->route('pages.Dashboard.user.users.index')
+        return redirect()->route('admin.user.index')
             ->with('success','User created successfully');
     }
 

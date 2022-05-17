@@ -35,8 +35,8 @@
                         <tr class="text-sm font-normal text-left text-gray-900 border-b border-b-gray-600">
                             <th class="py-4" scope="">No</th>
                             <th class="py-4" scope="">Nama</th>
-                            <th class="py-4" scope="">Tanggal Register</th>
-                            <th class="py-4" scope="">Pekerjaan</th>
+                            <th class="py-4" scope="">Email</th>
+                            <th class="py-4" scope="">Role</th>
                             <th class="py-4" scope="">Action</th>
                         </tr>
                         </thead>
@@ -60,14 +60,18 @@
                                 {{ $user->email ?? '' }}
                             </td>
                             <td class="px-1 py-5 text-sm">
-                                {{ $user->created_at ?? '' }}
+                                @if(!empty($user->getRoleNames()))
+                                    @foreach($user->getRoleNames() as $v)
+                                        <label class="badge badge-success">{{ $v }}</label>
+                                    @endforeach
+                                @endif
                             </td>
-                            <td class="px-1 py-5 text-sm">
-                                {{ $user->detail_user()->occupation ?? '' }}
-                            </td>
+{{--                            <td class="px-1 py-5 text-sm">--}}
+{{--                                {{ $user->detail_user()->occupation ?? '' }}--}}
+{{--                            </td>--}}
                             <form action="{{ route('admin.user.destroy',$user->id) }}" method="POST">
                                 <td class="px-1 py-5 text-sm">
-                                    <a href="{{ route('admin.user.edit', $user->id) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
+                                    <a href="{{ route('admin.user.show', $user->id) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
                                         Show user
                                     </a>
                                 </td>
@@ -94,6 +98,7 @@
 
                         </tbody>
                     </table>
+                    {!! $users->render() !!}
                 </div>
             </main>
         </div>
@@ -104,7 +109,7 @@
     <div class="m-auto text-center">
         <img src="{{ asset('/assets/images/empty-illustration.svg') }}" alt="" class="w-48 mx-auto">
         <h2 class="mt-8 mb-1 text-2xl font-semibold text-gray-700">
-            There is No Requests Yet
+            There is No User Yet
         </h2>
         <p class="text-sm text-gray-400">
             It seems that you haven’t provided any user. <br>
@@ -112,7 +117,7 @@
         </p>
 
         <div class="relative mt-0 md:mt-6">
-            <a href="{{ route('admin.user.users.create') }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-button">
+            <a href="{{ route('admin.user.create') }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-button">
                 + Add user
             </a>
         </div>

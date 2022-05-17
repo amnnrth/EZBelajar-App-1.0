@@ -53,9 +53,6 @@
                                         </td>
                                         <td class="px-1 py-5 text-sm">
                                             {{ $role->name ?? '' }}
-                                        </td>
-                                        <td class="px-1 py-5 text-sm">
-                                            {{ $role->name ?? '' }}
                                         <td class="px-1 py-5 text-sm">
                                             <a class="btn btn-info" href="{{ route('admin.role.show',$role->id) }}">Show</a>
                                             @can('role-edit')

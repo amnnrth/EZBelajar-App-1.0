@@ -36,7 +36,7 @@
                                     <th class="py-4" scope="">No</th>
                                     <th class="py-4" scope="">Judul Video</th>
                                     <th class="py-4" scope="">Tanggal Input</th>
-                                    <th class="py-4" scope="">Admin</th>
+                                    <th class="py-4" scope="">Role</th>
                                     <th class="py-4" scope="">Action</th>
                                 </tr>
                                 </thead>
@@ -57,7 +57,7 @@
                                             {{ $belajar->title ?? '' }}
                                         </td>
                                         <td class="px-1 py-5 text-sm">
-                                            {{ $belajar->created_at->diffForHumans() ?? '' }}
+                                            {{ $belajar->created_at?? '' }}
                                         </td>
                                         <td class="px-1 py-5 text-sm text-green-500 text-md">
                                             {{ 'Active' }}

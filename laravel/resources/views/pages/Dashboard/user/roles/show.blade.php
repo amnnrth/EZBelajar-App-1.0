@@ -48,7 +48,7 @@
                                     </div>
 
                                     <div class="col-span-6">
-                                        <label for="link" class="block mb-3 font-medium text-gray-700 text-md">Link</label>
+                                        <label for="link" class="block mb-3 font-medium text-gray-700 text-md">Roles</label>
                                         <p class="text-sm text-gray-600">
                                             @if(!empty($rolePermissions))
                                                 @foreach($rolePermissions as $v)

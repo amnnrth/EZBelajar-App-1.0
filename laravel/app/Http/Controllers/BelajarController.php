@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Belajar;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class BelajarController extends Controller
@@ -27,6 +28,7 @@ class BelajarController extends Controller
     public function index()
     {
         $belajars = Belajar::latest()->paginate(5);
+        $users = User::all();
         return view('pages.Dashboard.belajar.index', compact('belajars'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

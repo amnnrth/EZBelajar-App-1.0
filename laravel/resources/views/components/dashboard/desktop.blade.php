@@ -136,7 +136,7 @@
                     <span class="ml-4">Users</span>
                     <span
                         class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
-{{--                        {{ auth()->user()->order_freelancer()->count() }}--}}
+                        {{ auth()->user()->count() }}
                     </span>
 
                 </a>
@@ -168,7 +168,8 @@
                     <span class="ml-4">Role</span>
                     <span
                         class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
-                        {{ auth()->user()->roles()->count() }}
+{{--                        {{ auth()->user()->roles()->count() }}--}}
+{{--                        {{ $auth()->roles->count() }}--}}
                     </span>
 
                 </a>
