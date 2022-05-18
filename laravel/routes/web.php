@@ -8,6 +8,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BelajarController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,8 +74,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
 
     // Bank Soal
 //    Route::resource('banksoal', BankSoalController::class);
-    // Artikel
-//    Route::resource('artikel', ArtikelController::class);
+
+//     Artikel
+    Route::resource('artikel', BlogController::class);
 
 });
 

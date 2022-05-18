@@ -6,7 +6,7 @@
 
     {{-- top --}}
 
-    <div class="container">
+    <div class="container mx-auto">
 
         <div class="hero-bg">
             <!-- hero -->
@@ -19,7 +19,7 @@
                             class="text-black-1 lg:leading-normal sm:text-4xl lg:text-5xl text-3xl mb-5 font-semibold lg:mt-20">
                             Memberikan Kebutuhan Belajar lebih Mudah
                         </h1>
-                        <p class="text-lg leading-relaxed text-ezb-text font-light tracking-wide mb-10 lg:mb-18 ">
+                        <p class="text-lg leading-relaxed text-ezb-text font-light tracking-wide mb-10 lg:mb-18 flex-container">
                             Bingung mencari materi kuliah? Ez belajar adalah solusinya!
                             Materi kuliah apapun bisa kalian temukan disini. Kalian juga bisa
                             Berdiskusi tanya jawab seputar materi kuliah yang belum di mengerti,

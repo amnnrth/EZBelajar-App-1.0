@@ -9,24 +9,24 @@
         <div class="flex items-center pt-8 pl-5 space-x-2 border-t border-gray-100">
 
             {{-- validation photo --}}
-{{--            @if (auth()->user()->detail_user()->first()->photo != null)--}}
-{{--                <img class="object-cover object-center mr-1 rounded-full w-14 h-14"--}}
-{{--                     src="{{ url(Storage::url(auth()->user()->detail_user()->first()->photo)) }}" alt=""--}}
-{{--                     loading="lazy" />--}}
-{{--            @else--}}
-                <svg class="object-cover object-center mr-1 rounded-full w-14 h-14 text-gray-300" fill="currentColor"
-                     viewBox="0 0 24 24">
-                    <path
-                        d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-{{--            @endif--}}
+            {{--            @if (auth()->user()->detail_user()->first()->photo != null)--}}
+            {{--                <img class="object-cover object-center mr-1 rounded-full w-14 h-14"--}}
+            {{--                     src="{{ url(Storage::url(auth()->user()->detail_user()->first()->photo)) }}" alt=""--}}
+            {{--                     loading="lazy" />--}}
+            {{--            @else--}}
+            <svg class="object-cover object-center mr-1 rounded-full w-14 h-14 text-gray-300" fill="currentColor"
+                 viewBox="0 0 24 24">
+                <path
+                    d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            {{--            @endif--}}
 
             <div>
                 <!--Author name-->
                 <p class="font-semibold text-gray-900 text-md">{{ Auth::user()->name ?? '' }}</p>
                 <p class="text-sm font-light text-ezb-text">
                     Role
-{{--                    {{ auth()->user()->detail_user()->first()->role ?? '' }}--}}
+                    {{--                    {{ auth()->user()->detail_user()->first()->role ?? '' }}--}}
                 </p>
             </div>
         </div>
@@ -72,20 +72,20 @@
                     </svg> -->
                     <img src="{{ asset('/assets/icondashboard/film.svg') }}" alt="Video">
                     <span class="ml-4">Video</span>
-                    <span
-                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
-                        {{ auth()->user()->belajar()->count() }} Count
-                    </span>
+                    {{--                    <span--}}
+                    {{--                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">--}}
+                    {{--                        {{ auth()->user()->belajar()->count() }} Count--}}
+                    {{--                    </span>--}}
 
                 </a>
             </li>
 
             <li class="relative px-6 py-3">
 
-{{--                @if (request()->is('admin/request') || request()->is('admin/request/*') || request()->is('admin/*/request') || request()->is('admin/*/request/*'))--}}
-{{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
-{{--                          aria-hidden="true"></span>--}}
-{{--                @endif--}}
+                {{--                @if (request()->is('admin/request') || request()->is('admin/request/*') || request()->is('admin/*/request') || request()->is('admin/*/request/*'))--}}
+                {{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
+                {{--                          aria-hidden="true"></span>--}}
+                {{--                @endif--}}
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
                    href="#">
@@ -102,10 +102,10 @@
                     </svg> -->
                     <img src="{{ asset('/assets/icondashboard/book-open.svg') }}" alt="Bank Soal">
                     <span class="ml-4">Bank Soal</span>
-                    <span
-                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
-{{--                        {{ auth()->user()->order_buyer()->count() }}--}}
-                    </span>
+                    {{--                    <span--}}
+                    {{--                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">--}}
+                    {{--                        {{ auth()->user()->order_buyer()->count() }}--}}
+                    {{--                    </span>--}}
 
                 </a>
             </li>
@@ -134,10 +134,10 @@
                     </svg> -->
                     <img src="{{ asset('/assets/icondashboard/users.svg') }}" alt="users">
                     <span class="ml-4">Users</span>
-                    <span
-                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
-                        {{ auth()->user()->count() }}
-                    </span>
+                    {{--                    <span--}}
+                    {{--                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">--}}
+                    {{--                        {{ auth()->user()->count() }}--}}
+                    {{--                    </span>--}}
 
                 </a>
             </li>
@@ -166,29 +166,24 @@
                     </svg> -->
                     <img src="{{ asset('/assets/icondashboard/users.svg') }}" alt="users">
                     <span class="ml-4">Role</span>
-                    <span
-                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">
-{{--                        {{ auth()->user()->roles()->count() }}--}}
-{{--                        {{ $auth()->roles->count() }}--}}
-                    </span>
+                    {{--                    <span--}}
+                    {{--                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">--}}
+                    {{--                        {{ auth()->user()->roles()->count() }}--}}
+                    {{--                        {{ $auth()->roles->count() }}--}}
+                    {{--                    </span>--}}
 
                 </a>
             </li>
 
             <li class="relative px-6 py-3">
 
-                {{--                @if (request()->is('admin/profile') || request()->is('admin/profile/*') || request()->is('admin/*/profile') || request()->is('admin/*/profile/*'))--}}
-                {{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
-                {{--                        aria-hidden="true"></span>--}}
-                {{--                @endif--}}
-
-{{--                @if (request()->is('admin/artikel') || request()->is('admin/artikel/*') || request()->is('admin/*/artikel') || request()->is('admin/*/artikel/*'))--}}
-{{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
-{{--                          aria-hidden="true"></span>--}}
-{{--                @endif--}}
+                                @if (request()->is('admin/artikel') || request()->is('admin/artikel/*') || request()->is('admin/*/artikel') || request()->is('admin/*/artikel/*'))
+                                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
+                                          aria-hidden="true"></span>
+                                @endif
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
-                   href="#">
+                   href="{{ route('admin.artikel.index') }}">
                     <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="24" height="24" fill="white" />
                         <circle cx="10.5" cy="5.5" r="2.75" stroke="#082431" stroke-width="1.5" />
