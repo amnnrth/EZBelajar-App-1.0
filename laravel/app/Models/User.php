@@ -72,4 +72,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Belajar', 'id');
     }
+
+    // article
+    public function artikel()
+    {
+        return $this->hasMany('App\Models\Post', 'user_id');
+    }
 }

@@ -65,6 +65,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
 
     // Belajar
     Route::resource('belajar', BelajarController::class);
+    Route::get('find', [BelajarController::class, 'find'])->name('find-belajar');
 
     // User
     Route::resource('user', UserController::class);
@@ -77,6 +78,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
 
 //     Artikel
     Route::resource('artikel', BlogController::class);
+//    Route::get('user/edit/{id}','BlogController@edit');
+//    Route::put('user/update/{id}','BlogController@update');
 
 });
 

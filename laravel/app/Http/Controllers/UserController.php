@@ -124,7 +124,7 @@ class UserController extends Controller
 
         $user->assignRole($request->input('roles'));
 
-        return redirect()->route('pages.Dashboard.user.users.index')
+        return redirect()->route('admin.user.index')
             ->with('success','User updated successfully');
     }
 

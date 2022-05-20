@@ -8,7 +8,7 @@
         <main class="h-full overflow-y-auto">
             <div class="container mx-auto">
                 <div class="grid w-full gap-5 px-10 mx-auto md:grid-cols-12">
-                    <div class="col-span-8">
+                    <div class="col-span-4">
                         <h2 class="mt-8 mb-1 text-2xl font-semibold text-gray-700">
                             Belajar
                         </h2>
@@ -26,6 +26,23 @@
                 </div>
             </div>
 
+
+{{--            <div class="flex items-center justify-center mx-auto">--}}
+{{--                <div class="flex border-2 rounded">--}}
+{{--                    <form action="admin.belajar.find" method="GET">--}}
+{{--                        <input type="text" class="px-4 py-2 w-80" placeholder="Search...">--}}
+{{--                        <button class="flex items-center justify-center px-4 border-l">--}}
+{{--                            <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"--}}
+{{--                                 viewBox="0 0 24 24">--}}
+{{--                                <path--}}
+{{--                                        d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />--}}
+{{--                            </svg>--}}
+{{--                        </button>--}}
+{{--                    </form>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+
             <section class="container px-6 mx-auto mt-5">
                 <div class="grid gap-5 md:grid-cols-12">
                     <main class="col-span-12 p-4 md:pt-0">
@@ -36,7 +53,7 @@
                                     <th class="py-4" scope="">No</th>
                                     <th class="py-4" scope="">Judul Video</th>
                                     <th class="py-4" scope="">Tanggal Input</th>
-                                    <th class="py-4" scope="">Role</th>
+                                    <th class="py-4" scope="">User</th>
                                     <th class="py-4" scope="">Action</th>
                                 </tr>
                                 </thead>
@@ -59,8 +76,8 @@
                                         <td class="px-1 py-5 text-sm">
                                             {{ $belajar->created_at?? '' }}
                                         </td>
-                                        <td class="px-1 py-5 text-sm text-green-500 text-md">
-                                            {{ 'Active' }}
+                                        <td class="px-1 py-5 text-sm">
+                                            {{ auth()->user()->first()->name ?? '' }}
                                         </td>
                                         <form action="{{ route('admin.belajar.destroy',$belajar['id']) }}" method="POST">
                                             <td class="px-1 py-5 text-sm">
@@ -83,6 +100,7 @@
                                             </td>
                                         </form>
                                     </tr>
+                                    {{ $belajars->links() }}
                                 @empty
 
                                     {{-- empty --}}
@@ -178,4 +196,22 @@
 {{--        </div>--}}
 {{--    </div>--}}
 
+
 @endsection
+
+{{--@push('before-script')--}}
+{{--<script type="text/javascript">--}}
+{{--	var path = "{{ route('find-belajar') }}";--}}
+
+{{--	$('#search').typeahead({--}}
+{{--		source: function (query, process) {--}}
+{{--			return $.get(path, {--}}
+{{--				query: query--}}
+{{--			}, function (data) {--}}
+{{--				return process(data);--}}
+{{--			});--}}
+{{--		}--}}
+{{--	});--}}
+
+{{--</script>--}}
+{{--@endpush--}}

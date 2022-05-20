@@ -60,9 +60,9 @@
                             </div>
 
                             <div class="px-4 py-3 text-right sm:px-6">
-                                <a href="{{ route('admin.belajar.index') }}" type="button" class="inline-flex justify-center px-4 py-2 mr-4 text-sm font-medium text-gray-700 bg-white border border-gray-600 rounded-lg shadow-sm hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
+                                <a href="{{ route('admin.artikel.index') }}" type="button" class="inline-flex justify-center px-4 py-2 mr-4 text-sm font-medium text-gray-700 bg-white border border-gray-600 rounded-lg shadow-sm hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300">
                                     Back
-                                </a>çç
+                                </a>
 
                             </div>
                         </div>

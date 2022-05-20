@@ -110,7 +110,7 @@ class BlogController extends Controller
 //
 //        $relatedPosts = Post::where('category_id', $category->id)->latest()->take(3)->get();
 //        return view('blog.show', compact('post', 'category', 'relatedPosts'));
-        $post = Post::all();
+//        $post = Post::all();
 
         return view('pages.Dashboard.blog.show', compact('post'));
     }
@@ -123,9 +123,9 @@ class BlogController extends Controller
      */
     public function edit(Post $post)
     {
-        if (auth()->user()->id !== $post->user_id) {
-            return redirect()->route('blog.index')->with('error', 'You are not authorized to edit this post');
-        }
+//        if (auth()->user()->id !== $post->user_id) {
+//            return redirect()->route('admin.artikel.index')->with('error', 'You are not authorized to edit this post');
+//        }
 
         return view('pages.Dashboard.blog.edit', compact('post'));
     }
@@ -139,9 +139,9 @@ class BlogController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        if (auth()->user()->id !== $post->user_id) {
-            return redirect()->route('blog.index')->with('error', 'You are not authorized to edit this post');
-        }
+//        if (auth()->user()->id !== $post->user_id) {
+//            return redirect()->route('admin.artikel.index')->with('error', 'You are not authorized to edit this post');
+//        }
 
         $request->validate([
             'title' => 'required',

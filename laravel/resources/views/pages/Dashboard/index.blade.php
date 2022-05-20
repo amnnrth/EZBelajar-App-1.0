@@ -12,7 +12,7 @@
                         Overviews
                     </h2>
                     <p class="text-sm text-gray-400">
-                        Monthly Reports
+                        Monthly Report
                     </p>
                 </div>
 
@@ -21,7 +21,7 @@
                         <button
                             class="flex flex-row items-center w-full px-4 py-2 mt-2 text-left bg-white rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4">
 
-                            @if (auth()->user()->detail_user()->first()->photo != null)
+                            @if (auth()->user()->first()->photo != null)
                                 <img src="{{ url(Storage::url(auth()->user()->detail_user()->first()->photo)) }}"
                                      alt="photo profile" class="inline w-12 h-12 mr-3 rounded-full">
                             @else
@@ -51,7 +51,7 @@
                                     <img src="{{ asset('/assets/icondashboard/users.svg') }}" alt=""
                                          class="w-8 h-8">
                                 </div>
-                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $progress ?? '' }}</p>
+                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ NULL ?? '' }}</p>
                                 <p class="text-sm text-left text-gray-500">
                                     Visitor
                                 </p>
@@ -63,7 +63,7 @@
                                     <img src="{{ asset('/assets/icondashboard/users.svg') }}" alt=""
                                          class="w-8 h-8">
                                 </div>
-                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $completed ?? '' }}</p>
+                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ auth()->user()->count() ?? '' }}</p>
                                 <p class="text-sm text-left text-gray-500">
                                     Users
                                 </p>
@@ -75,7 +75,7 @@
                                     <img src="{{ asset('/assets/icondashboard/file-text.svg') }}" alt=""
                                          class="w-8 h-8">
                                 </div>
-                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $freelancer ?? '' }}</p>
+                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ auth()->user()->artikel()->count() ?? '' }}</p>
                                 <p class="text-sm text-left text-gray-500">
                                     Artikel
                                 </p>
@@ -87,7 +87,7 @@
                                     <img src="{{ asset('/assets/icondashboard/film.svg') }}" alt=""
                                          class="w-8 h-8">
                                 </div>
-                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $freelancer ?? '' }}</p>
+                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ auth()->user()->belajar()->count() ?? '' }}</p>
                                 <p class="text-sm text-left text-gray-500">
                                     Kalkulasi Video
                                 </p>

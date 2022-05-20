@@ -192,4 +192,11 @@ class BelajarController extends Controller
 
         return redirect()->route('pages.Dashboard.belajar.index')->with('success', 'Berhasil menghapus data');
     }
+
+    public function find(Request $request)
+    {
+        $search = $request->get('search');
+        $data = Belajar::where('title', 'LIKE', '%'.$search.'%')->paginate(10);
+        return view('pages.dashboard.belajar.index', compact('data'));
+    }
 }
