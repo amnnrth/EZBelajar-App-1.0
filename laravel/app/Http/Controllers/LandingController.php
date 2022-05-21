@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -109,8 +110,24 @@ class LandingController extends Controller
         return view('pages.Landing.tentang-kami');
     }
 
-    public function artikel()
+    public function artikel(Request $request)
     {
-        return view('pages.Landing.artikel.artikel');
+
+//        if ($request->has('search')) {
+//            $search = $request->get('search');
+//            $post = Post::where('title', 'LIKE', '%' . $search . '%')->paginate(5);
+//        } else {
+//            $post = Post::paginate(5);
+//        }
+
+        if($request->search){
+            $posts = Post::where('title', 'like', '%' . $request->search . '%')
+                ->orWhere('body', 'like', '%' . $request->search . '%')
+                ->latest()->paginate(4);
+        }
+
+        $posts = Post::latest()->get();
+
+        return view('pages.Landing.artikel.artikel',compact('posts'));
     }
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BelajarController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BankSoalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +81,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
     Route::resource('artikel', BlogController::class);
 //    Route::get('user/edit/{id}','BlogController@edit');
 //    Route::put('user/update/{id}','BlogController@update');
+
+    //Bank Soal
+    Route::resource('banksoal', BankSoalController::class);
 
 });
 

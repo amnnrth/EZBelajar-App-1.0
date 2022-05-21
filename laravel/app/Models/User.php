@@ -78,4 +78,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Post', 'user_id');
     }
+
+    // bank soal
+    public function bank_soal()
+    {
+        return $this->hasMany('App\Models\BankSoal', 'user_id');
+    }
 }

@@ -26,7 +26,21 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $users = User::orderBy('id','DESC')->paginate(5);
+
+        if ($request->filled('search')){
+            $users = User::where('name', 'like', '%' . $request->search . '%')
+                ->orWhere('email', 'like', '%' . $request->search . '%')
+                ->orWhere('created_at', 'like', '%' . $request->search . '%')
+                ->orWhere('updated_at', 'like', '%' . $request->search . '%')
+                ->orWhereHas('roles', function ($query) use ($request) {
+                    $query->where('name', 'like', '%' . $request->search . '%');
+                })
+                ->paginate(5);
+        }else{
+            $users = User::orderBy('id','DESC')->paginate(5);
+        }
+
+//        $users = User::orderBy('id','DESC')->paginate(5);
         return view('pages.Dashboard.user.users.index',compact('users'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }

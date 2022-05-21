@@ -82,13 +82,13 @@
 
             <li class="relative px-6 py-3">
 
-                {{--                @if (request()->is('admin/request') || request()->is('admin/request/*') || request()->is('admin/*/request') || request()->is('admin/*/request/*'))--}}
-                {{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
-                {{--                          aria-hidden="true"></span>--}}
-                {{--                @endif--}}
+                                @if (request()->is('admin/banksoal') || request()->is('admin/banksoal/*') || request()->is('admin/*/banksoal') || request()->is('admin/*/banksoal/*'))
+                                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
+                                          aria-hidden="true"></span>
+                                @endif
 
                 <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
-                   href="#">
+                   href="{{ route('admin.banksoal.index')}}">
                     <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2.25" y="1.25" width="19.5" height="21.5" rx="4.75" stroke="#082431" stroke-width="1.5" />
                         <rect x="11.3" y="7" width="1.4" height="10" rx="0.7" fill="#082431" />

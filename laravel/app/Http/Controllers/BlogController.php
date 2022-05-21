@@ -25,7 +25,11 @@ class BlogController extends Controller
     {
         if($request->search){
             $posts = Post::where('title', 'like', '%' . $request->search . '%')
-                ->orWhere('body', 'like', '%' . $request->search . '%')->latest()->paginate(4);
+                ->orWhere('body', 'like', '%' . $request->search . '%')
+                ->orWhereHas('user', function ($query) use ($request) {
+                    $query->where('name', 'like', '%' . $request->search . '%');
+                })
+                ->latest()->paginate(4);
         }
 //        elseif($request->category){
 //            $posts = Category::where('name', $request->category)->firstOrFail()->posts()->paginate(3)->withQueryString();
@@ -34,7 +38,7 @@ class BlogController extends Controller
             $posts = Post::latest()->paginate(5);
         }
 
-        $posts = Post::all();
+//        $posts = Post::all();
 //        $categories = Category::all();
 
         return view('pages.Dashboard.blog.index', compact('posts'))->with('i', (request()->input('page', 1) - 1) * 5);
@@ -139,13 +143,13 @@ class BlogController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-//        if (auth()->user()->id !== $post->user_id) {
-//            return redirect()->route('admin.artikel.index')->with('error', 'You are not authorized to edit this post');
-//        }
+        if (auth()->user()->id !== $post->user_id) {
+            return redirect()->route('admin.artikel.index')->with('error', 'You are not authorized to edit this post');
+        }
 
         $request->validate([
             'title' => 'required',
-            'image' => 'required | image',
+//            'imagePath' => 'required | image',
             'body' => 'required'
         ]);
 

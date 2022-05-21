@@ -4,6 +4,40 @@
 
 @section('content')
 
+    <style>
+        input[type=search] {
+            outline: none;
+            border: none;
+            background: #C4C4C4;
+        }
+
+        input[type=search]::-moz-focus-inner {
+            border: 0;
+        }
+
+        input[type=search]:focus {
+            outline: none;
+        }
+
+        .share-button button {
+            background: #C4C4C4;
+            border: none;
+        }
+
+        .share-button button:active {
+            background: #C4C4C4;
+            border: none !important;
+            outline: none !important;
+        }
+
+        .share-button button:focus {
+            background: #C4C4C4;
+            border: none !important;
+            outline: none !important;
+        }
+
+    </style>
+
 @if (count($users))
 <main class="h-full overflow-y-auto">
     <div class="container mx-auto">
@@ -16,11 +50,35 @@
                     {{ auth()->user()->count() }} Total User
                 </p>
             </div>
-            <div class="col-span-4 lg:text-right">
-                <div class="relative mt-0 md:mt-6">
-                    <a href="{{ route('admin.user.create') }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-button">
+{{--            <div class="col-span-4 lg:text-right">--}}
+{{--                <div class="relative mt-0 md:mt-6">--}}
+{{--                    <a href="{{ route('admin.user.create') }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-button">--}}
+{{--                        + Add User--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+        </div>
+    </div>
+
+    <div class="container mx-auto">
+        <div class="grid w-full gap-5 px-10 mx-auto md:grid-cols-12">
+            <div class="col-span-4 lg:text-left">
+                <div class="relative mt-0 md:mt-4 inline-block">
+                    <a href="{{ route('admin.user.create') }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">
                         + Add User
                     </a>
+                    <div class="inline-block ">
+                        <form method="GET">
+                            <input type="text" name="search" class="px-4 py-2 w-80" placeholder="Search..." value="{{ request('search') }}">
+                            <button class="flex items-center justify-center px-4 border-l">
+                                {{--                                                    <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"--}}
+                                {{--                                                         viewBox="0 0 24 24">--}}
+                                {{--                                                        <path--}}
+                                {{--                                                                d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"> </path>--}}
+                                {{--                                                    </svg>--}}
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

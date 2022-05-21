@@ -29,9 +29,37 @@ class RoleController extends Controller
      */
     public function index(Request $request)
     {
-        $roles = Role::orderBy('id','DESC')->paginate(5);
+        if ($request->filled('search')){
+            $roles = Role::where('name', 'like', '%' . $request->search . '%')
+//                ->orWhere('guard_name', 'like', '%' . $request->search . '%')
+                ->orWhere('created_at', 'like', '%' . $request->search . '%')
+                ->orWhere('updated_at', 'like', '%' . $request->search . '%')
+                ->orWhereHas('user', function ($query) use ($request) {
+                    $query->where('name', 'like', '%' . $request->search . '%');
+                })
+                ->paginate(5);
+        }else{
+            $roles = Role::orderBy('id','DESC')->paginate(5);
+        }
+
         return view('pages.Dashboard.user.roles.index',compact('roles'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
+
+//        if ($request->filled('search')){
+//            DB::table('roles')->where('name', 'like', '%' . $request->search . '%')->get();
+//        }
+////            $roles = Role::where('name', 'like', '%' . $request->search . '%')
+////                ->paginate(5);
+//
+//        $roles = DB::table('roles')->orderBy('id','DESC')->paginate(5);
+//
+//            return view('pages.Dashboard.user.roles.index',compact('roles'))
+//                ->with('i', ($request->input('page', 1) - 1) * 5);
+
+
+//        $roles = Role::orderBy('id','DESC')->paginate(5);
+//        return view('pages.Dashboard.user.roles.index',compact('roles'))
+//            ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**

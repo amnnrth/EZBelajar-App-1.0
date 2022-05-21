@@ -25,11 +25,44 @@ class BelajarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+//    public function index()
+//    {
+//        $belajars = Belajar::latest()->paginate(5);
+//
+//        // search
+//        if (\request('search')){
+//            $belajars = Belajar::where('title', 'like', '%' . request('search') . '%')
+////            ->orWhere('description', 'like', '%' . \request('search') . '%')
+////            ->orWhere('price', 'like', '%' . \request('search') . '%')
+////            ->orWhere('stock', 'like', '%' . \request('search') . '%')
+////            ->orWhere('created_at', 'like', '%' . \request('search') . '%')
+////            ->orWhere('updated_at', 'like', '%' . \request('search') . '%')
+//            ->paginate(5);
+//        }
+//
+//        $users = User::all();
+//        return view('pages.Dashboard.belajar.index', compact('belajars'))->with('i', (request()->input('page', 1) - 1) * 5);
+//    }
+
+    public function index(Request $request)
     {
-        $belajars = Belajar::latest()->paginate(5);
-        $users = User::all();
-        return view('pages.Dashboard.belajar.index', compact('belajars'))->with('i', (request()->input('page', 1) - 1) * 5);
+        if ($request->filled('search')){
+            $belajars = Belajar::where('title', 'like', '%' . $request->search . '%')
+                ->orWhereHas('user', function ($query) use ($request) {
+                    $query->where('name', 'like', '%' . $request->search . '%');
+                })
+//                ->orWhere('description', 'like', '%' . $request->search . '%')
+//                ->orWhere('price', 'like', '%' . $request->search . '%')
+//                ->orWhere('stock', 'like', '%' . $request->search . '%')
+//                ->orWhere('created_at', 'like', '%' . $request->search . '%')
+//                ->orWhere('updated_at', 'like', '%' . $request->search . '%')
+                ->paginate(5);
+        }else{
+            $belajars = Belajar::orderBy('id','DESC')->paginate(5);
+        }
+
+        return view('pages.Dashboard.belajar.index',compact('belajars'))
+            ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**
