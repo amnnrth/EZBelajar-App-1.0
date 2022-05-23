@@ -49,7 +49,7 @@
                                         <div class="col-span-6">
                                             <label for="title" class="block mb-3 font-medium text-gray-700 text-md">Title</label>
 
-                                            <input placeholder="Title" type="text" name="title" id="title" autocomplete="title" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('title') }}" required>
+                                            <input placeholder="Title" type="text" name="title" id="title" autocomplete="title" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('title') }}" required>
 
                                             @if ($errors->has('title'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('title') }}</p>
@@ -60,7 +60,7 @@
                                         <div class="col-span-6">
                                             <label for="description" class="block mb-3 font-medium text-gray-700 text-md">Cover</label>
 
-                                            <input placeholder="cover" type="file" name="cover" id="cover" autocomplete="cover" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('cover') }}" required>
+                                            <input placeholder="cover" type="file" name="cover" id="cover" autocomplete="cover" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('cover') }}" required>
 
                                             @if ($errors->has('description'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('description') }}</p>
@@ -70,7 +70,7 @@
                                         <div class="col-span-6">
                                             <label for="link" class="block mb-3 font-medium text-gray-700 text-md">Link</label>
 
-                                            <input placeholder="Link" type="text" name="link" id="link" autocomplete="link" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('link') }}" required>
+                                            <input placeholder="Link" type="text" name="link" id="link" autocomplete="link" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('link') }}" required>
 
                                             @if ($errors->has('title'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('title') }}</p>
@@ -85,7 +85,7 @@
                                         Cancel
                                     </a>
 
-                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 bg-ezb-bg" onclick="return confirm('Are you sure want to submit this data ?')">
+                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-ezb-bg" onclick="return confirm('Are you sure want to submit this data ?')">
                                         Create Service
                                     </button>
                                 </div>

@@ -50,7 +50,7 @@
                                         <div class="col-span-6">
                                             <label for="name" class="block mb-3 font-medium text-gray-700 text-md">Name</label>
                                             {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control block mb-3 font-medium text-gray-700 text-md')) !!}
-{{--                                            <input placeholder="name" type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('name') }}" required>--}}
+{{--                                            <input placeholder="name" type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('name') }}" required>--}}
 
                                             @if ($errors->has('name'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('name') }}</p>
@@ -92,7 +92,7 @@
                                         Cancel
                                     </a>
 
-                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 bg-ezb-bg" onclick="return confirm('Are you sure want to submit this data ?')">
+                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-ezb-bg" onclick="return confirm('Are you sure want to submit this data ?')">
                                         Create Role
                                     </button>
                                 </div>

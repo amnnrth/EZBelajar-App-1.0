@@ -38,7 +38,9 @@
                 <main class="col-span-12 p-4 md:pt-0">
                     <div class="px-2 py-2 mt-2 bg-white rounded-xl">
 
-{{--                        <form action="{{ route('admin.artikel.update',$post->id) }}" method="POST" enctype="multipart/form-data">--}}
+{{--                        <form action="{{ route('admin.artikel.update', $post->id)}}" method="POST" enctype="multipart/form-data">--}}
+                        {!! Form::model($post, ['method' => 'PATCH','route' => ['admin.artikel.update', $post->id]]) !!}
+
 
                             @csrf
                             @method('PUT')
@@ -50,7 +52,7 @@
                                         <div class="col-span-6">
                                             <label for="title" class="block mb-3 font-medium text-gray-700 text-md">Title</label>
 
-                                            <input placeholder="Title" type="text" name="title" id="title" autocomplete="title" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ $post->title }}" required>
+                                            <input placeholder="Title" type="text" name="title" id="title" autocomplete="title" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ $post->title }}" required>
 
                                             @if ($errors->has('title'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('title') }}</p>
@@ -61,7 +63,7 @@
                                         <div class="col-span-6">
                                             <label for="imagePath" class="block mb-3 font-medium text-gray-700 text-md">Cover</label>
 
-                                            <input placeholder="imagePath" type="file" name="imagePath" id="imagePath" autocomplete="imagePath" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('imagePath') }}" required>
+                                            <input placeholder="imagePath" type="file" name="imagePath" id="imagePath" autocomplete="imagePath" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('imagePath') }}" required>
 
                                             @if ($errors->has('imagePath'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('imagePath') }}</p>
@@ -71,7 +73,7 @@
                                         <div class="col-span-6">
                                             <label for="body" class="block mb-3 font-medium text-gray-700 text-md">Description</label>
 
-                                            <input placeholder="body" type="text" name="body" id="body" autocomplete="body" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ $post->body }}" required>
+                                            <input placeholder="body" type="text" name="body" id="body" autocomplete="body" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ $post->body }}" required>
 
                                             @if ($errors->has('body'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('body') }}</p>
@@ -86,14 +88,14 @@
                                         Cancel
                                     </a>
 
-                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 bg-ezb-bg" onclick="return confirm('Are you sure want to submit this data ?')">
+                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-ezb-bg" onclick="return confirm('Are you sure want to submit this data ?')">
                                         Create Artikel
                                     </button>
                                 </div>
 
                             </div>
 {{--                        </form>--}}
-
+                        {{ Form::close() }}
                     </div>
                 </main>
             </div>

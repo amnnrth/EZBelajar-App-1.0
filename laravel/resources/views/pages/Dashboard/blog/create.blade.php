@@ -49,7 +49,7 @@
                                         <div class="col-span-6">
                                             <label for="title" class="block mb-3 font-medium text-gray-700 text-md">Judul Aritkel</label>
 
-                                            <input placeholder="Title" type="text" name="title" id="title" autocomplete="title" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('title') }}" required>
+                                            <input placeholder="Title" type="text" name="title" id="title" autocomplete="title" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('title') }}" required>
 
                                             @if ($errors->has('title'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('title') }}</p>
@@ -60,7 +60,7 @@
                                         <div class="col-span-6">
                                             <label for="image" class="block mb-3 font-medium text-gray-700 text-md">Image</label>
 
-                                            <input placeholder="image" type="file" name="image" id="image" autocomplete="image" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('image') }}" required>
+                                            <input placeholder="image" type="file" name="image" id="image" autocomplete="image" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('image') }}" required>
 
                                             @if ($errors->has('image'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('image') }}</p>
@@ -70,7 +70,7 @@
                                         <div class="col-span-6">
                                             <label for="body" class="block mb-3 font-medium text-gray-700 text-md">Description</label>
 
-                                            <input placeholder="body" type="text" name="body" id="body" autocomplete="body" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('body') }}" required>
+                                            <input placeholder="body" type="text" name="body" id="body" autocomplete="body" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('body') }}" required>
 
                                             @if ($errors->has('body'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('body') }}</p>
@@ -85,7 +85,7 @@
                                         Cancel
                                     </a>
 
-                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 bg-ezb-bg" onclick="return confirm('Are you sure want to submit this data ?')">
+                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-ezb-bg" onclick="return confirm('Are you sure want to submit this data ?')">
                                         Create Artikel
                                     </button>
                                 </div>

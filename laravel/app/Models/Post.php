@@ -10,7 +10,10 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title','slug', 'body', 'user_id'
+        'title',
+        'slug',
+        'body',
+        'user_id',
     ];
 
     // We have post and it belongsTo a user

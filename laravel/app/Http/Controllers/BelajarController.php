@@ -6,6 +6,8 @@ use App\Models\Belajar;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use File;
+
 class BelajarController extends Controller
 {
     /**
@@ -206,7 +208,7 @@ class BelajarController extends Controller
 //
 //        $belajar->update($input);
 
-        return redirect()->route('pages.dashboard.belajar.index')->with('success', 'Berhasil mengubah data');
+        return redirect()->route('admin.belajar.index')->with('success', 'Berhasil mengubah data');
     }
 
     /**

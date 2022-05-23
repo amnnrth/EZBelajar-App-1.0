@@ -67,7 +67,7 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required',
-//            'imagePath' => 'required | image',
+//            'image' => 'required | image',
             'body' => 'required',
 //            'category_id' => 'required'
         ]);
@@ -144,12 +144,12 @@ class BlogController extends Controller
     public function update(Request $request, Post $post)
     {
         if (auth()->user()->id !== $post->user_id) {
-            return redirect()->route('admin.artikel.index')->with('error', 'You are not authorized to edit this post');
+            return redirect()->route('blog.index')->with('error', 'You are not authorized to edit this post');
         }
 
         $request->validate([
             'title' => 'required',
-//            'imagePath' => 'required | image',
+            'image' => 'required | image',
             'body' => 'required'
         ]);
 
@@ -158,7 +158,6 @@ class BlogController extends Controller
         $postId = $post->id;
         $slug = Str::slug($title, '-') . '-' . $postId;
     }
-
     /**
      * Remove the specified resource from storage.
      *

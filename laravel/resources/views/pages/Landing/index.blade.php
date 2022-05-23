@@ -26,12 +26,27 @@
                             dan Ez Belajar menyediakan Bank Soal untuk mengasah kemampuan
                             kalian juga lho!! tunggu apalagi? langsung daftar sekarang juga
                         </p>
+
+                        @guest
+                            <div
+                                    class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">
+                                    <button class="lg:bg-ezb-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" onclick="toggleModal('loginModal')">
+                                        YUK BELAJAR!
+                                    </button>
+                            </div>
+                        @endguest
+
+                        @auth()
                         <div
                             class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">
-                            <button class="lg:bg-ezb-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" onclick="toggleModal('registerModal')">
+                            <a href="{{ route('belajar.index') }}">
+                            <button class="lg:bg-ezb-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg">
                                 YUK BELAJAR!
                             </button>
+                            </a>
                         </div>
+                        @endauth
+
                     </div>
                     <!-- Right Column -->
                     <div class="w-full lg:w-1/2 text-center lg:justify-start justify-center flex pr-0">
@@ -134,27 +149,37 @@
 
 
         <!-- call to action -->
+        @foreach($posts as $post)
         <div class="py-10 lg:py-24 flex lg:flex-row flex-col items-center cta-bg">
             <!-- Left Column -->
             <div class="w-full lg:w-1/2 text-center justify-center flex lg:mb-0 mb-12">
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" data-lity>
-                    <img id="hero" src="{{ asset('/assets/images/video-placeholder.png') }}" alt="" class="p-5" />
-                </a>
+                <div class="flex-shrink-0">
+{{--                    <iframe src="{{ $post->link }}"   width="640" height="480" frameborder="0" scrolling="no" seamless="">--}}
+                    <a href="{{ route('detailbelajar',$post->title) }}">
+                        <img width="640" height="480" class="object-cover" src="{{ Storage::url($post->cover) }}" alt="blog image">
+                    </a>
+{{--                    </iframe>--}}
+                </div>
+{{--                <a href="{{ $post->link }}" data-lity>--}}
+{{--                    <img id="hero" src="{{ Storage::url($post->cover) }}" alt="" class="p-5" />--}}
+{{--                </a>--}}
             </div>
             <!-- Right Column -->
             <div class="lg:w-1/2 w-full flex flex-col lg:items-start items-center lg:text-left text-center">
                 <h2 class="md:text-4xl text-3xl font-semibold mb-10 lg:leading-normal text-medium-black">
-                    Operation System : FIFO <br>
+                    {{ $post->title }} <br>
 
                 </h2>
                 <a
-                    href="#"
+                    href="{{ route('belajar.index') }}"
                     class="lg:bg-ezb-services-bg px-10 py-4 text-base text-white font-semibold rounded-xl cursor-pointer focus:outline-none tracking-wide">
                     Mulai
                 </a>
             </div>
         </div>
+        @endforeach
+
     </div>
-    </div>
+
 
 @endsection

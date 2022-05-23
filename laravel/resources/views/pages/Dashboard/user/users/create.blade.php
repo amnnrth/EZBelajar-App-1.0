@@ -49,7 +49,7 @@
                                         <div class="col-span-6">
                                             <label for="name" class="block mb-3 font-medium text-gray-700 text-md">Name</label>
 
-{{--                                            <input placeholder="name" type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('name') }}" required>--}}
+{{--                                            <input placeholder="name" type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('name') }}" required>--}}
                                             {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
                                             @if ($errors->has('name'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('name') }}</p>
@@ -60,7 +60,7 @@
                                         <div class="col-span-6">
                                             <label for="email" class="block mb-3 font-medium text-gray-700 text-md">Email</label>
 
-{{--                                            <input placeholder="email" type="text" name="email" id="email" autocomplete="email" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('email') }}" required>--}}
+{{--                                            <input placeholder="email" type="text" name="email" id="email" autocomplete="email" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('email') }}" required>--}}
                                             {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
 
                                             @if ($errors->has('email'))
@@ -72,7 +72,7 @@
                                         <div class="col-span-6">
                                             <label for="password" class="block mb-3 font-medium text-gray-700 text-md">Password</label>
 
-{{--                                            <input placeholder="password" type="text" name="password" id="password" autocomplete="password" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('password') }}" required>--}}
+{{--                                            <input placeholder="password" type="text" name="password" id="password" autocomplete="password" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('password') }}" required>--}}
                                             {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control')) !!}
 
                                             @if ($errors->has('password'))
@@ -84,7 +84,7 @@
                                         <div class="col-span-6">
                                             <label for="confirm-password" class="block mb-3 font-medium text-gray-700 text-md">Confirm Password</label>
 
-{{--                                            <input placeholder="password" type="text" name="password" id="password" autocomplete="password" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('password') }}" required>--}}
+{{--                                            <input placeholder="password" type="text" name="password" id="password" autocomplete="password" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('password') }}" required>--}}
                                             {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
 
                                             @if ($errors->has('confirm-password'))
@@ -96,7 +96,7 @@
                                         <div class="col-span-6">
                                             <label for="roles[]" class="block mb-3 font-medium text-gray-700 text-md">Role</label>
 
-                                            {{--                                            <input placeholder="name" type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('name') }}" required>--}}
+                                            {{--                                            <input placeholder="name" type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('name') }}" required>--}}
                                             {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
 
                                             @if ($errors->has('roles[]'))
@@ -108,7 +108,7 @@
 {{--                                        <div class="col-span-6">--}}
 {{--                                            <label for="description" class="block mb-3 font-medium text-gray-700 text-md">Cover</label>--}}
 
-{{--                                            <input placeholder="cover" type="file" name="cover" id="cover" autocomplete="cover" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('cover') }}" required>--}}
+{{--                                            <input placeholder="cover" type="file" name="cover" id="cover" autocomplete="cover" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('cover') }}" required>--}}
 
 {{--                                            @if ($errors->has('description'))--}}
 {{--                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('description') }}</p>--}}
@@ -118,7 +118,7 @@
 {{--                                        <div class="col-span-6">--}}
 {{--                                            <label for="link" class="block mb-3 font-medium text-gray-700 text-md">Link</label>--}}
 
-{{--                                            <input placeholder="Link" type="text" name="link" id="link" autocomplete="link" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm" value="{{ old('link') }}" required>--}}
+{{--                                            <input placeholder="Link" type="text" name="link" id="link" autocomplete="link" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('link') }}" required>--}}
 
 {{--                                            @if ($errors->has('title'))--}}
 {{--                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('title') }}</p>--}}
@@ -133,7 +133,7 @@
                                         Cancel
                                     </a>
 
-                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 bg-ezb-bg" onclick="return confirm('Are you sure want to submit this data ?')">
+                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-ezb-bg" onclick="return confirm('Are you sure want to submit this data ?')">
                                         Create User
                                     </button>
                                 </div>

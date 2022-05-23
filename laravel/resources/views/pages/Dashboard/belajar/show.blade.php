@@ -49,7 +49,7 @@
 
                                         <div class="col-span-6">
                                             <label for="description" class="block mb-3 font-medium text-gray-700 text-md">Cover</label>
-                                                <img src="{{ Storage::url($belajar->cover) }}" width="100" alt="" />
+                                            <img src="{{ Storage::url($belajar->cover) }}" width="100" alt="" />
                                         </div>
 
                                         <div class="col-span-6">

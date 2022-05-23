@@ -49,13 +49,13 @@ use App\Http\Controllers\BankSoalController;
 Route::resource('/', LandingController::class);
 
 Route::get('belajar', [LandingController::class, 'belajar'])->name('belajar.index');
-Route::get('detailbelajar', [LandingController::class, 'detailbelajar'])->name('detailbelajar');
+Route::get('detailbelajar/{title}', [LandingController::class, 'detailbelajar'])->name('detailbelajar');
 
 Route::get('banksoal', [LandingController::class, 'banksoal'])->name('banksoal.index');
 Route::get('detailbanksoal', [LandingController::class, 'detailbanksoal'])->name('detailbanksoal');
 
 Route::get('artikel', [LandingController::class, 'artikel'])->name('artikel');
-Route::get('detailartikel', [LandingController::class, 'detailartikel'])->name('detailartikel');
+Route::get('detailartikel/{slug}', [LandingController::class, 'detailartikel'])->name('detailartikel');
 
 Route::get('tentangkami', [LandingController::class, 'tentangkami'])->name('tentangkami');
 

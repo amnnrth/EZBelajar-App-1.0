@@ -61,20 +61,65 @@
                     </div>
                 </div>
 
+                <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
+                    @foreach ($posts as $post)
+                        <a href="{{ route('detailartikel',$post->slug) }}">
+                            {{-- Post --}}
+                            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                                {{-- Header --}}
+                                <div class="flex-shrink-0">
+                                    <img class="h-48 w-full object-cover" src="{{ Storage::url($post->imagePath) }}" alt="blog image">
+                                </div>
 
+                                {{-- Contet --}}
+                                <div class="flex-1 p-6 flex flex-col justify-between">
+                                    <div class="flex-1">
+                                        <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">{{ $post->title }}</h3>
+                                        <p class="mt-3 text-base leading-6 text-gray-500">
+                                            @if (strlen($post->text) > 200)
+                                                {{ substr($post->text, 0, 200) }}...
+                                            @else
+                                                {{ $post->text }}
+                                            @endif
+                                        </p>
+                                    </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    @foreach($posts as $post)
-                    <div class="flex justify-center px-4 py-2">
-                        <a href="#">
-                            <img src="{{ $post->imagePath }}" style="height: 300px" alt="">
-                            <div class="text-center py-4">
-                                <h1 class="text-3xl font-semibold">{{ $post->title}}</h1>
-                                <p class="text-base font-semibold">{{ $post->body }}.</p>
+                                    <div class="mt-6 flex items-center">
+                                        <div class="flex-shrink-0">
+                                            <img class="h-10 w-10 rounded-full" src="{{ url('https://unsplash.com/photos/IF9TK5Uy-KI')}}" alt="author avatar">
+                                        </div>
+
+                                        <div class="ml-3">
+                                            <p class="text-sm leading-5 font-medium text-gray-900">{{ auth()->user()->first()->name }}</p>
+                                            <div class="flex text-sm leading-5 text-gray-500">
+                                                <time datetime="{{ $post->created_at }}">
+                                                    {{ $post->created_at->diffForHumans() }}
+                                                </time>
+                                                <span class="mx-1">&middot;</span>
+                                                <span>{{ ceil(strlen($post->text) / 863) }} min read</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </a>
-                    </div>
                     @endforeach
+                </div>
+
+
+
+{{--                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">--}}
+{{--                    @foreach($posts as $post)--}}
+{{--                    <div class="flex justify-center px-4 py-2">--}}
+{{--                        <a href="{{ route('detailartikel',$post->slug) }}">--}}
+{{--                            <img src="{{ Storage::url($post->imagePath) }}" style="height: 300px" alt="">--}}
+{{--                            <div class="text-center py-4">--}}
+{{--                                <h1 class="text-3xl font-semibold">{{ $post->title}}</h1>--}}
+{{--                                <p class="text-base font-semibold">{{ $post->body }}.</p>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    @endforeach--}}
 {{--                    <div class="flex justify-center px-4 py-2">--}}
 {{--                        <a href="#">--}}
 {{--                            <img src="{{ asset('/assets/images/article/article-2.png') }}" style="height: 300px" alt="">--}}

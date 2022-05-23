@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Belajar;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class LandingController extends Controller
      */
     public function index()
     {
-        return view('pages.landing.index');
+        $posts = Belajar::get()->take(1);
+
+        return view('pages.landing.index', compact('posts'));
     }
 
     /**
@@ -87,12 +90,15 @@ class LandingController extends Controller
 
     public function belajar()
     {
-        return view('pages.Landing.video.belajar');
+
+        $posts = Belajar::all();
+        return view('pages.Landing.video.belajar',compact('posts'));
     }
 
-    public function detailBelajar()
+    public function detailBelajar($title)
     {
-        return view('pages.Landing.video.detail-belajar');
+        $post = Belajar::where('title',$title)->first();
+        return view('pages.Landing.video.detail-belajar',compact('post'));
     }
 
     public function banksoal()
@@ -129,5 +135,11 @@ class LandingController extends Controller
         $posts = Post::latest()->get();
 
         return view('pages.Landing.artikel.artikel',compact('posts'));
+    }
+
+    public function detailartikel($slug)
+    {
+        $post = Post::where('slug',$slug)->first();
+        return view('pages.Landing.artikel.detail-artikel',compact('post'));
     }
 }
