@@ -11,6 +11,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BankSoalController;
 
+use App\Http\Controllers\ProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,7 +54,7 @@ Route::get('belajar', [LandingController::class, 'belajar'])->name('belajar.inde
 Route::get('detailbelajar/{title}', [LandingController::class, 'detailbelajar'])->name('detailbelajar');
 
 Route::get('banksoal', [LandingController::class, 'banksoal'])->name('banksoal.index');
-Route::get('detailbanksoal', [LandingController::class, 'detailbanksoal'])->name('detailbanksoal');
+Route::get('detailbanksoal/{title}', [LandingController::class, 'detailbanksoal'])->name('detailbanksoal');
 
 Route::get('artikel', [LandingController::class, 'artikel'])->name('artikel');
 Route::get('detailartikel/{slug}', [LandingController::class, 'detailartikel'])->name('detailartikel');
@@ -85,5 +87,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
     //Bank Soal
     Route::resource('banksoal', BankSoalController::class);
 
-});
+    //Profile
+    Route::resource('profile', ProfileController::class);
+    Route::get('delete_photo', [ProfileController::class, 'delete'])->name('delete.photo.profile');
 
+});

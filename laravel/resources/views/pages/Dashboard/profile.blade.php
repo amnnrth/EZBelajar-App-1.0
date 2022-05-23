@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.onlyHeader')
 
 @section('title', ' Edit Profile')
 
@@ -41,32 +41,32 @@
                                         </div>
                                     </div>
                                     <div class="md:col-span-6 lg:col-span-3">
-                                        <label for="service-name" class="block mb-3 font-medium text-gray-700 text-md">Full Name</label>
-                                        <input placeholder="Alex Jones" type="text" name="service-name" id="service-name" autocomplete="service-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
+                                        <label for="ezbice-name" class="block mb-3 font-medium text-gray-700 text-md">Full Name</label>
+                                        <input placeholder="Alex Jones" type="text" name="ezbice-name" id="ezbice-name" autocomplete="ezbice-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
                                     </div>
                                     <div class="md:col-span-6 lg:col-span-3">
-                                        <label for="service-name" class="block mb-3 font-medium text-gray-700 text-md">Role</label>
-                                        <input placeholder="Website Developer" type="text" name="service-name" id="service-name" autocomplete="service-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
+                                        <label for="ezbice-name" class="block mb-3 font-medium text-gray-700 text-md">Role</label>
+                                        <input placeholder="Website Developer" type="text" name="ezbice-name" id="ezbice-name" autocomplete="ezbice-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
                                     </div>
                                     <div class="md:col-span-6 lg:col-span-3">
-                                        <label for="service-name" class="block mb-3 font-medium text-gray-700 text-md">Email Address</label>
-                                        <input placeholder="Alex.jones@gmail.com" type="text" name="service-name" id="service-name" autocomplete="service-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
+                                        <label for="ezbice-name" class="block mb-3 font-medium text-gray-700 text-md">Email Address</label>
+                                        <input placeholder="Alex.jones@gmail.com" type="text" name="ezbice-name" id="ezbice-name" autocomplete="ezbice-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
                                     </div>
                                     <div class="md:col-span-6 lg:col-span-3">
-                                        <label for="service-name" class="block mb-3 font-medium text-gray-700 text-md">Contact Number</label>
-                                        <input placeholder="087721205555" type="number" name="service-name" id="service-name" autocomplete="service-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
+                                        <label for="ezbice-name" class="block mb-3 font-medium text-gray-700 text-md">Contact Number</label>
+                                        <input placeholder="087721205555" type="number" name="ezbice-name" id="ezbice-name" autocomplete="ezbice-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
                                     </div>
                                     <div class="col-span-6">
-                                        <label for="service-name" class="block mb-3 font-medium text-gray-700 text-md">Biografi</label>
-                                        <textarea placeholder="Enter your biography here.." type="text" name="service-name" id="service-name" autocomplete="service-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" rows="4">I am a web developer and web designer. I have an Associate Degree in Software and Web Development, and I have much
+                                        <label for="ezbice-name" class="block mb-3 font-medium text-gray-700 text-md">Biografi</label>
+                                        <textarea placeholder="Enter your biography here.." type="text" name="ezbice-name" id="ezbice-name" autocomplete="ezbice-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" rows="4">I am a web developer and web designer. I have an Associate Degree in Software and Web Development, and I have much
 experience in programming languages, such as HTML5, CSS3, PHP, Javascript and PHP. I can use Bootstrap and WordPress.
 I will provide fast response and clear communication in several languages.  Feel free to contact me, thank you!</textarea>
                                     </div>
                                     <div class="col-span-6">
-                                        <label for="service-name" class="block mb-3 font-medium text-gray-700 text-md">My Experience</label>
-                                        <input placeholder="More than 9 years of experience" type="text" name="service-name" id="service-name" autocomplete="service-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
-                                        <input placeholder="Knowledge in the fields of interface design, marketing and etc" type="text" name="service-name" id="service-name" autocomplete="service-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
-                                        <input placeholder="Lead Developer at Sony Music for 8 Years" type="text" name="service-name" id="service-name" autocomplete="service-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
+                                        <label for="ezbice-name" class="block mb-3 font-medium text-gray-700 text-md">My Experience</label>
+                                        <input placeholder="More than 9 years of experience" type="text" name="ezbice-name" id="ezbice-name" autocomplete="ezbice-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
+                                        <input placeholder="Knowledge in the fields of interface design, marketing and etc" type="text" name="ezbice-name" id="ezbice-name" autocomplete="ezbice-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
+                                        <input placeholder="Lead Developer at Sony Music for 8 Years" type="text" name="ezbice-name" id="ezbice-name" autocomplete="ezbice-name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm">
                                     </div>
                                 </div>
                             </div>

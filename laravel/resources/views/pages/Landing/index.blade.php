@@ -60,43 +60,42 @@
 
         {{-- content --}}
         <div class="content">
-            <!-- services -->
             <!-- <div class="bg-serv-services-bg overflow-hidden"> -->
             <div class="pt-16 pb-16 lg:pb-20 my-auto mx-auto">
                 <div class="flex flex-col w-full h-auto">
-                    <p class="sm:text-2xl text-xl text-center font-semibold mb-5 text-medium-black">
+                    <p class="sm:text-2xl text-xl text-center font-semibold mb-5 text-medium-black" data-aos="zoom-in">
                         Keuntungan Belajar dari EZBelajar </p>
-                    <div class="flex">
-                        <div class="container">
-                            <div class="my-3 md:flex gap-4 ml-24">
-                                <img src="{{ asset('assets/images/iconkeuntungan/diskusi.svg')}}" class="w-10 h-10" alt="Diskusi">
-                                <p class="text-black font-semibold">Diskusi Bersama <br/> <span class="text-ezb-text font-medium">Berdiskusi bersama user lain </br> untuk membahas pembelajaran</span></p>
-                            </div>
-                            <div class="my-3 md:flex gap-4 ml-24">
-                                <img src="{{ asset('assets/images/iconkeuntungan/materi.svg')}}" class="w-10 h-10" alt="Materi">
-                                <p class="text-black font-semibold">Materi Sesuai<br/> <span class="text-ezb-text font-medium">Materi yang diberikan </br>sesuai dengan kebutuhan</span></p>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="my-3 md:flex gap-4 ml-24">
-                                <img src="{{ asset('assets/images/iconkeuntungan/filter.svg')}}" class="w-10 h-10" alt="Terfilterisasi">
-                                <p class="text-black font-semibold">Terfilterisasi<br/> <span class="text-ezb-text font-medium">Materi video yang diberikan </br>sudah terfilter oleh tim kami untuk di sajikan</span></p></p>
-                            </div>
-                            <div class="my-3 md:flex gap-4 ml-24">
+                    <div class="flex-container mx-auto">
+                        <div class="container" >
+                            <div class="my-3 md:flex gap-4 ml-24" data-aos="zoom-in">
                                 <img src="{{ asset('assets/images/iconkeuntungan/banksoal.svg')}}" class="w-10 h-10" alt="Bank Soal">
-                                <p class="text-black font-semibold">Bank Soal<br/> <span class="text-ezb-text font-medium">Tersedia beraneka ragam macam </br>
+                                <p class="text-black font-semibold">Bank Soal<br/> <span class="text-serv-text font-medium">Tersedia beraneka ragam macam </br>
                                         soal untuk mengasah kemampuan </br>
                                         dan pengetahuan kalian</span></p>
                             </div>
+                            <div class="my-3 md:flex gap-4 ml-24" data-aos="zoom-in">
+                                <img src="{{ asset('assets/images/iconkeuntungan/materi.svg')}}" class="w-10 h-10" alt="Materi">
+                                <p class="text-black font-semibold">Materi Sesuai<br/> <span class="text-serv-text font-medium">Materi yang diberikan </br>sesuai dengan kebutuhan</span></p>
+                            </div>
                         </div>
                         <div class="container">
-                            <div class="my-3 md:flex gap-4 ml-24">
-                                <img src="{{ asset('assets/images/iconkeuntungan/access.svg')}}" class="w-10 h-10" alt="Access">
-                                <p class="text-black font-semibold">Mudah di Akses<br/><span class="text-ezb-text font-medium">Dapat di akses dengan mudah</br> oleh kalangan pelajar dan pekerja</span></p>
+                            <div class="my-3 md:flex gap-4 ml-24" data-aos="zoom-in">
+                                <img src="{{ asset('assets/images/iconkeuntungan/filter.svg')}}" class="w-10 h-10" alt="Terfilterisasi">
+                                <p class="text-black font-semibold">Terfilterisasi<br/> <span class="text-serv-text font-medium">Materi video yang diberikan </br>sudah terfilter oleh tim kami untuk di sajikan</span></p></p>
                             </div>
-                            <div class="my-3 md:flex gap-4 ml-24">
+                            <div class="my-3 md:flex gap-4 ml-24" data-aos="zoom-in">
+                                <img src="{{ asset('assets/images/iconkeuntungan/diskusi.svg')}}" class="w-10 h-10" alt="Diskusi">
+                                <p class="text-black font-semibold">Diskusi Bersama <br/> <span class="text-serv-text font-medium">Berdiskusi bersama user lain </br> untuk membahas pembelajaran</span></p>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="my-3 md:flex gap-4 ml-24" data-aos="zoom-in">
+                                <img src="{{ asset('assets/images/iconkeuntungan/access.svg')}}" class="w-10 h-10" alt="Access">
+                                <p class="text-black font-semibold">Mudah di Akses<br/><span class="text-serv-text font-medium">Dapat di akses dengan mudah</br> oleh kalangan pelajar dan </br>pekerja</span></p>
+                            </div>
+                            <div class="my-3 md:flex gap-4 ml-24" data-aos="zoom-in">
                                 <img src="{{ asset('assets/images/iconkeuntungan/artikel.svg')}}" class="w-10 h-10" alt="Artikel">
-                                <p class="text-black font-semibold">Artikel<br/> <span class="text-ezb-text font-medium">Banyak Artikel yang </br>mudah untuk di akses</span></p>
+                                <p class="text-black font-semibold">Artikel<br/> <span class="text-serv-text font-medium">Banyak Artikel yang </br>mudah untuk di akses</span></p>
                             </div>
                         </div>
                     </div>

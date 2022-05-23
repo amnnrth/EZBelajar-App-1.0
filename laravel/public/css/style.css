@@ -1808,6 +1808,10 @@ body {
 	--tw-bg-opacity: 1;
 	background-color: rgba(83, 113, 128, var(--tw-bg-opacity));
 }
+.hover\:bg-ezb-btn:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgba(39, 137, 252, var(--tw-bg-opacity));
+}
 .hover\:text-white:hover{
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
@@ -2247,4 +2251,12 @@ body {
 		flex-direction: column;
 	}
 }
+
+.profilepic {
+	/*border-radius: 50%;*/
+	clip-path: circle();
+	width: 250px;
+	height: 250px;
+}
+
 

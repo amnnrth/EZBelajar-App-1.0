@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="ml-3">
-                            <p class="text-sm leading-5 font-medium text-gray-900">{{ auth()->user()->first()->name }}</p>
+                            <p class="text-sm leading-5 font-medium text-gray-900">{{ $post->user()->first()->name }}</p>
                             <div class="flex text-sm leading-5 text-gray-500">
                                 <time datetime="{{ $post->created_at }}">
                                     {{ $post->created_at->diffForHumans() }}

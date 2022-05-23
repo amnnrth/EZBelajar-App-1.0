@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BankSoal;
 use App\Models\Belajar;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -92,6 +93,13 @@ class LandingController extends Controller
     {
 
         $posts = Belajar::all();
+
+        if (request('search'))
+        {
+            $posts = Belajar::where('title', 'LIKE', '%' . request('search') . '%')
+                ->get();
+        }
+
         return view('pages.Landing.video.belajar',compact('posts'));
     }
 
@@ -103,12 +111,21 @@ class LandingController extends Controller
 
     public function banksoal()
     {
-        return view('pages.Landing.banksoal.bank-soal');
+        $posts = BankSoal::latest()->get();
+
+        if (request('search'))
+        {
+            $posts = BankSoal::where('title', 'LIKE', '%' . request('search') . '%')
+                ->get();
+        }
+
+        return view('pages.Landing.banksoal.bank-soal',compact('posts'));
     }
 
-    public function detailBanksoal()
+    public function detailBanksoal($title)
     {
-        return view('pages.Landing.banksoal.detail-bank-soal');
+        $post = BankSoal::where('title',$title)->first();
+        return view('pages.Landing.banksoal.detail-bank-soal',compact('post'));
     }
 
     public function tentangkami()
@@ -116,23 +133,15 @@ class LandingController extends Controller
         return view('pages.Landing.tentang-kami');
     }
 
-    public function artikel(Request $request)
+    public function artikel()
     {
-
-//        if ($request->has('search')) {
-//            $search = $request->get('search');
-//            $post = Post::where('title', 'LIKE', '%' . $search . '%')->paginate(5);
-//        } else {
-//            $post = Post::paginate(5);
-//        }
-
-        if($request->search){
-            $posts = Post::where('title', 'like', '%' . $request->search . '%')
-                ->orWhere('body', 'like', '%' . $request->search . '%')
-                ->latest()->paginate(4);
-        }
-
         $posts = Post::latest()->get();
+
+        if (request('search')){
+            $posts = Post::where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('body', 'like', '%' . request('search') . '%')
+                ->latest()->paginate(3);
+        }
 
         return view('pages.Landing.artikel.artikel',compact('posts'));
     }

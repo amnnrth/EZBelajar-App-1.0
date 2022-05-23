@@ -11,6 +11,7 @@ class BankSoal extends Model
 
     protected $fillable = [
         'title',
+        'jumlahSoal',
         'soal',
         'jawaban',
     ];

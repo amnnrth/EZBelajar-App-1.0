@@ -70,6 +70,7 @@ class BankSoalController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'jumlahSoal' => 'required',
             'soal' => 'required|mimes:pdf,xlx,csv|max:2048',
             'jawaban' => 'required|mimes:pdf,xlx,csv|max:2048',
         ]);
@@ -80,6 +81,7 @@ class BankSoalController extends Controller
 
         $post = new BankSoal();
         $post->title = $request->title;
+        $post->jumlahSoal = $request->jumlahSoal;
         $post->soal = $pathSoal;
         $post->jawaban = $pathJawaban;
         $post->user_id = $user_id;
@@ -164,6 +166,7 @@ class BankSoalController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'jumlahSoal' => 'required',
         ]);
 
         $input = $request->all();

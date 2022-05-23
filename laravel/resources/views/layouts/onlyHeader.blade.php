@@ -2,9 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 
-    @include('includes.landing.meta')
+{{--    @include('includes.landing.meta')--}}
 
-    <title>@yield('title') | EZBelajar</title>
+    <title>@yield('title') | Edit Profile</title>
 
     @stack('before-style')
 
@@ -22,17 +22,17 @@
 
     @yield('content')
 
-    @stack('before-script')
+{{--    @stack('before-script')--}}
 
-    @include('includes.landing.script')
+{{--    @include('includes.landing.script')--}}
 
-    @stack('after-script')
+{{--    @stack('after-script')--}}
 
     {{-- modals --}}
-    @include('components.modal.login')
-    @include('components.modal.register')
-    @include('components.modal.register-success')
-    @include('components.modal.forgot-password')
+{{--    @include('components.modal.login')--}}
+{{--    @include('components.modal.register')--}}
+{{--    @include('components.modal.register-success')--}}
+{{--    @include('components.modal.forgot-password')--}}
 
 </div>
 </body>

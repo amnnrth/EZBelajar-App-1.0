@@ -4,49 +4,50 @@
 
 @section('content')
 
-    <style>
-        input[type=search] {
-            outline: none;
-            border: none;
-            background: #C4C4C4;
-        }
+{{--    <style>--}}
+{{--        input[type=search] {--}}
+{{--            outline: none;--}}
+{{--            border: none;--}}
+{{--            background: #C4C4C4;--}}
+{{--        }--}}
 
-        input[type=search]::-moz-focus-inner {
-            border: 0;
-        }
+{{--        input[type=search]::-moz-focus-inner {--}}
+{{--            border: 0;--}}
+{{--        }--}}
 
-        input[type=search]:focus {
-            outline: none;
-        }
+{{--        input[type=search]:focus {--}}
+{{--            outline: none;--}}
+{{--        }--}}
 
-        .share-button button {
-            background: #C4C4C4;
-            border: none;
-        }
+{{--        .share-button button {--}}
+{{--            background: #C4C4C4;--}}
+{{--            border: none;--}}
+{{--        }--}}
 
-        .share-button button:active {
-            background: #C4C4C4;
-            border: none !important;
-            outline: none !important;
-        }
+{{--        .share-button button:active {--}}
+{{--            background: #C4C4C4;--}}
+{{--            border: none !important;--}}
+{{--            outline: none !important;--}}
+{{--        }--}}
 
-        .share-button button:focus {
-            background: #C4C4C4;
-            border: none !important;
-            outline: none !important;
-        }
+{{--        .share-button button:focus {--}}
+{{--            background: #C4C4C4;--}}
+{{--            border: none !important;--}}
+{{--            outline: none !important;--}}
+{{--        }--}}
 
-    </style>
+{{--    </style>--}}
 
     <div class="content">
         <!-- ezbices -->
         <div class="bg-ezb-bg-explore overflow-hidden">
             <div class="pt-16 pb-16 lg:pb-20 lg:px-24 md:px-16 sm:px-8 px-8 mx-auto">
+
                 <div class="text-center mb-5">
                     <div class="flex items-center justify-center">
                         <div class="flex w-full lg:w-1/2 rounded-lg" style="background: #C4C4C4">
-                            <form method="GET">
-                                <input type="search" name="search" class="px-4 py-2 w-full rounded-lg" placeholder=" Search..." value="{{ request('search') }}">
+                            <form method="{{ '/belajar' }}" class="flex w-full rounded-lg" style="background: #C4C4C4">
+                                <input type="search" name="search" class="px-4 py-2 w-full rounded-lg" placeholder=" Search..." value="{{ request('search') }}" style="background: #C4C4C4">
                                 <div class="share-button flex">
                                     <button class="flex items-center justify-center px-4 rounded-lg">
                                         <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
