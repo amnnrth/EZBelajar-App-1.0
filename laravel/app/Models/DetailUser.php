@@ -21,9 +21,8 @@ class DetailUser extends Model
     protected $fillable = [
         'users_id',
         'photo',
-        'role',
-        'contact_number',
-        'biography',
+        'occupation',
+        'sex',
         'updated_at',
         'created_at',
         'deleted_at',
