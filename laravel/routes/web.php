@@ -12,6 +12,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BankSoalController;
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +49,7 @@ use App\Http\Controllers\ProfileController;
 //});
 
 
-Route::resource('/', LandingController::class);
+Route::get('/', [LandingController::class, 'index'])->name('index');
 
 Route::get('belajar', [LandingController::class, 'belajar'])->name('belajar.index');
 Route::get('detailbelajar/{title}', [LandingController::class, 'detailbelajar'])->name('detailbelajar');
@@ -60,6 +61,14 @@ Route::get('artikel', [LandingController::class, 'artikel'])->name('artikel');
 Route::get('detailartikel/{slug}', [LandingController::class, 'detailartikel'])->name('detailartikel');
 
 Route::get('tentangkami', [LandingController::class, 'tentangkami'])->name('tentangkami');
+
+//Route::get('test',[LandingController::class, 'test']);
+
+//comment
+//    Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
+//    Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
+Route::post('/comment/reply', [CommentController::class, 'replyStore'])->name('reply.add');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'verified']], function() {
 
@@ -90,5 +99,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
     //Profile
     Route::resource('profile', ProfileController::class);
     Route::get('delete_photo', [ProfileController::class, 'delete'])->name('delete.photo.profile');
+
+//    //comment
+////    Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+//    Route::resource('comment', CommentController::class);
+////    Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
+//    Route::post('/reply/store', [CommentController::class, 'replyStore'])->name('reply.add');
 
 });

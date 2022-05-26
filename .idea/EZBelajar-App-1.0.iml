@@ -129,6 +129,7 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/livewire/livewire" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/laravelcollective/html" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/te7a-houdini/laravel-trix" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

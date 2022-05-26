@@ -65,6 +65,15 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+
+//        Post::create(request()->all());
+
+//storing must follow this convention (model lowered class name)-trixFields
+//        Post::create([
+//            'title' => 'required',
+//            'post-trixFields' => request('post-trixFields'),
+//        ]);
+
         $request->validate([
             'title' => 'required',
 //            'image' => 'required | image',

@@ -1563,17 +1563,17 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.13.0",
-            "version_normalized": "9.13.0.0",
+            "version": "v9.14.0",
+            "version_normalized": "9.14.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "87b6cc8bc41d1cf85c7c1401cddde8570a3b95bb"
+                "reference": "5356f15d008c1b23088ccf21a5fb4aa2f87af034"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/87b6cc8bc41d1cf85c7c1401cddde8570a3b95bb",
-                "reference": "87b6cc8bc41d1cf85c7c1401cddde8570a3b95bb",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5356f15d008c1b23088ccf21a5fb4aa2f87af034",
+                "reference": "5356f15d008c1b23088ccf21a5fb4aa2f87af034",
                 "shasum": ""
             },
             "require": {
@@ -1697,7 +1697,7 @@
                 "symfony/postmark-mailer": "Required to enable support for the Postmark mail transport (^6.0).",
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0)."
             },
-            "time": "2022-05-17T14:07:43+00:00",
+            "time": "2022-05-24T14:03:46+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1745,17 +1745,17 @@
         },
         {
             "name": "laravel/jetstream",
-            "version": "v2.8.1",
-            "version_normalized": "2.8.1.0",
+            "version": "v2.8.2",
+            "version_normalized": "2.8.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "50ca355fa7cff5a851bbc0fa6addaa0010493c8d"
+                "reference": "10a7914447c24f8ac9c6565c41f9f10711807401"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/50ca355fa7cff5a851bbc0fa6addaa0010493c8d",
-                "reference": "50ca355fa7cff5a851bbc0fa6addaa0010493c8d",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/10a7914447c24f8ac9c6565c41f9f10711807401",
+                "reference": "10a7914447c24f8ac9c6565c41f9f10711807401",
                 "shasum": ""
             },
             "require": {
@@ -1772,7 +1772,7 @@
                 "orchestra/testbench": "^6.0|^7.0",
                 "phpunit/phpunit": "^9.3"
             },
-            "time": "2022-05-13T14:06:46+00:00",
+            "time": "2022-05-24T13:49:23+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1814,17 +1814,17 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.14.6",
-            "version_normalized": "1.14.6.0",
+            "version": "v1.14.7",
+            "version_normalized": "1.14.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "f00f3a8f83e71436d473cda7700ae7b4b68d26cc"
+                "reference": "c049316f9bcb02598607307f18b514b66202b639"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/f00f3a8f83e71436d473cda7700ae7b4b68d26cc",
-                "reference": "f00f3a8f83e71436d473cda7700ae7b4b68d26cc",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/c049316f9bcb02598607307f18b514b66202b639",
+                "reference": "c049316f9bcb02598607307f18b514b66202b639",
                 "shasum": ""
             },
             "require": {
@@ -1833,7 +1833,7 @@
                 "illuminate/support": "^8.0|^9.0",
                 "php": "^7.3|^8.0"
             },
-            "time": "2022-05-18T15:56:59+00:00",
+            "time": "2022-05-21T17:14:14+00:00",
             "bin": [
                 "bin/sail"
             ],
@@ -2078,17 +2078,17 @@
         },
         {
             "name": "laravel/ui",
-            "version": "v3.4.5",
-            "version_normalized": "3.4.5.0",
+            "version": "v3.4.6",
+            "version_normalized": "3.4.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/ui.git",
-                "reference": "f11d295de1508c5bb56206a620b00b6616de414c"
+                "reference": "65ec5c03f7fee2c8ecae785795b829a15be48c2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/ui/zipball/f11d295de1508c5bb56206a620b00b6616de414c",
-                "reference": "f11d295de1508c5bb56206a620b00b6616de414c",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/65ec5c03f7fee2c8ecae785795b829a15be48c2c",
+                "reference": "65ec5c03f7fee2c8ecae785795b829a15be48c2c",
                 "shasum": ""
             },
             "require": {
@@ -2101,7 +2101,7 @@
             "require-dev": {
                 "orchestra/testbench": "^6.23|^7.0"
             },
-            "time": "2022-02-21T14:59:16+00:00",
+            "time": "2022-05-20T13:38:08+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2136,7 +2136,7 @@
                 "ui"
             ],
             "support": {
-                "source": "https://github.com/laravel/ui/tree/v3.4.5"
+                "source": "https://github.com/laravel/ui/tree/v3.4.6"
             },
             "install-path": "../laravel/ui"
         },
@@ -8597,6 +8597,66 @@
                 }
             ],
             "install-path": "../symfony/var-dumper"
+        },
+        {
+            "name": "te7a-houdini/laravel-trix",
+            "version": "2.0.6",
+            "version_normalized": "2.0.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amaelftah/laravel-trix.git",
+                "reference": "52aa86853b9883e934ddb2938d3015e56e951a28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amaelftah/laravel-trix/zipball/52aa86853b9883e934ddb2938d3015e56e951a28",
+                "reference": "52aa86853b9883e934ddb2938d3015e56e951a28",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.8.0|~6.0|~7.0|~8.0|~9.0",
+                "php": "^7.1|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.5|~4.0|~5.0|~6.0"
+            },
+            "time": "2022-02-14T13:23:06+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Te7aHoudini\\LaravelTrix\\LaravelTrixServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Te7aHoudini\\LaravelTrix\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ahmed Abd El Ftah",
+                    "email": "ahmedabdelftah95165@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "trix editor for laravel inspired by ActionText for rails",
+            "homepage": "https://github.com/te7ahoudini/laravel-trix",
+            "keywords": [
+                "laravel-trix",
+                "te7a-houdini"
+            ],
+            "support": {
+                "issues": "https://github.com/amaelftah/laravel-trix/issues",
+                "source": "https://github.com/amaelftah/laravel-trix/tree/2.0.6"
+            },
+            "install-path": "../te7a-houdini/laravel-trix"
         },
         {
             "name": "theseer/tokenizer",

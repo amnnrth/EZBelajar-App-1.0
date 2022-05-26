@@ -97,6 +97,12 @@ class LandingController extends Controller
         if (request('search'))
         {
             $posts = Belajar::where('title', 'LIKE', '%' . request('search') . '%')
+                ->with([
+                    'user:id,name',
+                    'comments.user:id,name',
+                    'comments.replies.user:id,name',
+                    'comments.replies.replies.user:id,name',
+                    'comments.replies.replies.replies.user:id,name'])
                 ->get();
         }
 
@@ -139,6 +145,12 @@ class LandingController extends Controller
 
         if (request('search')){
             $posts = Post::where('title', 'like', '%' . request('search') . '%')
+                ->with([
+                    'user:id,name',
+                    'comments.user:id,name',
+                    'comments.replies.user:id,name',
+                    'comments.replies.replies.user:id,name',
+                    'comments.replies.replies.replies.user:id,name'])
                 ->orWhere('body', 'like', '%' . request('search') . '%')
                 ->latest()->paginate(3);
         }
@@ -150,5 +162,9 @@ class LandingController extends Controller
     {
         $post = Post::where('slug',$slug)->first();
         return view('pages.Landing.artikel.detail-artikel',compact('post'));
+    }
+
+    public function test(){
+//        return view('components.modal.reset-password');
     }
 }

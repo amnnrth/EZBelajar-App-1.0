@@ -58,6 +58,17 @@
                                         </div>
 
                                         <div class="col-span-6">
+                                            <label for="jumlahSoal" class="block mb-3 font-medium text-gray-700 text-md">Bank Soal</label>
+
+                                            <input placeholder="jumlahSoal" type="text" name="jumlahSoal" id="jumlahSoal" autocomplete="jumlahSoal" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('jumlahSoal') }}" required>
+
+                                            @if ($errors->has('jumlahSoal'))
+                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('jumlahSoal') }}</p>
+                                            @endif
+
+                                        </div>
+
+                                        <div class="col-span-6">
                                             <label for="soal" class="block mb-3 font-medium text-gray-700 text-md">Soal</label>
 
                                             <input placeholder="soal" type="file" name="soal" id="soal" autocomplete="soal" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('cover') }}" required>

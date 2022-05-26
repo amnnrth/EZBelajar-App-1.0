@@ -47,7 +47,7 @@
                             </label>
                         </div>
 
-                        <a href="#" class="inline-block align-baseline text-xs text-blue-button mt-2 font-medium mr-6" onclick="toggleModal('forpasModal')">
+                        <a href="#" class="inline-block align-baseline text-xs text-blue-button mt-2 font-medium mr-6" onclick="toggleModal('loginModal');toggleModal('forgot-password')">
                             Lupa Kata Sandi?
                         </a>
                     </div>
@@ -57,12 +57,12 @@
                 <div class="px-6 pb-6 rounded-b-xl mx-10">
                     <input type="hidden" name="auth" value="true">
 
-                    <button class="lg:bg-ezb-services-bg text-white text-lg ml-23 py-3 px-12 my-2 rounded-lg w-36 ml-21" type="submit">Masuk
+                    <button class="lg:bg-ezb-services-bg text-white text-lg ml-23 py-3 px-12 my-2 rounded-lg w-36 ml-21" type="submit">Masuk<br>
                     </button>
 
-                    <p href="#" class="ml-23 py-5">
-                        Belum Punya Akun ? </br><a href="#" class="text-blue-button ml-22" onclick="toggleModal('loginModal');toggleModal('registerModal')">Daftar</a>
-                    </p>
+                    <a href="#" class="ml-23 py-5">
+                        Belum Punya Akun ? <br><a href="#" class="text-blue-button ml-22" onclick="toggleModal('loginModal');toggleModal('registerModal')">Daftar</a>
+                    </a>
                 </div>
 
             </form>

@@ -55,6 +55,7 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
+            'Te7aHoudini\\LaravelTrix\\' => 24,
         ),
         'S' => 
         array (
@@ -215,6 +216,10 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         'Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'Te7aHoudini\\LaravelTrix\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/te7a-houdini/laravel-trix/src',
         ),
         'Symfony\\Polyfill\\Php81\\' => 
         array (
@@ -594,6 +599,7 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         'App\\Http\\Controllers\\BankSoalController' => __DIR__ . '/../..' . '/app/Http/Controllers/BankSoalController.php',
         'App\\Http\\Controllers\\BelajarController' => __DIR__ . '/../..' . '/app/Http/Controllers/BelajarController.php',
         'App\\Http\\Controllers\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/BlogController.php',
+        'App\\Http\\Controllers\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
         'App\\Http\\Controllers\\LandingController' => __DIR__ . '/../..' . '/app/Http/Controllers/LandingController.php',
@@ -609,8 +615,11 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Request\\UpdateDetailUserRequest' => __DIR__ . '/../..' . '/app/Http/Request/UpdateDetailUserRequest.php',
+        'App\\Http\\Request\\UpdateProfileRequest' => __DIR__ . '/../..' . '/app/Http/Request/UpdateProfileRequest.php',
         'App\\Models\\BankSoal' => __DIR__ . '/../..' . '/app/Models/BankSoal.php',
         'App\\Models\\Belajar' => __DIR__ . '/../..' . '/app/Models/Belajar.php',
+        'App\\Models\\Comment' => __DIR__ . '/../..' . '/app/Models/Comment.php',
         'App\\Models\\DetailUser' => __DIR__ . '/../..' . '/app/Models/DetailUser.php',
         'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -806,6 +815,8 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         'DASPRiD\\Enum\\Exception\\UnserializeNotSupportedException' => __DIR__ . '/..' . '/dasprid/enum/src/Exception/UnserializeNotSupportedException.php',
         'DASPRiD\\Enum\\NullValue' => __DIR__ . '/..' . '/dasprid/enum/src/NullValue.php',
         'Database\\Factories\\BankSoalFactory' => __DIR__ . '/../..' . '/database/factories/BankSoalFactory.php',
+        'Database\\Factories\\CommentFactory' => __DIR__ . '/../..' . '/database/factories/CommentFactory.php',
+        'Database\\Factories\\DatabaseSeederFactory' => __DIR__ . '/../..' . '/database/factories/DatabaseSeederFactory.php',
         'Database\\Factories\\PostFactory' => __DIR__ . '/../..' . '/database/factories/PostFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\CreateAdminUserSeeder' => __DIR__ . '/../..' . '/database/seeders/CreateAdminUserSeeder.php',
@@ -6065,6 +6076,16 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
         'Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
         'Symfony\\Polyfill\\Php81\\Php81' => __DIR__ . '/..' . '/symfony/polyfill-php81/Php81.php',
+        'Te7aHoudini\\LaravelTrix\\Http\\Controllers\\TrixAttachmentController' => __DIR__ . '/..' . '/te7a-houdini/laravel-trix/src/Http/Controllers/TrixAttachmentController.php',
+        'Te7aHoudini\\LaravelTrix\\LaravelTrix' => __DIR__ . '/..' . '/te7a-houdini/laravel-trix/src/LaravelTrix.php',
+        'Te7aHoudini\\LaravelTrix\\LaravelTrixServiceProvider' => __DIR__ . '/..' . '/te7a-houdini/laravel-trix/src/LaravelTrixServiceProvider.php',
+        'Te7aHoudini\\LaravelTrix\\Models\\TrixAttachment' => __DIR__ . '/..' . '/te7a-houdini/laravel-trix/src/Models/TrixAttachment.php',
+        'Te7aHoudini\\LaravelTrix\\Models\\TrixRichText' => __DIR__ . '/..' . '/te7a-houdini/laravel-trix/src/Models/TrixRichText.php',
+        'Te7aHoudini\\LaravelTrix\\Pipes\\AttachmentInput' => __DIR__ . '/..' . '/te7a-houdini/laravel-trix/src/Pipes/AttachmentInput.php',
+        'Te7aHoudini\\LaravelTrix\\Pipes\\Input' => __DIR__ . '/..' . '/te7a-houdini/laravel-trix/src/Pipes/Input.php',
+        'Te7aHoudini\\LaravelTrix\\Pipes\\Styles' => __DIR__ . '/..' . '/te7a-houdini/laravel-trix/src/Pipes/Styles.php',
+        'Te7aHoudini\\LaravelTrix\\Pipes\\TrixEditor' => __DIR__ . '/..' . '/te7a-houdini/laravel-trix/src/Pipes/TrixEditor.php',
+        'Te7aHoudini\\LaravelTrix\\Traits\\HasTrixRichText' => __DIR__ . '/..' . '/te7a-houdini/laravel-trix/src/Traits/HasTrixRichText.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
         'Tests\\Feature\\ApiTokenPermissionsTest' => __DIR__ . '/../..' . '/tests/Feature/ApiTokenPermissionsTest.php',
         'Tests\\Feature\\AuthenticationTest' => __DIR__ . '/../..' . '/tests/Feature/AuthenticationTest.php',
