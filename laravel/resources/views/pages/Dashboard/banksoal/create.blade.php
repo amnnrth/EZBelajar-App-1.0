@@ -22,7 +22,7 @@
         <nav class="mx-10 mt-8 text-sm" aria-label="Breadcrumb">
             <ol class="inline-flex p-0 list-none">
                 <li class="flex items-center">
-                    <a href="{{ route('admin.belajar.index') }}" class="text-gray-400">Bank Soal</a>
+                    <a href="{{ route('admin.banksoal.index') }}" class="text-gray-400">Bank Soal</a>
                     <svg class="w-3 h-3 mx-3 text-gray-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                         <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
                     </svg>
@@ -58,33 +58,47 @@
                                         </div>
 
                                         <div class="col-span-6">
-                                            <label for="jumlahSoal" class="block mb-3 font-medium text-gray-700 text-md">Bank Soal</label>
+                                            <label for="description" class="block mb-3 font-medium text-gray-700 text-md">Description</label>
 
-                                            <input placeholder="jumlahSoal" type="text" name="jumlahSoal" id="jumlahSoal" autocomplete="jumlahSoal" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('jumlahSoal') }}" required>
+{{--                                            <textarea name="" id="" cols="30" rows="10"></textarea>--}}
 
-                                            @if ($errors->has('jumlahSoal'))
-                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('jumlahSoal') }}</p>
+                                            <input name="description" value="{{ old('description') }}" type="text" id="description" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" required>
+                            
+                                            @if ($errors->has('description'))
+                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('description') }}</p>
                                             @endif
 
                                         </div>
 
+
+{{--                                        <div class="col-span-6">--}}
+{{--                                            <label for="jumlahSoal" class="block mb-3 font-medium text-gray-700 text-md">Bank Soal</label>--}}
+
+{{--                                            <input placeholder="jumlahSoal" type="text" name="jumlahSoal" id="jumlahSoal" autocomplete="jumlahSoal" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('jumlahSoal') }}" required>--}}
+
+{{--                                            @if ($errors->has('jumlahSoal'))--}}
+{{--                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('jumlahSoal') }}</p>--}}
+{{--                                            @endif--}}
+
+{{--                                        </div>--}}
+
+{{--                                        <div class="col-span-6">--}}
+{{--                                            <label for="soal" class="block mb-3 font-medium text-gray-700 text-md">Soal</label>--}}
+
+{{--                                            <input placeholder="soal" type="file" name="soal" id="soal" autocomplete="soal" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('cover') }}" required>--}}
+
+{{--                                            @if ($errors->has('soal'))--}}
+{{--                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('soal') }}</p>--}}
+{{--                                            @endif--}}
+{{--                                        </div>--}}
+
                                         <div class="col-span-6">
-                                            <label for="soal" class="block mb-3 font-medium text-gray-700 text-md">Soal</label>
+                                            <label for="filePath" class="block mb-3 font-medium text-gray-700 text-md">Soal & Jawaban</label>
 
-                                            <input placeholder="soal" type="file" name="soal" id="soal" autocomplete="soal" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('cover') }}" required>
+                                            <input placeholder="filePath" type="file" name="filePath" id="filePath" autocomplete="filePath" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('filePath') }}" required>
 
-                                            @if ($errors->has('soal'))
-                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('soal') }}</p>
-                                            @endif
-                                        </div>
-
-                                        <div class="col-span-6">
-                                            <label for="jawaban" class="block mb-3 font-medium text-gray-700 text-md">Jawaban</label>
-
-                                            <input placeholder="jawaban" type="file" name="jawaban" id="jawaban" autocomplete="jawaban" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('cover') }}" required>
-
-                                            @if ($errors->has('jawaban'))
-                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('jawaban') }}</p>
+                                            @if ($errors->has('filePath'))
+                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('filePath') }}</p>
                                             @endif
                                         </div>
 

@@ -44,6 +44,8 @@ class CreateNewUser implements CreatesNewUsers
                 $detail_user->sex = NULL;
                 $detail_user->save();
 
+                // assign user
+                $user->assignRole('user');
             });
         });
 

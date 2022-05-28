@@ -14,6 +14,8 @@ use App\Http\Controllers\BankSoalController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CommentController;
 
+use App\Http\Controllers\QuestionsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +50,8 @@ use App\Http\Controllers\CommentController;
 //    })->name('dashboard');
 //});
 
+//testing
+//Route::get('test',[LandingController::class, 'test']);
 
 Route::get('/', [LandingController::class, 'index'])->name('index');
 
@@ -62,7 +66,7 @@ Route::get('detailartikel/{slug}', [LandingController::class, 'detailartikel'])-
 
 Route::get('tentangkami', [LandingController::class, 'tentangkami'])->name('tentangkami');
 
-//Route::get('test',[LandingController::class, 'test']);
+
 
 //comment
 //    Route::post('/comment/store', 'CommentController@store')->name('comment.add');
@@ -95,10 +99,25 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
 
     //Bank Soal
     Route::resource('banksoal', BankSoalController::class);
+    Route::get('/detailQuiz/{banksoal}', [BankSoalController::class, 'detailQuiz'])
+        ->name('detailQuiz');
 
     //Profile
     Route::resource('profile', ProfileController::class);
     Route::get('delete_photo', [ProfileController::class, 'delete'])->name('delete.photo.profile');
+
+    //Questions
+    Route::get('/createQuestion/{banksoal}', [QuestionsController::class, 'createQuestion'])
+        ->name('createQuestion');
+
+    Route::get('/detailQuestion/{question}', [QuestionsController::class, 'detailQuestion'])
+        ->name('detailQuestion');
+
+    Route::post('/storeQuestion/{banksoal}', [QuestionsController::class, 'storeQuestion'])
+        ->name('storeQuestion');
+    Route::post('/deleteQuestion/{id}', [QuestionsController::class, 'deleteQuestion'])
+        ->name('deleteQuestion');
+
 
 //    //comment
 ////    Route::post('/comment/store', 'CommentController@store')->name('comment.add');

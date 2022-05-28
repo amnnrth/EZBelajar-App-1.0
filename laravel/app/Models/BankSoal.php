@@ -11,12 +11,24 @@ class BankSoal extends Model
 
     protected $fillable = [
         'title',
-        'jumlahSoal',
-        'soal',
-        'jawaban',
+        'description',
+        'filePath',
     ];
 
+    //user
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    //question
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+
+    //header
+    public function quizHeaders()
+    {
+        return $this->hasMany(QuizHeader::class);
     }
 }

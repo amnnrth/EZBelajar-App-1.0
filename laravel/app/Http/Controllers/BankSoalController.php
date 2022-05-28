@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BankSoal;
 use App\Models\Belajar;
+use App\Models\Section;
 use App\Models\User;
 use http\Env\Response;
 use Illuminate\Http\Request;
@@ -69,21 +70,20 @@ class BankSoalController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'jumlahSoal' => 'required',
-            'soal' => 'required|mimes:pdf,xlx,csv|max:2048',
-            'jawaban' => 'required|mimes:pdf,xlx,csv|max:2048',
+            'title' => 'required|unique:bank_soals|min:5|max:255',
+//            'description' => 'required|min:5|max:255',
+            'filePath' => 'required|mimes:pdf,xlx,docs|max:2048',
         ]);
 
-        $pathSoal = $request->file('soal')->store('public/assets/soal');
-        $pathJawaban = $request->file('jawaban')->store('public/assets/jawaban');
+        $pathFile = $request->file('filePath')->store('public/assets/BankSoal');
         $user_id = auth()->user()->id;  // get the user id
+//        $path_soal = $get_user_photo['photo'];
+
 
         $post = new BankSoal();
         $post->title = $request->title;
-        $post->jumlahSoal = $request->jumlahSoal;
-        $post->soal = $pathSoal;
-        $post->jawaban = $pathJawaban;
+        $post->description = $request->description;
+        $post->filePath = $pathFile;
         $post->user_id = $user_id;
         $post->save();
 
@@ -165,8 +165,7 @@ class BankSoalController extends Controller
     public function update(Request $request, BankSoal $banksoal)
     {
         $request->validate([
-            'title' => 'required',
-            'jumlahSoal' => 'required',
+            'title' => 'required|unique:bank_soals|min:5|max:255',
         ]);
 
         $input = $request->all();
@@ -223,6 +222,17 @@ class BankSoalController extends Controller
     }
 
     //custom
+
+    function create_quiz()
+    {
+        return view('pages.Dashboard.banksoal.quiz.create');
+    }
+
+    public function detailQuiz(BankSoal $banksoal)
+    {
+        $questions = $banksoal->questions()->paginate(10);
+        return view('pages.Dashboard.banksoal.quiz.detail', compact('questions', 'banksoal'));
+    }
 
 //    function getSoal(BankSoal $banksoal){
 //        $file=Storage::disk('assets/soal/')->get($banksoal->soal);

@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
 
 //        $this->call([
 //            CreateAdminUserSeeder::class,
-//            DetailUserTableSeeder::class
+//            DetailUserSeeder::class
 //        ]);
     }
 }
