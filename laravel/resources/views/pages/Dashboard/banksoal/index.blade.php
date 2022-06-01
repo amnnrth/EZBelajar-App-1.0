@@ -99,6 +99,9 @@
                                             {{ $bank_soal->title ?? '' }}
                                         </td>
                                         <td class="px-1 py-5 text-sm">
+{{--                                            <a href="{{ route('admin.createQuestion',$bank_soal->id) }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">--}}
+{{--                                                Create--}}
+{{--                                            </a>--}}
                                             <a href="{{ route('admin.detailQuiz',$bank_soal->id) }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">
                                                 Detail
                                             </a>

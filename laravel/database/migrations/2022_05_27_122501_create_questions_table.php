@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('question');
             $table->text('explanation');
             $table->enum('is_active', ['0', '1'])->default('1');
-            $table->foreignId('bank_soal_id')->references('id')->on('bank_soals')->onDelete('cascade');
-//            $table->foreignId('bank_soal_id')->constrained()->onDelete('cascade');
-//            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+//            $table->foreignId('section_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
+            $table->foreignId('bank_soal_id')->references('id')->on('bank_soals')->onDelete('cascade')->nullable();
+//            $table->foreignId('bank_soal_id')->constrained()->onDelete('cascade')->nullable()->default('');
         });
     }
 

@@ -130,6 +130,7 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/laravelcollective/html" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/te7a-houdini/laravel-trix" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/realrashid/sweet-alert" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,4 +1,4 @@
-@extends('layouts.onlyheader')
+@extends('layouts.front')
 
 @section('title', ' Detail Soal')
 
@@ -16,8 +16,8 @@
                 <p class="text-black font-semibold">Jumlah soal : <br>
                     <span class="text-black font-light">10</span></p>
                 <br>
-                <a href="#">
-                    <button class="lg:bg-ezb-services-bg py-2 px-10 my-3">Download Soal</button>
+                <a href="{{ route('startQuiz') }}">
+                    <button class="lg:bg-ezb-services-bg py-2 px-10 my-3">Quizl</button>
                 </a>
                 <br>
                 <a href="#">

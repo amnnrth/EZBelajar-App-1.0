@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\BankSoal;
 use App\Models\Belajar;
-use App\Models\Section;
+//use App\Models\Section;
+use App\Models\Question;
+use App\Models\Quiz;
+use App\Models\QuizHeader;
 use App\Models\User;
 use http\Env\Response;
 use Illuminate\Http\Request;
@@ -129,7 +132,7 @@ class BankSoalController extends Controller
 //
 //        BankSoal::create($input);
 
-        return redirect()->route('admin.banksoal.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('admin.banksoal.index')->withsuccess('success', 'Data berhasil ditambahkan');
 
     }
 
@@ -218,7 +221,9 @@ class BankSoalController extends Controller
     {
         $banksoal->delete();
 
-        return redirect()->route('pages.Dashboard.banksoal.index')->with('success', 'Data berhasil dihapus');
+        return redirect()->back()->withSuccess('Question created successfully');
+
+//        return redirect()->route('pages.Dashboard.banksoal.index')->with('success', 'Data berhasil dihapus');
     }
 
     //custom
@@ -232,6 +237,83 @@ class BankSoalController extends Controller
     {
         $questions = $banksoal->questions()->paginate(10);
         return view('pages.Dashboard.banksoal.quiz.detail', compact('questions', 'banksoal'));
+    }
+
+    public function userQuizHome()
+    {
+        $activeUsers = User::count();
+
+        $questionsCount = Question::where('is_active', '1')->count();
+
+        $banksoals = BankSoal::withCount('questions')
+            ->where('is_active', '1')
+            ->orderBy('title', 'asc')
+            ->get();
+
+        $quizesTaken = QuizHeader::count();
+
+        $userQuizzes = auth()
+            ->user()
+            ->quizHeaders()
+            ->orderBy('id', 'desc')
+            ->paginate(10);
+
+        $quizAverage = auth()->user()->quizHeaders()->avg('score');
+
+        return view(
+            'pages.Dashboard.quiz.userQuizHome',
+            compact(
+                'banksoals',
+                'activeUsers',
+                'questionsCount',
+                'quizesTaken',
+                'userQuizzes',
+                'quizAverage'
+            )
+        );
+    }
+
+    public function deleteUserQuiz($id)
+    {
+        $quizheader = QuizHeader::findOrFail($id);
+        if (auth()->id() == $quizheader->user_id) {
+            $quizheader->delete();
+            return redirect()->back()
+                ->withSuccess("Quiz deleted successfully!");
+        }
+        return redirect()->back()->withWarning("Can not delete quiz!");
+    }
+
+    public function userQuizDetails($id)
+    {
+        // Answers with alphabetical choice
+        $choice = collect(['A', 'B', 'C', 'D']);
+
+        //Get quiz summary record for the given quiz
+        $userQuizDetails = QuizHeader::where('id', $id)
+            ->with('banksoal')->first();
+
+        //Extract question taken by the users stored as a serialized string while takeing the quiz
+        $quizQuestionsList = collect(unserialize($userQuizDetails->questions_taken));
+
+        //Get the actual quiz questiona and answers from Quiz table using quiz_header_id
+        $userQuiz = Quiz::where('quiz_header_id', $userQuizDetails->id)
+            ->orderBy('question_id', 'ASC')->get();
+        //dd($userQuiz);
+        //Get the Questions and related answers taken by the user during the quiz
+        $quizQuestions = Question::whereIn('id', $quizQuestionsList)->orderBy('id', 'ASC')->with('answers')->get();
+
+        //pass the data using compact to the view to display
+        return view(
+            'pages.Dashboard.quiz.userQuizDetail',
+            compact(
+                'userQuizDetails',
+                'quizQuestionsList',
+                'userQuiz',
+                'quizQuestions',
+                'choice'
+            )
+        );
     }
 
 //    function getSoal(BankSoal $banksoal){

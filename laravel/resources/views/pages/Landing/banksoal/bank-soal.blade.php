@@ -1,4 +1,4 @@
-@extends('layouts.onlyheader')
+@extends('layouts.front')
 
 @section('title', ' Bank Soal')
 

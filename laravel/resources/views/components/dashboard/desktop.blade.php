@@ -82,6 +82,70 @@
 
             <li class="relative px-6 py-3">
 
+                @if (request()->is('admin/quiz') || request()->is('admin/quiz/*') || request()->is('admin/*/quiz') || request()->is('admin/*/quiz/*'))
+                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
+                          aria-hidden="true"></span>
+                @endif
+
+                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"
+                   href="{{ route('admin.userQuizHome') }}">
+                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
+                        <rect x="3" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
+                        <rect x="14" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
+                        <rect x="14" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />
+                    </svg> -->
+                    <!-- Active Icons -->
+                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="7" height="7" rx="2" fill="#082431" />
+                        <rect x="3" y="14" width="7" height="7" rx="2" fill="#082431" />
+                        <rect x="14" y="3" width="7" height="7" rx="2" fill="#082431" />
+                        <rect x="14" y="14" width="7" height="7" rx="2" fill="#082431" />
+                    </svg> -->
+                    <img src="{{ asset('/assets/icondashboard/film.svg') }}" alt="Video">
+                    <span class="ml-4">Quiz</span>
+                    {{--                    <span--}}
+                    {{--                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">--}}
+                    {{--                        {{ auth()->user()->belajar()->count() }} Count--}}
+                    {{--                    </span>--}}
+
+                </a>
+            </li>
+
+{{--            <li class="relative px-6 py-3">--}}
+
+{{--                @if (request()->is('admin/section') || request()->is('admin/section/*') || request()->is('admin/*/section') || request()->is('admin/*/section/*'))--}}
+{{--                    <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"--}}
+{{--                          aria-hidden="true"></span>--}}
+{{--                @endif--}}
+
+{{--                <a class="inline-flex items-center w-full text-sm font-light transition-colors duration-150 hover:text-gray-800"--}}
+{{--                   href="{{ route('admin.listSection') }}">--}}
+{{--                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
+{{--                        <rect x="3" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />--}}
+{{--                        <rect x="3" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />--}}
+{{--                        <rect x="14" y="3" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />--}}
+{{--                        <rect x="14" y="14" width="7" height="7" rx="2" stroke="#082431" stroke-width="1.5" />--}}
+{{--                    </svg> -->--}}
+{{--                    <!-- Active Icons -->--}}
+{{--                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
+{{--                        <rect x="3" y="3" width="7" height="7" rx="2" fill="#082431" />--}}
+{{--                        <rect x="3" y="14" width="7" height="7" rx="2" fill="#082431" />--}}
+{{--                        <rect x="14" y="3" width="7" height="7" rx="2" fill="#082431" />--}}
+{{--                        <rect x="14" y="14" width="7" height="7" rx="2" fill="#082431" />--}}
+{{--                    </svg> -->--}}
+{{--                    <img src="{{ asset('/assets/icondashboard/film.svg') }}" alt="Video">--}}
+{{--                    <span class="ml-4">Sections</span>--}}
+{{--                    --}}{{--                    <span--}}
+{{--                    --}}{{--                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">--}}
+{{--                    --}}{{--                        {{ auth()->user()->belajar()->count() }} Count--}}
+{{--                    --}}{{--                    </span>--}}
+
+{{--                </a>--}}
+{{--            </li>--}}
+
+            <li class="relative px-6 py-3">
+
                                 @if (request()->is('admin/banksoal') || request()->is('admin/banksoal/*') || request()->is('admin/*/banksoal') || request()->is('admin/*/banksoal/*'))
                                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                                           aria-hidden="true"></span>

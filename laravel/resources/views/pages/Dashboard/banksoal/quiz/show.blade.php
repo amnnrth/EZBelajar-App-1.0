@@ -170,7 +170,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <div class="@if($answer->is_checked === '1') bg-green-400 p-1 text-white rounded-xl @endif justify-center mx-auto text-xs font-extrabold  "> {{ $answer->is_checked === '1'  ? 'Correct' : 'Wrong' }}</div>
+                                    <div class="@if($answer->is_checked === '1') justify-center mx-auto text-xs font-semibold bg-green-600 @endif justify-center mx-auto text-xs font-semibold  "> {{ $answer->is_checked === '1'  ? 'Correct' : 'Wrong' }}</div>
                                 </td>
 {{--                                <td class="px-6 py-4">--}}
 {{--                                    {{ $answer->answe ?? ''}}--}}

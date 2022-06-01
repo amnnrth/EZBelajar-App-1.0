@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('quiz_header_id')->constrained()->onDelete('cascade');
             $table->foreignId('bank_soal_id')->constrained()->onDelete('cascade');
+//            $table->foreignId('section_id')->constrained()->onDelete('cascade');
             $table->foreignId('question_id')->constrained()->onDelete('cascade');
             $table->foreignId('answer_id')->constrained()->onDelete('cascade');
             $table->enum('is_correct', [0, 1])->default(0);

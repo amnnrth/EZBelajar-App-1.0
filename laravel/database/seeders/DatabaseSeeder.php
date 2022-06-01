@@ -19,17 +19,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Comment::factory(100)->create();
+//        Comment::factory(100)->create();
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
-//        $this->call([
-//            CreateAdminUserSeeder::class,
-//            DetailUserSeeder::class
-//        ]);
+        $this->call([
+            PermissionSeeder::class,
+            CreateAdminUserSeeder::class,
+            DetailUserSeeder::class,
+            QuoteSeeder::class,
+        ]);
     }
 }

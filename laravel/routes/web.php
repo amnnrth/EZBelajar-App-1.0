@@ -15,6 +15,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CommentController;
 
 use App\Http\Controllers\QuestionsController;
+use App\Http\Controllers\SectionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,39 @@ use App\Http\Controllers\QuestionsController;
 //testing
 //Route::get('test',[LandingController::class, 'test']);
 
+// Testing
+Route::get('/createSection', [SectionsController::class, 'createSection'])
+    ->name('createSection');
+
+Route::post('/deleteSection/{id}', [SectionsController::class, 'deleteSection'])
+    ->name('deleteSection');
+
+Route::post('/storeSection/section', [SectionsController::class, 'storeSection'])
+    ->name('storeSection');
+
+Route::get('/editSection/{section}', [SectionsController::class, 'editSection'])
+    ->name('editSection');
+
+Route::post('/updateSection/{section}', [SectionsController::class, 'updateSection'])
+    ->name('updateSection');
+
+Route::get('/listSection', [SectionsController::class, 'listSection'])
+    ->name('listSection');
+
+Route::get('/detailSection/{section}', [SectionsController::class, 'detailSection'])
+    ->name('detailSection');
+
+Route::get('/createQuestion/{section}', [QuestionsController::class, 'createQuestion'])
+    ->name('createQuestion');
+
+Route::get('/detailQuestion/{question}', [QuestionsController::class, 'detailQuestion'])
+    ->name('detailQuestion');
+
+Route::post('/storeQuestion/{section}', [QuestionsController::class, 'storeQuestion'])
+    ->name('storeQuestion');
+Route::post('/deleteQuestion/{id}', [QuestionsController::class, 'deleteQuestion'])
+    ->name('deleteQuestion');
+
 Route::get('/', [LandingController::class, 'index'])->name('index');
 
 Route::get('belajar', [LandingController::class, 'belajar'])->name('belajar.index');
@@ -66,7 +100,10 @@ Route::get('detailartikel/{slug}', [LandingController::class, 'detailartikel'])-
 
 Route::get('tentangkami', [LandingController::class, 'tentangkami'])->name('tentangkami');
 
-
+Route::get('/startQuiz', [LandingController::class, 'startQuiz'])
+    ->name('startQuiz');
+Route::get('/userQuizDetails/{id}', [LandingController::class, 'userQuizDetails'])
+    ->name('userQuizDetails');
 
 //comment
 //    Route::post('/comment/store', 'CommentController@store')->name('comment.add');
@@ -118,11 +155,28 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
     Route::post('/deleteQuestion/{id}', [QuestionsController::class, 'deleteQuestion'])
         ->name('deleteQuestion');
 
+    Route::get('/userQuizHome', [BankSoalController::class, 'userQuizHome'])
+        ->name('userQuizHome');
 
-//    //comment
-////    Route::post('/comment/store', 'CommentController@store')->name('comment.add');
-//    Route::resource('comment', CommentController::class);
-////    Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
-//    Route::post('/reply/store', [CommentController::class, 'replyStore'])->name('reply.add');
+    Route::post('/deleteUserQuiz/{id}', [BankSoalController::class, 'deleteUserQuiz'])
+        ->name('deleteUserQuiz');
+
+    Route::get('/userQuizDetails/{id}', [BankSoalController::class, 'userQuizDetails'])
+        ->name('userQuizDetails');
 
 });
+
+//Route::middleware(['auth', 'verified', 'role:admin|user'])->prefix('user')->group(function () {
+//
+//    Route::get('/userQuizHome', [AppUserController::class, 'userQuizHome'])
+//        ->name('userQuizHome');
+//
+//    Route::get('/userQuizDetails/{id}', [AppUserController::class, 'userQuizDetails'])
+//        ->name('userQuizDetails');
+//
+//    Route::post('/deleteUserQuiz/{id}', [AppUserController::class, 'deleteUserQuiz'])
+//        ->name('deleteUserQuiz');
+//
+//    Route::get('/startQuiz', [AppUserController::class, 'startQuiz'])
+//        ->name('startQuiz');
+//});

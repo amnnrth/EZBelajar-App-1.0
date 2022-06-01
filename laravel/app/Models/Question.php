@@ -11,6 +11,15 @@ class Question extends Model
 
     protected $guarded = [];
 
+    protected $fillable = [
+        'question',
+        'explanation',
+        'is_active',
+        'user_id',
+        'bank_soal_id',
+    ];
+
+
     public function banksoal()
     {
         return $this->belongsTo(BankSoal::class);
@@ -24,5 +33,10 @@ class Question extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function section()
+    {
+        return $this->belongsTo(Section::class);
     }
 }

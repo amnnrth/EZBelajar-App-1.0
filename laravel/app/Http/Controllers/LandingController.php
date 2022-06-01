@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\BankSoal;
 use App\Models\Belajar;
 use App\Models\Post;
+use App\Models\Question;
+use App\Models\Quiz;
+use App\Models\QuizHeader;
+//use App\Models\Section;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -115,6 +120,7 @@ class LandingController extends Controller
         return view('pages.Landing.video.detail-belajar',compact('post'));
     }
 
+    // Bank Soal
     public function banksoal()
     {
         $posts = BankSoal::latest()->get();
@@ -134,6 +140,44 @@ class LandingController extends Controller
         return view('pages.Landing.banksoal.detail-bank-soal',compact('post'));
     }
 
+    public function startQuiz()
+    {
+        return view('pages.Landing.banksoal.quiz.quiz');
+    }
+
+    public function userQuizDetails($id)
+    {
+        // Answers with alphabetical choice
+        $choice = collect(['A', 'B', 'C', 'D']);
+
+        //Get quiz summary record for the given quiz
+        $userQuizDetails = QuizHeader::where('id', $id)
+            ->with('banksoal')->first();
+
+        //Extract question taken by the users stored as a serialized string while takeing the quiz
+        $quizQuestionsList = collect(unserialize($userQuizDetails->questions_taken));
+
+        //Get the actual quiz questiona and answers from Quiz table using quiz_header_id
+        $userQuiz = Quiz::where('quiz_header_id', $userQuizDetails->id)
+            ->orderBy('question_id', 'ASC')->get();
+        //dd($userQuiz);
+        //Get the Questions and related answers taken by the user during the quiz
+        $quizQuestions = Question::whereIn('id', $quizQuestionsList)->orderBy('id', 'ASC')->with('answers')->get();
+
+        //pass the data using compact to the view to display
+        return view(
+            'pages.Landing.banksoal.quiz.QuizDetail',
+            compact(
+                'userQuizDetails',
+                'quizQuestionsList',
+                'userQuiz',
+                'quizQuestions',
+                'choice'
+            )
+        );
+    }
+
+    // About Us
     public function tentangkami()
     {
         return view('pages.Landing.tentang-kami');
@@ -167,4 +211,37 @@ class LandingController extends Controller
     public function test(){
 //        return view('components.modal.reset-password');
     }
+
+
+//    public function userQuizDetails($id)
+//    {
+//        // Answers with alphabetical choice
+//        $choice = collect(['A', 'B', 'C', 'D']);
+//
+//        //Get quiz summary record for the given quiz
+//        $userQuizDetails = QuizHeader::where('id', $id)
+//            ->with('banksoal')->first();
+//
+//        //Extract question taken by the users stored as a serialized string while takeing the quiz
+//        $quizQuestionsList = collect(unserialize($userQuizDetails->questions_taken));
+//
+//        //Get the actual quiz questiona and answers from Quiz table using quiz_header_id
+//        $userQuiz = Quiz::where('quiz_header_id', $userQuizDetails->id)
+//            ->orderBy('question_id', 'ASC')->get();
+//        //dd($userQuiz);
+//        //Get the Questions and related answers taken by the user during the quiz
+//        $quizQuestions = Question::whereIn('id', $quizQuestionsList)->orderBy('id', 'ASC')->with('answers')->get();
+//
+//        //pass the data using compact to the view to display
+//        return view(
+//            'appusers.userQuizDetail',
+//            compact(
+//                'userQuizDetails',
+//                'quizQuestionsList',
+//                'userQuiz',
+//                'quizQuestions',
+//                'choice'
+//            )
+//        );
+//    }
 }
