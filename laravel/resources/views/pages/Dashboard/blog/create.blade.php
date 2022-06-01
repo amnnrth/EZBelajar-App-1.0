@@ -59,9 +59,9 @@
 
                                         <div class="col-span-6">
                                             <label for="image" class="block mb-3 font-medium text-gray-700 text-md">Image</label>
-
-                                            <input placeholder="image" type="file" name="image" id="image" autocomplete="image" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('image') }}" required>
-
+                                            <img class="banner-preview img-fluid mb-3 col-sm-3">
+{{--                                            <input placeholder="image" type="file" name="image" id="image" autocomplete="image" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('image') }}" required>--}}
+                                            <input class="form-control block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewBanner()" value="{{ old('image') }}" required>
                                             @if ($errors->has('image'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('image') }}</p>
                                             @endif
@@ -71,7 +71,8 @@
                                             <label for="body" class="block mb-3 font-medium text-gray-700 text-md">Description</label>
 
                                             <input placeholder="body" type="text" name="body" id="body" autocomplete="body" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('body') }}" required>
-
+                                            <trix-editor input="body"></trix-editor>
+{{--                                            @trix(\App\Post::class, 'content')--}}
                                             @if ($errors->has('body'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('body') }}</p>
                                             @endif

@@ -20,6 +20,7 @@ class BankSoalFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
+            'jumlahSoal' => $this->faker->numberBetween(1,10),
             'soal' => $this->faker->file,
             'jawaban' => $this->faker->file,
         ];

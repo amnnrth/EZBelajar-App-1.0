@@ -12,6 +12,9 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BankSoalController;
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CommentController;
+
+use App\Http\Controllers\QuestionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,8 +50,10 @@ use App\Http\Controllers\ProfileController;
 //    })->name('dashboard');
 //});
 
+//testing
+//Route::get('test',[LandingController::class, 'test']);
 
-Route::resource('/', LandingController::class);
+Route::get('/', [LandingController::class, 'index'])->name('index');
 
 Route::get('belajar', [LandingController::class, 'belajar'])->name('belajar.index');
 Route::get('detailbelajar/{title}', [LandingController::class, 'detailbelajar'])->name('detailbelajar');
@@ -60,6 +65,14 @@ Route::get('artikel', [LandingController::class, 'artikel'])->name('artikel');
 Route::get('detailartikel/{slug}', [LandingController::class, 'detailartikel'])->name('detailartikel');
 
 Route::get('tentangkami', [LandingController::class, 'tentangkami'])->name('tentangkami');
+
+
+
+//comment
+//    Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
+//    Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
+Route::post('/comment/reply', [CommentController::class, 'replyStore'])->name('reply.add');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'verified']], function() {
 
@@ -86,9 +99,30 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
 
     //Bank Soal
     Route::resource('banksoal', BankSoalController::class);
+    Route::get('/detailQuiz/{banksoal}', [BankSoalController::class, 'detailQuiz'])
+        ->name('detailQuiz');
 
     //Profile
     Route::resource('profile', ProfileController::class);
     Route::get('delete_photo', [ProfileController::class, 'delete'])->name('delete.photo.profile');
+
+    //Questions
+    Route::get('/createQuestion/{banksoal}', [QuestionsController::class, 'createQuestion'])
+        ->name('createQuestion');
+
+    Route::get('/detailQuestion/{question}', [QuestionsController::class, 'detailQuestion'])
+        ->name('detailQuestion');
+
+    Route::post('/storeQuestion/{banksoal}', [QuestionsController::class, 'storeQuestion'])
+        ->name('storeQuestion');
+    Route::post('/deleteQuestion/{id}', [QuestionsController::class, 'deleteQuestion'])
+        ->name('deleteQuestion');
+
+
+//    //comment
+////    Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+//    Route::resource('comment', CommentController::class);
+////    Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
+//    Route::post('/reply/store', [CommentController::class, 'replyStore'])->name('reply.add');
 
 });

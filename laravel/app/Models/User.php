@@ -64,6 +64,7 @@ class User extends Authenticatable
     // one to one
     public function detail_user()
     {
+//        return $this->hasOne('App\Models\DetailUser', 'user_id');
         return $this->hasOne('App\Models\DetailUser', 'user_id');
     }
 
@@ -83,5 +84,17 @@ class User extends Authenticatable
     public function bank_soal()
     {
         return $this->hasMany('App\Models\BankSoal', 'user_id');
+    }
+
+    //question
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+
+    //header quiz
+    public function quizHeaders()
+    {
+        return $this->hasMany(QuizHeader::class);
     }
 }

@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('bank_soals', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->integer('jumlahSoal');
-            $table->string('soal');
-            $table->string('jawaban');
+            $table->string('description');
+//            $table->string('soal');
+            $table->string('filePath');
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->enum('is_active', ['0', '1'])->default('1')->nullable();
             $table->timestamps();
         });
     }

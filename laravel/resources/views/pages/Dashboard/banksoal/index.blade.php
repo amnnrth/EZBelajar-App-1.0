@@ -76,6 +76,7 @@
                                 <tr class="text-sm font-normal text-left text-gray-900 border-b border-b-gray-600">
                                     <th class="py-4" scope="">No</th>
                                     <th class="py-4" scope="">Nama Soal</th>
+                                    <th class="py-4 text-center" scope="">Quiz</th>
                                     <th class="py-4" scope="">Tanggal Input</th>
                                     <th class="py-4" scope="">User</th>
                                     <th class="py-4" scope="">Action</th>
@@ -98,31 +99,31 @@
                                             {{ $bank_soal->title ?? '' }}
                                         </td>
                                         <td class="px-1 py-5 text-sm">
+                                            <a href="{{ route('admin.detailQuiz',$bank_soal->id) }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">
+                                                Detail
+                                            </a>
+                                        </td>
+                                        <td class="px-1 py-5 text-sm">
                                             {{ $bank_soal->created_at?? '' }}
                                         </td>
                                         <td class="px-1 py-5 text-sm">
                                             {{ auth()->user()->first()->name ?? '' }}
                                         </td>
-                                        <form action="{{ route('admin.banksoal.destroy',$bank_soal['id']) }}" method="POST">
-                                            <td class="px-1 py-5 text-sm">
-                                                <a href="{{ route('admin.banksoal.show', $bank_soal['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
-                                                    Show Bank Soal
-                                                </a>
-                                            </td>
-                                            <td class="px-1 py-5 text-sm">
-                                                <a href="{{ route('admin.banksoal.edit', $bank_soal['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
-                                                    Edit Bank Soal
-                                                </a>
-                                            </td>
-
-                                            @csrf
-                                            @method('DELETE')
-                                            <td class="px-1 py-5 text-sm">
-                                                <a>
-                                                    Delete Bank Soal
-                                                </a>
-                                            </td>
+                                        <td>
+                                            <form action="{{ route('admin.banksoal.destroy',$bank_soal['id']) }}" method="POST">
+                                            <a href="{{ route('admin.banksoal.show', $bank_soal['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
+                                                Show Bank Soal
+                                            </a>
+                                            <a href="{{ route('admin.banksoal.edit', $bank_soal['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
+                                                Edit Bank Soal
+                                            </a>
+                                        @csrf
+                                        @method('DELETE')
+                                            <a>
+                                                Delete Bank Soal
+                                            </a>
                                         </form>
+                                        </td>
                                     </tr>
                                     {{ $bank_soals->links() }}
                                 @empty

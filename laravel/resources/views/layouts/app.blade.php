@@ -9,7 +9,7 @@
     @stack('before-style')
 
     @include('includes.dashboard.style')
-
+    @trixassets
     @stack('after-style')
 
 </head>

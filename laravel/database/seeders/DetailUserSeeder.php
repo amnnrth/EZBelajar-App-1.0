@@ -11,7 +11,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 use App\Models\User;
 
-class DetailUserTableSeeder extends Seeder
+class DetailUserSeeder extends Seeder
 {
     /**
      * Run the database seeds.

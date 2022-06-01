@@ -43,27 +43,35 @@
                                     <div class="flex-1">
                                         <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">{{ $post->title }}</h3>
                                         <p class="mt-3 text-base leading-6 text-gray-500">
-                                            @if (strlen($post->text) > 200)
-                                                {{ substr($post->text, 0, 200) }}...
+                                            @if (strlen($post->body) > 200)
+                                                {{ substr($post->body, 0, 200) }}...
                                             @else
-                                                {{ $post->text }}
+                                                {{ $post->body }}
                                             @endif
                                         </p>
                                     </div>
 
                                     <div class="mt-6 flex items-center">
                                         <div class="flex-shrink-0">
-                                            <img class="h-10 w-10 rounded-full" src="{{ url('https://unsplash.com/photos/IF9TK5Uy-KI')}}" alt="author avatar">
+
+                                            @if($post->user->detail_user->first()->photo != null)
+                                                <img class="inline ml-3 h-10 w-10 rounded-full" src="{{ url(Storage::url($post->user->detail_user->first()->photo ?? '')) }}" alt="" loading="lazy" />
+                                            @else
+                                                <svg class="inline ml-3 h-10 w-10 rounded-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                </svg>
+                                            @endif
+
                                         </div>
 
                                         <div class="ml-3">
-                                            <p class="text-sm leading-5 font-medium text-gray-900">{{ $post->user()->first()->name }}</p>
+                                            <p class="text-sm leading-5 font-medium text-gray-900">{{ $post->user()->first()->name ?? ''}}</p>
                                             <div class="flex text-sm leading-5 text-gray-500">
-                                                <time datetime="{{ $post->created_at }}">
-                                                    {{ $post->created_at->diffForHumans() }}
+                                                <time datetime="{{ $post->created_at ?? ''}}">
+                                                    {{ $post->created_at->diffForHumans() ?? ''}}
                                                 </time>
                                                 <span class="mx-1">&middot;</span>
-                                                <span>{{ ceil(strlen($post->text) / 863) }} min read</span>
+                                                <span>{{ ceil(strlen($post->body) / 863) ?? ''}} min read</span>
                                             </div>
                                         </div>
                                     </div>
