@@ -1,21 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-
-use App\Http\Controllers\LandingController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\BelajarController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BankSoalController;
-
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BelajarController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CommentController;
-
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\QuestionsController;
-use App\Http\Controllers\SectionsController;
+use App\Http\Controllers\User\ProfileController;
+use App\Http\Controllers\User\RoleController;
+use App\Http\Controllers\User\UserController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BootcampController;
 
 /*
 |--------------------------------------------------------------------------
@@ -164,6 +160,18 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
     Route::get('/userQuizDetails/{id}', [BankSoalController::class, 'userQuizDetails'])
         ->name('userQuizDetails');
 
+    // bootcamp
+    Route::resource('bootcamp', BootcampController::class);
+    Route::get('/detailBootcamp/{bootcamp}', [BootcampController::class, 'detailBootcamp'])
+        ->name('detailBootcamp');
+    Route::get('/createMateriBootcamp/{bootcamp}', [BootcampController::class, 'createMateriBootcamp'])
+        ->name('createMateriBootcamp');
+    Route::get('/detailMateriBootcamp/{bootcamp}', [BootcampController::class, 'detailMateriBootcamp'])
+        ->name('detailMateriBootcamp');
+    Route::post('/storeMateriBootcamp/{bootcamp}', [BootcampController::class, 'storeMateriBootcamp'])
+        ->name('storeMateriBootcamp');
+    Route::post('/deleteMateriBootcamp/{id}', [BootcampController::class, 'deleteMateriBootcamp'])
+        ->name('deleteMateriBootcamp');
 });
 
 //Route::middleware(['auth', 'verified', 'role:admin|user'])->prefix('user')->group(function () {

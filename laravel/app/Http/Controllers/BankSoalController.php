@@ -3,17 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\BankSoal;
-use App\Models\Belajar;
-//use App\Models\Section;
-use App\Models\Question;
-use App\Models\Quiz;
-use App\Models\QuizHeader;
-use App\Models\User;
-use http\Env\Response;
+use App\Models\Quiz\Question;
+use App\Models\Quiz\Quiz;
+use App\Models\Quiz\QuizHeader;
+use App\Models\User\User;
+use File;
 use Illuminate\Http\Request;
 
-use File;
-use Illuminate\Support\Facades\Storage;
+//use App\Models\Section;
 
 class BankSoalController extends Controller
 {

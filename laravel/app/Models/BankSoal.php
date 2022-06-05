@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\Quiz\Question;
+use App\Models\Quiz\QuizHeader;
+use App\Models\User\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User\User;
 
 class Question extends Model
 {
@@ -35,8 +36,8 @@ class Question extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function section()
-    {
-        return $this->belongsTo(Section::class);
-    }
+//    public function section()
+//    {
+//        return $this->belongsTo(Section::class);
+//    }
 }

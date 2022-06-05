@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Belajar;
-use App\Models\User;
-use Illuminate\Http\Request;
-
 use File;
+use Illuminate\Http\Request;
 
 class BelajarController extends Controller
 {

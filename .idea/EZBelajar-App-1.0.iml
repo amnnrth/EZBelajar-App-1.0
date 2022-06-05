@@ -131,6 +131,8 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/te7a-houdini/laravel-trix" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/realrashid/sweet-alert" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/chartisan/php" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/consoletvs/charts" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

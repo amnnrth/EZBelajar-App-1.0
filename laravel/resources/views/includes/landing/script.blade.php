@@ -7,6 +7,8 @@
         integrity="sha512-/ncZdOhQm5pgj5KHy720Ck7XF5RzYK6rtUsLNnGcitXrKT3wUYzTrPlOSG7SdL2kDzkuLEOFvrQRyllcZkeAlg=="
         crossorigin="anonymous"></script>
 
+<script src="{{ asset('./TW-ELEMENTS-PATH/dist/js/index.min.js')}}"></script>
+
 <!-- Charting library -->
 {{--<script src="{{ url('https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js')}}"></script>--}}
 <!-- Chartisan -->

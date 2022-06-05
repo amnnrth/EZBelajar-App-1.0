@@ -2,12 +2,12 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Quiz;
-use App\Models\Quote;
+use App\Models\Quiz\Quiz;
+use App\Models\Quiz\Quote;
 use App\Models\BankSoal;
 use Livewire\Component;
-use App\Models\Question;
-use App\Models\QuizHeader;
+use App\Models\Quiz\Question;
+use App\Models\Quiz\QuizHeader;
 
 class UserQuizlv extends Component
 {

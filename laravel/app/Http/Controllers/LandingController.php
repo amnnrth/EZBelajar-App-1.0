@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\BankSoal;
 use App\Models\Belajar;
 use App\Models\Post;
-use App\Models\Question;
-use App\Models\Quiz;
-use App\Models\QuizHeader;
-//use App\Models\Section;
-use App\Models\User;
+use App\Models\Quiz\Question;
+use App\Models\Quiz\Quiz;
+use App\Models\Quiz\QuizHeader;
 use Illuminate\Http\Request;
+
+//use App\Models\Section;
 
 class LandingController extends Controller
 {

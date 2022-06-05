@@ -30,10 +30,6 @@ class QuestionsController extends Controller
 //        $bankSoal = BankSoal::find($bankSoal->id);
 //        $bankSoal = BankSoal::find($bankSoal->id);
 
-//        $bankSoal = BankSoal::find($bankSoal);
-
-        $bankSoal = $bankSoal;
-
         $data = $request->validate([
             'question' => ['required', Rule::unique('questions')],
             'explanation' => 'required',
@@ -49,10 +45,7 @@ class QuestionsController extends Controller
             'is_active' => $request->is_active,
             'user_id' => Auth::id(),
             'bank_soal_id' => Auth::user()->bank_soal()->first()->id,
-//            'bank_soal_id' => $bankSoal->id
         ]);
-
-//        dd($question);
 
 //        return $data;
 //        return $question;

@@ -23,9 +23,9 @@
                 <a href="#">
                     <button class="lg:bg-ezb-services-bg py-2 px-5 my-3">Download Jawaban</button>
                 </a>
-                <a href="{{ route('banksoal.quiz')}}">
-                    <button class="lg:bg-ezb-services-bg py-2 px-5 my-3">Mulai Quiz</button>
-                </a>
+{{--                <a href="{{ route('startQuiz')}}">--}}
+{{--                    <button class="lg:bg-ezb-services-bg py-2 px-5 my-3">Mulai Quiz</button>--}}
+{{--                </a>--}}
 
             </div>
         </div>

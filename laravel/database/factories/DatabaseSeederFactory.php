@@ -2,11 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
-use App\Models\Post;
 use App\Models\Belajar;
 use App\Models\Comment;
-
+use App\Models\Post;
+use App\Models\User\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

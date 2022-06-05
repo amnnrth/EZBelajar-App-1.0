@@ -126,6 +126,8 @@
       <path value="$PROJECT_DIR$/laravel/vendor/composer" />
       <path value="$PROJECT_DIR$/laravel/vendor/te7a-houdini/laravel-trix" />
       <path value="$PROJECT_DIR$/laravel/vendor/realrashid/sweet-alert" />
+      <path value="$PROJECT_DIR$/laravel/vendor/chartisan/php" />
+      <path value="$PROJECT_DIR$/laravel/vendor/consoletvs/charts" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
