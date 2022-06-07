@@ -60,8 +60,10 @@ class QuestionsController extends Controller
 //        dd($question);
 
         $status = $question->answers()->createMany($data['answers'])->push();
+
+        toast()->success('Question created successfully', 'success');
         return redirect()->route('admin.detailQuiz', $bankSoal->id)
-            ->withSuccess('Question created successfully');
+            ->with('Question created successfully');
     }
 
     function deleteQuestion($id)
@@ -71,6 +73,6 @@ class QuestionsController extends Controller
 
 //        return redirect()->route('admin.banksoal.index');
         return redirect()->route('admin.detailBankSoal', $question->banksoal->id)
-            ->withSuccess('Question with id: ' . $question->id . ' deleted successfully');
+            ->with('Question with id: ' . $question->id . ' deleted successfully');
     }
 }

@@ -12,8 +12,8 @@
                         <h2 class="mt-8 mb-1 text-2xl font-semibold text-gray-700">
                             Video
                         </h2>
-                        <p clxass="text-sm text-gray-400">
-                            {{ auth()->user()->belajar()->count() }} Total Video
+                        <p class="text-sm text-gray-400">
+                            {{ $belajars->count() }} Total Video
                         </p>
                     </div>
 {{--                    <div class="col-span-4 lg:text-right">--}}

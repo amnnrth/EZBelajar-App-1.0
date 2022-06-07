@@ -116,8 +116,8 @@ class BelajarController extends Controller
 //
 //        Belajar::create($input);
 
-
-        return redirect()->route('admin.belajar.index')->with('success', 'Berhasil menambahkan data');
+        toast()->success('Video berhasil ditambahkan', 'Berhasil');
+        return redirect()->route('admin.belajar.index');
     }
 
     /**

@@ -101,13 +101,22 @@ class LandingController extends Controller
 
         if (request('search'))
         {
+//            $posts = Belajar::where('title', 'LIKE', '%' . request('search') . '%')
+//                ->with([
+//                    'user:id,name',
+//                    'comments.user:id,name',
+//                    'comments.replies.user:id,name',
+//                    'comments.replies.replies.user:id,name',
+//                    'comments.replies.replies.replies.user:id,name'])
+//                ->get();
+
             $posts = Belajar::where('title', 'LIKE', '%' . request('search') . '%')
-                ->with([
-                    'user:id,name',
-                    'comments.user:id,name',
-                    'comments.replies.user:id,name',
-                    'comments.replies.replies.user:id,name',
-                    'comments.replies.replies.replies.user:id,name'])
+//                ->with([
+//                    'user:id,name',
+//                    'comments.user:id,name',
+//                    'comments.replies.user:id,name',
+//                    'comments.replies.replies.user:id,name',
+//                    'comments.replies.replies.replies.user:id,name'])
                 ->get();
         }
 
@@ -116,6 +125,7 @@ class LandingController extends Controller
 
     public function detailBelajar($title)
     {
+//        $post = Belajar::where('title',$title)->first();
         $post = Belajar::where('title',$title)->first();
         return view('pages.Landing.video.detail-belajar',compact('post'));
     }

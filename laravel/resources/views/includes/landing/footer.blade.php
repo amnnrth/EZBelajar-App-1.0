@@ -1,6 +1,6 @@
 <!-- footer -->
 <footer class="footer bg-ezb-bg relative py-2">
-    <div class="mx-auto lg:px-16 md:px-20 px-8 py-8 ">
+    <div class="mx-auto lg:px-16 md:px-20 px-8 py-8 text-white">
         <div class="sm:flex sm:mt-16">
             <div class="mt-8 sm:mt-0 sm:w-full flex flex-col md:flex-row justify-between">
                 <div class="flex-1 mt-2 flex-col">
@@ -39,7 +39,7 @@
                     <h4 class="font-medium text-black text-lg mt-4 md:mt-0 mb-4">Alamat</h4>
                     <div class="my-3">
                         <a href="https://goo.gl/maps/jEHAHmtTotqSsC2C7">
-                            <p class="text-black font-light">
+                            <p class="text-white font-light">
                                 Jl. Raya Kb. Jeruk No.27, RW.9, Kb. Jeruk, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11530
                             </p>
                         </a>

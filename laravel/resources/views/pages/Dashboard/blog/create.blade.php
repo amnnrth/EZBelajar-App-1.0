@@ -2,6 +2,15 @@
 
 @section('title', ' Create Artikel')
 
+@push('after-style')
+    <style>
+        trix-toolbar [data-trix-button-group="file-tools"]
+        {
+            display: none;
+        }
+    </style>
+@endpush
+
 @section('content')
 
     <main class="h-full overflow-y-auto">
@@ -101,3 +110,16 @@
     </main>
 
 @endsection
+
+@push('after-script')
+    <script>
+        document.addEventListener('trix-file-accept', function(event) {
+            event.preventDefault();
+            // var file = event.file;
+            // var url = URL.createObjectURL(file);
+            // var preview = document.querySelector('.banner-preview');
+            // preview.src = url;
+        });
+    </script>
+@endpush
+

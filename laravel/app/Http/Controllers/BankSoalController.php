@@ -129,6 +129,7 @@ class BankSoalController extends Controller
 //
 //        BankSoal::create($input);
 
+        toast()->success('Data Bank Soal berhasil ditambahkan', 'Berhasil');
         return redirect()->route('admin.banksoal.index')->withsuccess('success', 'Data berhasil ditambahkan');
 
     }

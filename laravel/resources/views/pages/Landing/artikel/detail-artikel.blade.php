@@ -120,9 +120,13 @@
                         </div>
 
                         <h2 class="mt-6 md:text-4xl leading-10 tracking-tight font-bold text-gray-900 text-center">{{ $post->title ?? ''}}</h2>
-                        <p class="mt-6 leading-6 text-gray-500">{!! $post->trix('body') !!}</p>
+{{--                        <p class="mt-6 leading-6 text-gray-500">{!! $post->trix('body') !!}</p>--}}
+                <trix-editor class="trix-content">
+                            <div class="trix-content">{!! $post->body ?? ''!!}</div>
+                </trix-editor>
 
-                </div>
+
+            </div>
 
             @include('components.comment.index',['comments' => $post->comments, 'post_id' => $post->id])
 

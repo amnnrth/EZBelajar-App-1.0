@@ -107,6 +107,7 @@ class BlogController extends Controller
         $post->user_id = $user_id;
         $post->save();
 
+        toast()->success('Blog created successfully', 'Success');
         return redirect()->route('admin.artikel.index')->with('success', 'Post created successfully');
     }
 

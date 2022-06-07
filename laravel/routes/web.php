@@ -51,26 +51,6 @@ use App\Http\Controllers\BootcampController;
 //Route::get('test',[LandingController::class, 'test']);
 
 // Testing
-Route::get('/createSection', [SectionsController::class, 'createSection'])
-    ->name('createSection');
-
-Route::post('/deleteSection/{id}', [SectionsController::class, 'deleteSection'])
-    ->name('deleteSection');
-
-Route::post('/storeSection/section', [SectionsController::class, 'storeSection'])
-    ->name('storeSection');
-
-Route::get('/editSection/{section}', [SectionsController::class, 'editSection'])
-    ->name('editSection');
-
-Route::post('/updateSection/{section}', [SectionsController::class, 'updateSection'])
-    ->name('updateSection');
-
-Route::get('/listSection', [SectionsController::class, 'listSection'])
-    ->name('listSection');
-
-Route::get('/detailSection/{section}', [SectionsController::class, 'detailSection'])
-    ->name('detailSection');
 
 Route::get('/createQuestion/{section}', [QuestionsController::class, 'createQuestion'])
     ->name('createQuestion');
@@ -97,7 +77,7 @@ Route::get('detailartikel/{slug}', [LandingController::class, 'detailartikel'])-
 Route::get('tentangkami', [LandingController::class, 'tentangkami'])->name('tentangkami');
 
 Route::get('/startQuiz', [LandingController::class, 'startQuiz'])
-    ->name('startQuiz');
+    ->name('startQuiz')->middleware('auth');
 Route::get('/userQuizDetails/{id}', [LandingController::class, 'userQuizDetails'])
     ->name('userQuizDetails');
 

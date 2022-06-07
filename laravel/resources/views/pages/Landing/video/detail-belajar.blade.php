@@ -13,7 +13,7 @@
 
             <div class="flex mx-auto items-center justify-center shadow-lg mt-56 mx-8 mb-4 max-w-lg" style="width: 640px; height: 480px; position: relative;">
 
-                <iframe src="{{ $post->link }}"   width="640" height="480" frameborder="0" scrolling="no" seamless=""></iframe>
+                <iframe src="{{ $post->link ?? ''}}"   width="640" height="480" frameborder="0" scrolling="no" seamless=""></iframe>
 
                 <div style="width: 80px; height: 80px; position: absolute; opacity: 0; right: 0px; top: 0px;">&nbsp;</div>
             </div>

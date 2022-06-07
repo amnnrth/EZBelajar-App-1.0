@@ -6,3 +6,10 @@
 
 {{-- CSRF Token --}}
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
+{{--TRIX--}}
+<link rel="stylesheet" type="text/css" href="{{ asset('css/trix.css')}}">
+<script type="text/javascript" src="{{ asset('js/trix.js') }}"></script>
+
+@trixassets
+
