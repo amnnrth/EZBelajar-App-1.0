@@ -223,7 +223,8 @@ class BelajarController extends Controller
 //        $belajar->find($belajar->id)->delete();
         $belajar->delete();
 
-        return redirect()->route('pages.Dashboard.belajar.index')->with('success', 'Berhasil menghapus data');
+        toast()->success('Berhasil menghapus data video','Berhasil');
+        return redirect()->route('admin.belajar.index');
     }
 
     public function find(Request $request)

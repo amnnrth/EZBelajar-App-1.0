@@ -44,8 +44,9 @@
                                         <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">{{ $post->title }}</h3>
                                         <p class="mt-3 text-base leading-6 text-gray-500">
                                             @if (strlen($post->body) > 200)
-{{--                                                {{ substr($post->body, 0, 200) }}...--}}
-                                                <span class="mx-1">{!! ceil(strlen($post->body) / 863) ?? ''!!}</span>
+{{--                                                {!! substr($post->body, 0, 200) !!}...--}}
+{{--                                                                                                {{ substr($post->body, 0, 200) }}...--}}
+{{--                                                <span class="mx-1">{!! ceil(strlen($post->body) / 863) ?? ''!!}</span>--}}
                                             @else
                                                 {!! $post->body ?? '' !!}
 {{--                                                {{ $post->body }}--}}

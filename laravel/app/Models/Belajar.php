@@ -20,6 +20,6 @@ class Belajar extends Model
 
     public function comments()
     {
-        return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
+        return $this->hasMany(Comment::class)->whereNull('parent_id');
     }
 }

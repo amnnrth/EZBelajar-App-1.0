@@ -2840,3 +2840,18 @@ select {
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
 }
+
+.animate-bounce {
+	animation: bounce-in-out 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) both;
+}
+
+@keyframes bounce {
+	0%, 100% {
+		transform: translateY(-25%);
+		animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+	}
+	50% {
+		transform: translateY(0);
+		animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	}
+}

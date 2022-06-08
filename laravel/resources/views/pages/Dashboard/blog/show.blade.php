@@ -3,6 +3,8 @@
 @section('title', ' Show Artikel')
 
 @section('content')
+{{--    @dd($post)--}}
+
 
     <main class="h-full overflow-y-auto">
         <div class="container mx-auto">
@@ -44,17 +46,17 @@
 
                                     <div class="col-span-6">
                                         <label for="title" class="block mb-3 font-medium text-gray-700 text-md">Judul Artikel</label>
-                                        <p class="text-sm text-gray-600">{{ $post->title }}</p>
+                                        <p class="text-sm text-gray-600">{{ $post->title ?? ''}}</p>
                                     </div>
 
                                     <div class="col-span-6">
                                         <label for="description" class="block mb-3 font-medium text-gray-700 text-md">Cover</label>
-                                        <img src="{{ Storage::url($post->imagePath) }}" width="100" alt="" />
+                                        <img src="{{ Storage::url($post->imagePath) ?? ''}}" width="100" alt="" />
                                     </div>
 
                                     <div class="col-span-6">
                                         <label for="link" class="block mb-3 font-medium text-gray-700 text-md">Description</label>
-                                        <p class="text-sm text-gray-600">{{ $post->body }}</p>
+                                        <p class="text-sm text-gray-600">{!! $post->body ?? '' !!}</p>
                                     </div>
                                 </div>
                             </div>
@@ -71,5 +73,6 @@
             </div>
         </section>
     </main>
+
 
 @endsection

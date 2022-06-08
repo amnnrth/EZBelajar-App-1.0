@@ -41,7 +41,7 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeArtikel(Request $request)
     {
 
         $request->validate([
@@ -54,11 +54,41 @@ class CommentController extends Controller
         $post = Post::find($request->get('post_id'));
 //        $post = Post::find($request->input('post_id'));
 //        $post = Post::find($request->get('id', 'post_id'));
-//        dd($post);
+        dd($post);
         $post->comments()->save($comment);
 
 //        $belajar = Belajar::find($request->get('belajar_id'));
 //        $belajar->comments()->save($comment);
+
+        return back();
+    }
+
+    public function storeBelajar(Request $request)
+    {
+
+        $request->validate([
+            'comment' => 'required',
+        ]);
+
+        $comment = new Comment;
+        $comment->comment = $request->comment;
+        $comment->user()->associate($request->user());
+//        $post = Belajar::find($request->get('belajar_id'));
+        $post = Belajar::find($request->get('belajar_id'));
+//        dd($post);
+        $post->comments()->save($comment);
+
+//        $comment = new Comment;
+//        $comment->comment = $request->comment;
+//        $comment->user()->associate($request->user());
+//        $post = Belajar::find($request->get('belajar_id'));
+////        dd($comment);
+//        $post->comments()->save($comment);
+//        $post = Post::find($request->get('belajar_id'));
+//        $belajar = Belajar::find($request->get('belajar_id'));
+//        $belajar->comments()->save($comment);
+
+//        dd($belajar);
 
         return back();
     }
@@ -79,6 +109,8 @@ class CommentController extends Controller
 
 //        $post = Post::find($request->get('id'));
         $post = Post::find($request->get('post_id'));
+
+//        dd($post);
         $post->comments()->save($reply);
 
 //        $belalajar = Belajar::find($request->get('id'));

@@ -113,62 +113,62 @@
 {{--                                    <div class="text-sm text-gray-900">{{ $mainMateriBootcamp->title_study_case ?? ''}}</div>--}}
 {{--                                </td>--}}
 {{--                            </tr>--}}
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <div class="flex items-center">
-                                        <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">
-                                                Description Study Case
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="text-sm text-gray-900">{{ $mainMateriBootcamp->description_study_case ?? ''}}</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <div class="flex items-center">
-                                        <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">
-                                                Status
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    <div class="text-sm text-gray-900">{{ $mainMateriBootcamp->is_active === '1'  ? 'Active' : 'Not Active' ?? ''}}</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4">
-                                    <div class="flex items-center">
-                                        <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">
-                                                Price
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    <div class="text-sm text-gray-900">{{ 'Rp '.number_format($mainMateriBootcamp->price) ?? ''}}</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 ">
-                                    <div class="flex items-center">
-                                        <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">
-                                                Created By
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="text-sm text-gray-900">{{ $mainMateriBootcamp->user->name ?? ''}}</div>
-                                </td>
-                            </tr>
+{{--                            <tr>--}}
+{{--                                <td class="px-6 py-4 ">--}}
+{{--                                    <div class="flex items-center">--}}
+{{--                                        <div class="ml-4">--}}
+{{--                                            <div class="text-sm font-medium text-gray-900">--}}
+{{--                                                Description Study Case--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </td>--}}
+{{--                                <td class="px-6 py-4">--}}
+{{--                                    <div class="text-sm text-gray-900">{{ $mainMateriBootcamp->description_study_case ?? ''}}</div>--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+{{--                            <tr>--}}
+{{--                                <td class="px-6 py-4 ">--}}
+{{--                                    <div class="flex items-center">--}}
+{{--                                        <div class="ml-4">--}}
+{{--                                            <div class="text-sm font-medium text-gray-900">--}}
+{{--                                                Status--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </td>--}}
+{{--                                <td class="px-6 py-4 ">--}}
+{{--                                    <div class="text-sm text-gray-900">{{ $mainMateriBootcamp->is_active === '1'  ? 'Active' : 'Not Active' ?? ''}}</div>--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+{{--                            <tr>--}}
+{{--                                <td class="px-6 py-4">--}}
+{{--                                    <div class="flex items-center">--}}
+{{--                                        <div class="ml-4">--}}
+{{--                                            <div class="text-sm font-medium text-gray-900">--}}
+{{--                                                Price--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </td>--}}
+{{--                                <td class="px-6 py-4 ">--}}
+{{--                                    <div class="text-sm text-gray-900">{{ 'Rp '.number_format($mainMateriBootcamp->price) ?? ''}}</div>--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+{{--                            <tr>--}}
+{{--                                <td class="px-6 py-4 ">--}}
+{{--                                    <div class="flex items-center">--}}
+{{--                                        <div class="ml-4">--}}
+{{--                                            <div class="text-sm font-medium text-gray-900">--}}
+{{--                                                Created By--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </td>--}}
+{{--                                <td class="px-6 py-4">--}}
+{{--                                    <div class="text-sm text-gray-900">{{ $mainMateriBootcamp->user->name ?? ''}}</div>--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
                             </tbody>
                         </table>
                     </div>

@@ -47,6 +47,22 @@
                                     <div class="grid grid-cols-6 gap-6">
 
                                         <div class="col-span-6">
+                                            <label for="users" class="block mb-3 font-medium text-gray-700 text-md">Mentor Bootcamp</label>
+                                            <select name="mentor_id" id="users" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                                <option selected disabled>Select Mentor </option>
+                                                @foreach ($users as $key => $user)
+                                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                                @endforeach
+                                            </select>
+{{--                                            <input placeholder="Bootcamp apa yang ingin kamu tawarkan?" type="text" name="title" id="title" autocomplete="title" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('title') }}" required>--}}
+
+                                            @if ($errors->has('title'))
+                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('title') }}</p>
+                                            @endif
+
+                                        </div>
+
+                                        <div class="col-span-6">
                                             <label for="title" class="block mb-3 font-medium text-gray-700 text-md">Judul Bootcamp</label>
 
                                             <input placeholder="Bootcamp apa yang ingin kamu tawarkan?" type="text" name="title" id="title" autocomplete="title" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('title') }}" required>
@@ -80,7 +96,7 @@
                                         <div class="col-span-6">
                                             <label for="title_study_case" class="block mb-3 font-medium text-gray-700 text-md">Judul Study Case <span class="text-gray-400">(Optional)</span></label>
 
-                                            <input placeholder="Study Case Bootcamp" type="text" name="title_study_case" id="title_study_case" autocomplete="title_study_case" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('title_study_case') }}" required>
+                                            <input placeholder="Study Case Bootcamp" type="text" name="title_study_case" id="title_study_case" autocomplete="title_study_case" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('title_study_case') }}">
 
                                             @if ($errors->has('title_study_case'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('title_study_case') }}</p>
@@ -91,7 +107,7 @@
                                         <div class="col-span-6">
                                             <label for="description_study_case" class="block mb-3 font-medium text-gray-700 text-md">Deskripsi Study Case <span class="text-gray-400">(Optional)</span></label>
 
-                                            <input placeholder="Jelaskan Bootcamp ditawarkan?" type="text" name="description_study_case" id="description_study_case" autocomplete="description_study_case" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('description_study_case') }}" required>
+                                            <input placeholder="Jelaskan Bootcamp ditawarkan?" type="text" name="description_study_case" id="description_study_case" autocomplete="description_study_case" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('description_study_case') }}">
 
                                             @if ($errors->has('description_study_case'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('description_study_case') }}</p>

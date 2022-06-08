@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\BankSoal;
 use App\Models\Belajar;
+use App\Models\Bootcamp\Bootcamp;
+use App\Models\Bootcamp\MainMateriBootcamp;
 use App\Models\Post;
 use App\Models\Quiz\Question;
 use App\Models\Quiz\Quiz;
 use App\Models\Quiz\QuizHeader;
+use App\Models\User\User;
 use Illuminate\Http\Request;
 
 //use App\Models\Section;
@@ -97,7 +100,7 @@ class LandingController extends Controller
     public function belajar()
     {
 
-        $posts = Belajar::all();
+        $posts = Belajar::latest()->get();
 
         if (request('search'))
         {
@@ -111,12 +114,12 @@ class LandingController extends Controller
 //                ->get();
 
             $posts = Belajar::where('title', 'LIKE', '%' . request('search') . '%')
-//                ->with([
-//                    'user:id,name',
-//                    'comments.user:id,name',
-//                    'comments.replies.user:id,name',
-//                    'comments.replies.replies.user:id,name',
-//                    'comments.replies.replies.replies.user:id,name'])
+                ->with([
+                    'user:id,name',
+                    'comments.user:id,name',
+                    'comments.replies.user:id,name',
+                    'comments.replies.replies.user:id,name',
+                    'comments.replies.replies.replies.user:id,name'])
                 ->get();
         }
 
@@ -218,40 +221,30 @@ class LandingController extends Controller
         return view('pages.Landing.artikel.detail-artikel',compact('post'));
     }
 
-    public function test(){
-//        return view('components.modal.reset-password');
+    public function bootcamp()
+    {
+        $posts = Bootcamp::latest()->get();
+
+        if (request('search'))
+        {
+            $posts = Bootcamp::where('title', 'LIKE', '%' . request('search') . '%')
+//                ->with([
+//                    'user:id,name',
+//                    'comments.user:id,name',
+//                    'comments.replies.user:id,name',
+//                    'comments.replies.replies.user:id,name',
+//                    'comments.replies.replies.replies.user:id,name'])
+                ->get();
+        }
+
+        return view('pages.Landing.bootcamp.bootcamp',compact('posts'));
     }
 
-
-//    public function userQuizDetails($id)
-//    {
-//        // Answers with alphabetical choice
-//        $choice = collect(['A', 'B', 'C', 'D']);
-//
-//        //Get quiz summary record for the given quiz
-//        $userQuizDetails = QuizHeader::where('id', $id)
-//            ->with('banksoal')->first();
-//
-//        //Extract question taken by the users stored as a serialized string while takeing the quiz
-//        $quizQuestionsList = collect(unserialize($userQuizDetails->questions_taken));
-//
-//        //Get the actual quiz questiona and answers from Quiz table using quiz_header_id
-//        $userQuiz = Quiz::where('quiz_header_id', $userQuizDetails->id)
-//            ->orderBy('question_id', 'ASC')->get();
-//        //dd($userQuiz);
-//        //Get the Questions and related answers taken by the user during the quiz
-//        $quizQuestions = Question::whereIn('id', $quizQuestionsList)->orderBy('id', 'ASC')->with('answers')->get();
-//
-//        //pass the data using compact to the view to display
-//        return view(
-//            'appusers.userQuizDetail',
-//            compact(
-//                'userQuizDetails',
-//                'quizQuestionsList',
-//                'userQuiz',
-//                'quizQuestions',
-//                'choice'
-//            )
-//        );
-//    }
+    public function detailBootcamp($title)
+    {
+        $post = Bootcamp::where('title',$title)->first();
+        $mentor_id = User::findOrFail($post->mentor_id);
+//        $main_materi = MainMateriBootcamp::where('bootcamp_id',$post->id)->where('main_materi',1)->first();
+        return view('pages.Landing.bootcamp.detail-bootcamp',compact('post','mentor_id'));
+    }
 }

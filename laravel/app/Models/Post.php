@@ -11,6 +11,8 @@ class Post extends Model
 {
     use HasFactory, HasTrixRichText;
 
+    public $table = 'posts';
+
     protected $guarded = [];
 
     protected $fillable = [

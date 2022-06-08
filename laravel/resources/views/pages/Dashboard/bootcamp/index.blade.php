@@ -151,12 +151,12 @@
                                         <form action="{{ route('admin.bootcamp.destroy',$bootcamp['id']) }}" method="POST">
                                             <td class="px-1 py-5 text-sm">
                                                 <a href="{{ route('admin.bootcamp.show', $bootcamp['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
-                                                    Show Bootcamp
+                                                    Show
                                                 </a>
                                             </td>
                                             <td class="px-1 py-5 text-sm">
                                                 <a href="{{ route('admin.bootcamp.edit', $bootcamp['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
-                                                    Edit Bootcamp
+                                                    Edit
                                                 </a>
                                             </td>
 
@@ -164,11 +164,12 @@
                                             @method('DELETE')
                                             <td class="px-1 py-5 text-sm">
                                                 <a>
-                                                    Delete Bootcamp
+                                                    <button onclick="return confirm('Hapus Bootcamp?')"><span data-feather="x-circle">DELETE</span></button>
                                                 </a>
                                             </td>
                                         </form>
                                     </tr>
+                                    {{ $bootcamps->links() }}
                                 @empty
 
                                     {{-- empty --}}

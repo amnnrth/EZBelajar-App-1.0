@@ -219,7 +219,8 @@ class BankSoalController extends Controller
     {
         $banksoal->delete();
 
-        return redirect()->back()->withSuccess('Question created successfully');
+        toast()->success('Data Bank Soal berhasil dihapus', 'Berhasil');
+        return redirect()->back();
 
 //        return redirect()->route('pages.Dashboard.banksoal.index')->with('success', 'Data berhasil dihapus');
     }

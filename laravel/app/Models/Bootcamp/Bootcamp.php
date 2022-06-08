@@ -17,6 +17,7 @@ class Bootcamp extends Model
         'description',
         'price',
         'study_case',
+        'mentor_id',
         'updated_at',
         'created_at',
     ];

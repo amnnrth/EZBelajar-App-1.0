@@ -30,6 +30,8 @@
                        class="block {{ request()->is('tentangkami') ? 'nav-link active font-medium' : 'nav-link text-ezb-text' }}">Tentang Kami</a>
                     <a href="{{ route('artikel') }}"
                        class="block {{ request()->is('artikel') ? 'nav-link active font-medium' : 'nav-link text-ezb-text' }}">Artikel</a>
+                    <a href="{{ route('bootcamp.index') }}"
+                       class="block {{ request()->is('bootcamp') ? 'nav-link active font-medium' : 'nav-link text-ezb-text' }}">Bootcamp</a>
 
                     @auth
 

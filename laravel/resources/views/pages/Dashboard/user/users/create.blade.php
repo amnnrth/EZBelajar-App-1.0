@@ -49,8 +49,8 @@
                                         <div class="col-span-6">
                                             <label for="name" class="block mb-3 font-medium text-gray-700 text-md">Name</label>
 
-{{--                                            <input placeholder="name" type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('name') }}" required>--}}
-                                            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                                            <input placeholder="name" type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('name') }}" required>
+{{--                                            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}--}}
                                             @if ($errors->has('name'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('name') }}</p>
                                             @endif
@@ -60,8 +60,8 @@
                                         <div class="col-span-6">
                                             <label for="email" class="block mb-3 font-medium text-gray-700 text-md">Email</label>
 
-{{--                                            <input placeholder="email" type="text" name="email" id="email" autocomplete="email" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('email') }}" required>--}}
-                                            {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
+                                            <input placeholder="email" type="email" name="email" id="email" autocomplete="email" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('email') }}" required>
+{{--                                            {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}--}}
 
                                             @if ($errors->has('email'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('email') }}</p>
@@ -72,8 +72,8 @@
                                         <div class="col-span-6">
                                             <label for="password" class="block mb-3 font-medium text-gray-700 text-md">Password</label>
 
-{{--                                            <input placeholder="password" type="text" name="password" id="password" autocomplete="password" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('password') }}" required>--}}
-                                            {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control')) !!}
+                                            <input placeholder="password" type="password" name="password" id="password" autocomplete="password" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('password') }}" required>
+{{--                                            {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control')) !!}--}}
 
                                             @if ($errors->has('password'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('password') }}</p>
@@ -84,8 +84,8 @@
                                         <div class="col-span-6">
                                             <label for="confirm-password" class="block mb-3 font-medium text-gray-700 text-md">Confirm Password</label>
 
-{{--                                            <input placeholder="password" type="text" name="password" id="password" autocomplete="password" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('password') }}" required>--}}
-                                            {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
+                                            <input placeholder="confirm-password" type="password" name="confirm-password" id="confirm-password" autocomplete="confirm-password" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('password') }}" required>
+{{--                                            {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}--}}
 
                                             @if ($errors->has('confirm-password'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('confirm-password') }}</p>
@@ -96,8 +96,15 @@
                                         <div class="col-span-6">
                                             <label for="roles[]" class="block mb-3 font-medium text-gray-700 text-md">Role</label>
 
+{{--                                            <select name="mentor_id" id="users" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">--}}
+{{--                                                <option selected disabled>Select Mentor </option>--}}
+{{--                                                @foreach ($roles as $key => $role)--}}
+{{--                                                    <option value="{{ $role->id }}">{{ $role->name }}</option>--}}
+{{--                                                @endforeach--}}
+{{--                                            </select>--}}
+
                                             {{--                                            <input placeholder="name" type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('name') }}" required>--}}
-                                            {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
+                                            {!! Form::select('roles[]', $roles,[], array('class' =>'block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm', 'form-control','multiple')) !!}
 
                                             @if ($errors->has('roles[]'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('roles[]') }}</p>

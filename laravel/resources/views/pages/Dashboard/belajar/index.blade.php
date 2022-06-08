@@ -104,7 +104,6 @@
                                         <td class="px-1 py-5 text-sm">
                                             {{ auth()->user()->first()->name ?? '' }}
                                         </td>
-                                        <form action="{{ route('admin.belajar.destroy',$belajar['id']) }}" method="POST">
                                             <td class="px-1 py-5 text-sm">
                                                 <a href="{{ route('admin.belajar.show', $belajar['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
                                                     Show Belajar
@@ -115,12 +114,12 @@
                                                     Edit Belajar
                                                 </a>
                                             </td>
-
+                                        <form action="{{ route('admin.belajar.destroy',$belajar['id']) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <td class="px-1 py-5 text-sm">
                                                 <a>
-                                                    Delete Belajar
+                                                    <button class="badge bg-danger border-0" onclick="return confirm('Hapus Post?')"><span data-feather="x-circle">DELETE</span></button>
                                                 </a>
                                             </td>
                                         </form>

@@ -49,7 +49,7 @@
 
                                         <div class="col-span-6">
                                             <label for="name" class="block mb-3 font-medium text-gray-700 text-md">Name</label>
-                                            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control block mb-3 font-medium text-gray-700 text-md')) !!}
+                                            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm')) !!}
 {{--                                            <input placeholder="name" type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('name') }}" required>--}}
 
                                             @if ($errors->has('name'))

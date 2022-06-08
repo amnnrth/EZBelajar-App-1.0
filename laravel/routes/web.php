@@ -83,9 +83,14 @@ Route::get('/userQuizDetails/{id}', [LandingController::class, 'userQuizDetails'
 
 //comment
 //    Route::post('/comment/store', 'CommentController@store')->name('comment.add');
-Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
+Route::post('/comment/storeArtikel', [CommentController::class, 'storeArtikel'])->name('comment.addArtikel');
+Route::post('/comment/storeBelajar', [CommentController::class, 'storeBelajar'])->name('comment.addBelajar');
 //    Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
 Route::post('/comment/reply', [CommentController::class, 'replyStore'])->name('reply.add');
+
+//Bootcamo
+Route::get('/bootcamp', [LandingController::class, 'bootcamp'])->name('bootcamp.index');
+Route::get('detailBootcamp/{title}', [LandingController::class, 'detailBootcamp'])->name('detailBootcamp');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'verified']], function() {
 
@@ -168,3 +173,4 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
 //    Route::get('/startQuiz', [AppUserController::class, 'startQuiz'])
 //        ->name('startQuiz');
 //});
+

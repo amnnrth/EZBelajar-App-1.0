@@ -87,27 +87,28 @@
                                         <td class="px-1 py-5 text-sm">
                                             {{ auth()->user()->first()->name ?? '' }}
                                         </td>
-                                        <form action="{{ route('admin.artikel.destroy',$post['id']) }}" method="POST">
                                             <td class="px-1 py-5 text-sm">
-                                                <a href="{{ route('admin.artikel.show', $post['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
+                                                <a href="{{ route('admin.artikel.show', $post->id) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
                                                     Show Artikel
                                                 </a>
                                             </td>
                                             <td class="px-1 py-5 text-sm">
-                                                <a href="{{ route('admin.artikel.edit', $post['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
+                                                <a href="{{ route('admin.artikel.edit', $post->id) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
                                                     Edit Artikel
                                                 </a>
                                             </td>
-
+                                        <form action="{{ route('admin.artikel.destroy',$post->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <td class="px-1 py-5 text-sm">
                                                 <a>
-                                                    Delete Artikel
+                                                    <button class="badge bg-danger border-0" onclick="return confirm('Hapus Post?')"><span data-feather="x-circle">DELETE</span></button>
+{{--                                                    Delete Artikel--}}
                                                 </a>
                                             </td>
                                         </form>
                                     </tr>
+                                    {{ $posts->links() }}
                                 @empty
 
                                     {{-- empty --}}

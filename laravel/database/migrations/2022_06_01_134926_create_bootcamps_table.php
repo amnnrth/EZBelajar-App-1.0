@@ -24,6 +24,7 @@ return new class extends Migration
             $table->longText('thumbnail_bootcamp_study_case')->nullable();
             $table->string('price');
             $table->enum('is_active', ['0', '1'])->default('1')->nullable();
+            $table->foreignId('mentor_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

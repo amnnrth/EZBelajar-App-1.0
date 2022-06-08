@@ -127,23 +127,23 @@
 {{--                            <td class="px-1 py-5 text-sm">--}}
 {{--                                {{ $user->detail_user()->occupation ?? '' }}--}}
 {{--                            </td>--}}
-                            <form action="{{ route('admin.user.destroy',$user->id) }}" method="POST">
+
                                 <td class="px-1 py-5 text-sm">
                                     <a href="{{ route('admin.user.show', $user->id) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
-                                        Show user
+                                        Show
                                     </a>
                                 </td>
                                 <td class="px-1 py-5 text-sm">
                                     <a href="{{ route('admin.user.edit', $user->id) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
-                                        Edit user
+                                        Edit
                                     </a>
                                 </td>
-
+                            <form action="{{ route('admin.user.destroy',$user->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <td class="px-1 py-5 text-sm">
                                     <a>
-                                        Delete user
+                                        <button onclick="return confirm('Hapus User?')"><span data-feather="x-circle">DELETE</span></button>
                                     </a>
                                 </td>
                             </form>
