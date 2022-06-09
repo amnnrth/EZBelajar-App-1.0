@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @dd($post)
+{{--    @dd($post)--}}
 
     <main class="h-full overflow-y-auto">
         <div class="container mx-auto">
@@ -65,7 +65,8 @@
                                         <div class="col-span-6">
                                             <label for="imagePath" class="block mb-3 font-medium text-gray-700 text-md">Cover</label>
 
-                                            <input placeholder="imagePath" type="file" name="imagePath" id="imagePath" autocomplete="imagePath" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('imagePath') }}" required>
+                                            <img src="{{ url(Storage::url($post->imagePath) ?? '') }}" alt="thumbnail bootcamp" class="inline object-cover w-20 h-20 rounded" for="choose">
+                                            <input placeholder="imagePath" type="file" name="imagePath" id="imagePath" autocomplete="imagePath" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" required>
 
                                             @if ($errors->has('imagePath'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('imagePath') }}</p>
@@ -75,8 +76,9 @@
                                         <div class="col-span-6">
                                             <label for="body" class="block mb-3 font-medium text-gray-700 text-md">Description</label>
 
-                                            <input placeholder="body" type="text" name="body" id="body" autocomplete="body" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ $post->body }}" required>
-
+                                            <input placeholder="body" type="hidden" name="body" id="body" autocomplete="body" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{!! $post->body ?? '' !!}" required>
+                                            <trix-editor input="body"></trix-editor>
+                                            {{--                                            @trix(\App\Post::class, 'content')--}}
                                             @if ($errors->has('body'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('body') }}</p>
                                             @endif
@@ -91,7 +93,7 @@
                                     </a>
 
                                     <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-ezb-bg" onclick="return confirm('Are you sure want to submit this data ?')">
-                                        Create Artikel
+                                        Update Artikel
                                     </button>
                                 </div>
 

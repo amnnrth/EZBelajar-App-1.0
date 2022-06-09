@@ -64,8 +64,9 @@
 
 {{--                                        </div>--}}
 
-                                        <div class="ml-3">
+                                        <div class="ml-3 flex inline-block">
 {{--                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>--}}
+                                            <p class="text-4xl font-semibold disc-price blink mr-4" style="text-decoration-line: line-through;">Rp. 5.000.000</p>
                                             <p class="text-4xl font-semibold underline decoration-indigo-500">{{ 'Rp '.number_format($post->price) ?? ''}}</p>
 
 {{--                                            <p class="text-sm leading-5 font-medium text-gray-900">{{ $post->user()->first()->name ?? ''}}</p>--}}

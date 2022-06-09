@@ -4,6 +4,12 @@
 
 @section('content')
 
+{{--    @foreach($main_materi->detail_materi_bootcamp as $materi)--}}
+{{--        @dd($detail_materi)--}}
+{{--    @endforeach--}}
+
+{{--<h1>{{$main_materi->detail_materi_bootcamp }}</h1>--}}
+
     <main class="h-full overflow-y-auto">
 
         <div class="container mx-auto">
@@ -37,11 +43,11 @@
             <div class="grid w-full gap-5 px-10 mx-auto md:grid-cols-8">
                 <div class="col-span-4 lg:text-left">
                     <div class="relative mt-0 md:mt-4 inline-block">
-                        <form action="{{route('admin.deleteMateriBootcamp',$mainMateriBootcamp->id ?? '')}}" method="post">
+                        <form action="{{route('admin.deleteMateriBootcamp',$main_materi->id ?? '')}}" method="post">
                             @csrf
                             <button type="submit">
                                 <a class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">
-                                    Delete Bootcmap
+                                    Delete Materi
                                 </a>
                             </button>
                         </form>
@@ -82,7 +88,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <div class="text-sm text-gray-900">{{ $mainMateriBootcamp->description ?? ''}}</div>
+                                    <div class="text-sm text-gray-900">{{ $main_materi->description ?? ''}}</div>
                                 </td>
                             </tr>
 {{--                            <tr>--}}
@@ -186,19 +192,20 @@
                             </tr>
                             </thead>
                             <tbody class="bg-white">
-                            @foreach($detail_materi as $materi)
+                            @foreach($main_materi->detail_materi_bootcamp as $materi)
+{{--                                @dd($materi)--}}
                                 <tr>
                                     <td class="px-6 py-4">
                                         <div class="flex items-center">
                                             <div class="ml-4">
                                                 <div class="text-sm font-medium text-gray-900">
-{{--                                                    {{ $materi->description ?? ''}}--}}
+                                                    {{ $materi->description ?? ''}}
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="px-6 py-4">
-                                        <div class="@if($materi->is_checked === '1') justify-center mx-auto text-xs font-semibold bg-green-600 @endif justify-center mx-auto text-xs font-semibold  "> {{ $answer->is_checked === '1'  ? 'Correct' : 'Wrong' }}</div>
+{{--                                        <div class="@if($materi->is_checked === '1') justify-center mx-auto text-xs font-semibold bg-green-600 @endif justify-center mx-auto text-xs font-semibold  "> {{ $answer->is_checked === '1'  ? 'Correct' : 'Wrong' }}</div>--}}
                                     </td>
                                     {{--                                <td class="px-6 py-4">--}}
                                     {{--                                    {{ $answer->answe ?? ''}}--}}

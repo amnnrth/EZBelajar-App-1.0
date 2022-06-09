@@ -23,6 +23,7 @@ class DetailBootcamp extends Model
         'duration',
         'media',
         'schedule',
+        'start_bootcamp',
         'participant',
         'updated_at',
         'created_at',

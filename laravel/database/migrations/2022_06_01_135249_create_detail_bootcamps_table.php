@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('duration');
             $table->string('media');
             $table->string('schedule');
+            $table->string('start_bootcamp');
             $table->integer('participant');
             $table->timestamps();
         });

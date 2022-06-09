@@ -13,7 +13,7 @@ class UpdateBootcampRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,27 @@ class UpdateBootcampRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => [
+                'required', 'string', 'max:255',
+            ],
+            'description' => [
+                'nullable', 'string', 'max:5000',
+            ],
+            'thumbnail_bootcamp' => [
+                'nullable', 'file', 'max:1024',
+            ],
+            'title_study_case' => [
+                'required', 'string', 'max:255',
+            ],
+            'description_study_case' => [
+                'nullable', 'string', 'max:5000',
+            ],
+            'thumbnail_bootcamp_study_case' => [
+                'nullable', 'file', 'max:1024',
+            ],
+            'price' => [
+                'required', 'string',
+            ],
         ];
     }
 }

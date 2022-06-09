@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Bootcamp\StoreBootcampRequest;
+use App\Http\Requests\Bootcamp\UpdateBootcampRequest;
 use App\Models\BankSoal;
 use App\Models\Bootcamp\AdvantageBootcamp;
 use App\Models\Bootcamp\BenefitBootcamp;
@@ -118,6 +119,7 @@ class BootcampController extends Controller
         $bootcampDetail->duration = $request->duration;
         $bootcampDetail->media = $request->media;
         $bootcampDetail->schedule = $request->schedule;
+        $bootcampDetail->start_bootcamp = $request->start_bootcamp;
         $bootcampDetail->participant = $request->participant;
         $bootcampDetail->save();
 
@@ -155,21 +157,6 @@ class BootcampController extends Controller
             $advantage_bootcamp->save();
         }
 
-        // add to main materi bootcamp
-        foreach ($data['main-materi-bootcamp'] as $key => $value) {
-            $main_materi_bootcamp = new MainMateriBootcamp;
-            $main_materi_bootcamp->bootcamp_id = $bootcamp->id;
-            $main_materi_bootcamp->description = $value;
-            $main_materi_bootcamp->save();
-        }
-
-        // add to Detail Materi Bootcamp
-        foreach ($data['detail-materi-bootcamp'] as $key => $value) {
-            $detail_materi_bootcamp = new DetailMateriBootcamp;
-            $detail_materi_bootcamp->main_materi_bootcamp_id = $main_materi_bootcamp->id;
-            $detail_materi_bootcamp->description = $value;
-            $detail_materi_bootcamp->save();
-        }
 
 
 //        $bootcamp = new Bootcamp;
@@ -205,9 +192,16 @@ class BootcampController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Bootcamp $bootcamp)
     {
-//        return view('pages.Dashboard.bootcamp.edit');
+        $detail_bootcamp = DetailBootcamp::where('bootcamp_id',$bootcamp->id)->first();
+        $benefit_bootcamp = BenefitBootcamp::where('bootcamp_id',$bootcamp->id)->get();
+        $advantage_bootcamp = AdvantageBootcamp::where('bootcamp_id',$bootcamp->id)->get();
+        $main_materi_bootcamp = MainMateriBootcamp::where('bootcamp_id',$bootcamp->id)->get();
+//        $detail_materi_bootcamp = DetailMateriBootcamp::where('main_materi_bootcamp_id',$main_materi_bootcamp->id)->get();
+
+        $mentor_id = User::all();
+        return view('pages.Dashboard.bootcamp.edit',compact('bootcamp','mentor_id','benefit_bootcamp','advantage_bootcamp','main_materi_bootcamp','detail_bootcamp'));
     }
 
     public function editMainMateri(MainMateriBootcamp $mainMateriBootcamp)
@@ -222,9 +216,38 @@ class BootcampController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateBootcampRequest $request, Bootcamp $bootcamp)
     {
-        //
+        $data = $request->all();
+
+        // update to bootcamp
+        $bootcamp->update($data);
+
+        // update to detail bootcamp
+        $detail_bootcamp = DetailBootcamp::where('bootcamp_id',$bootcamp->id)->first();
+        $detail_bootcamp->update($data);
+
+        // update to benefit bootcamp
+        $benefit_bootcamp = BenefitBootcamp::where('bootcamp_id',$bootcamp->id)->delete();
+        foreach ($data['benefit-bootcamps'] as $key => $value) {
+            $benefit_bootcamp = new BenefitBootcamp;
+            $benefit_bootcamp->bootcamp_id = $bootcamp->id;
+            $benefit_bootcamp->description = $value;
+            $benefit_bootcamp->save();
+        }
+
+        // update to advantage bootcamp
+        $advantage_bootcamp = AdvantageBootcamp::where('bootcamp_id',$bootcamp->id)->delete();
+        foreach ($data['advantage-bootcamps'] as $key => $value) {
+            $advantage_bootcamp = new AdvantageBootcamp;
+            $advantage_bootcamp->bootcamp_id = $bootcamp->id;
+            $advantage_bootcamp->description = $value;
+            $advantage_bootcamp->save();
+        }
+
+        toast()->success('Data Bootcamp berhasil diubah', 'Berhasil');
+        return redirect()->route('admin.bootcamp.index');
+
     }
 
     public function destroy($id)
@@ -302,10 +325,11 @@ class BootcampController extends Controller
 //        }
     }
 
-    public function detailMateriBootcamp(MainMateriBootcamp $mainMateriBootcamp)
+    public function detailMateriBootcamp($id)
     {
-        $detail_materi = $mainMateriBootcamp->detail_materi_bootcamp()->paginate(10);
+        $main_materi = MainMateriBootcamp::findOrFail($id);
+//        $detail_materi = DetailMateriBootcamp::findOrFail($id);
 
-        return view('pages.Dashboard.bootcamp.detail_materi_bootcamp', compact('mainMateriBootcamp', 'detail_materi'));
+        return view('pages.Dashboard.bootcamp.detail_materi_bootcamp', compact('main_materi'));
     }
 }

@@ -278,6 +278,17 @@
                                         </div>
 
                                         <div class="col-span-6">
+                                            <label for="start_bootcamp" class="block mb-3 font-medium text-gray-700 text-md">Jadwal Bootcamp</label>
+
+                                            <input placeholder="Jadwal dimulainya bootcamp" type="text" name="start_bootcamp" id="start_bootcamp" autocomplete="start_bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('start_bootcamp') }}" required>
+
+                                            @if ($errors->has('start_bootcamp'))
+                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('start_bootcamp') }}</p>
+                                            @endif
+
+                                        </div>
+
+                                        <div class="col-span-6">
                                             <label for="participant" class="block mb-3 font-medium text-gray-700 text-md">Participant Bootcamp</label>
 
                                             <input placeholder="Maximal Participant Bootcamp" type="number" name="participant" id="participant" autocomplete="participant" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('participant') }}" required>
@@ -287,52 +298,53 @@
                                             @endif
                                         </div>
 
-                                        <div class="col-span-6">
-                                            <label for="main-materi-bootcamp" class="block mb-2 font-medium text-gray-700 text-md">Main Materi Bootcamp</label>
+{{--                                        <div class="col-span-6">--}}
+{{--                                            <label for="main-materi-bootcamp" class="block mb-2 font-medium text-gray-700 text-md">Main Materi Bootcamp</label>--}}
 
 {{--                                            <p class="block mb-3 text-sm text-gray-700">--}}
 {{--                                                Main Materi?--}}
 {{--                                            </p>--}}
 
-                                            <input placeholder="Main Materi" type="text" name="main-materi-bootcamp[]" id="main-materi-bootcamp" autocomplete="main-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('main-materi-bootcamp[]') }}" required>
+{{--                                            <input placeholder="Main Materi" type="text" name="main-materi-bootcamp[]" id="main-materi-bootcamp" autocomplete="main-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('main-materi-bootcamp[]') }}" required>--}}
 
 
 {{--                                            <input placeholder="Keunggulan Service 2" type="text" name="main-materi-bootcamp[]" id="main-materi-bootcamp" autocomplete="main-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('main-materi-bootcamp[]') }}" required>--}}
 
 {{--                                            <input placeholder="Keunggulan Service 3" type="text" name="main-materi-bootcamp[]" id="main-materi-bootcamp" autocomplete="main-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('main-materi-bootcamp[]') }}" required>--}}
 
-                                            <div id="newDetailMainMenuRow"></div>
+{{--                                            <div id="newDetailMainMenuRow"></div>--}}
 
-                                            <button type="button" class="inline-flex justify-center px-3 py-2 mt-3 text-xs font-medium text-gray-700 bg-gray-100 border border-transparent rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" id="addDetailMainMenuRow">
-                                                Tambahkan Detail Main Materi Bootcamp +
-                                            </button>
+{{--                                            <button type="button" class="inline-flex justify-center px-3 py-2 mt-3 text-xs font-medium text-gray-700 bg-gray-100 border border-transparent rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" id="addDetailMainMenuRow">--}}
+{{--                                                Tambahkan Detail Main Materi Bootcamp +--}}
+{{--                                            </button>--}}
 
-                                            <div id="newMainMateriRow"></div>
-                                            <button type="button" class="inline-flex justify-center px-3 py-2 mt-3 text-xs font-medium text-gray-700 bg-gray-100 border border-transparent rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" id="addMainMateriRow">
-                                                Tambahkan Main Materi Bootcamp +
-                                            </button>
+{{--                                            <div id="newMainMateriRow"></div>--}}
+{{--
+                                   <button type="button" class="inline-flex justify-center px-3 py-2 mt-3 text-xs font-medium text-gray-700 bg-gray-100 border border-transparent rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" id="addMainMateriRow">--}}
+{{--                                                Tambahkan Main Materi Bootcamp +--}}
+{{--                                            </button>--}}
 
-                                        </div>
+{{--                                        </div>--}}
 
-                                        <div class="col-span-6">
-                                            <label for="main-materi-bootcamp" class="block mb-2 font-medium text-gray-700 text-md">Main Materi Bootcamp</label>
+{{--                                        <div class="col-span-6">--}}
+{{--                                            <label for="main-materi-bootcamp" class="block mb-2 font-medium text-gray-700 text-md">Main Materi Bootcamp</label>--}}
 
-                                            {{--                                            <p class="block mb-3 text-sm text-gray-700">--}}
-                                            {{--                                                Main Materi?--}}
-                                            {{--                                            </p>--}}
+{{--                                            --}}{{--                                            <p class="block mb-3 text-sm text-gray-700">--}}
+{{--                                            --}}{{--                                                Main Materi?--}}
+{{--                                            --}}{{--                                            </p>--}}
 
-                                            <input placeholder="Main Materi" type="text" name="main-materi-bootcamp[]" id="main-materi-bootcamp" autocomplete="main-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('main-materi-bootcamp[]') }}" required>
-                                            <input placeholder="Detail Main Materi Bootcmap" type="text" name="detail-materi-bootcamp[]" id="detail-materi-bootcamp" autocomplete="detail-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
-                                            <input placeholder="Detail Main Materi Bootcmap" type="text" name="detail-materi-bootcamp[]" id="detail-materi-bootcamp" autocomplete="detail-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
-                                            {{--                                            <input placeholder="Keunggulan Service 2" type="text" name="main-materi-bootcamp[]" id="main-materi-bootcamp" autocomplete="main-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('main-materi-bootcamp[]') }}" required>--}}
+{{--                                            <input placeholder="Main Materi" type="text" name="main-materi-bootcamp[]" id="main-materi-bootcamp" autocomplete="main-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('main-materi-bootcamp[]') }}" required>--}}
+{{--                                            <input placeholder="Detail Main Materi Bootcmap" type="text" name="detail-materi-bootcamp[]" id="detail-materi-bootcamp" autocomplete="detail-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>--}}
+{{--                                            <input placeholder="Detail Main Materi Bootcmap" type="text" name="detail-materi-bootcamp[]" id="detail-materi-bootcamp" autocomplete="detail-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>--}}
+{{--                                            --}}{{--                                            <input placeholder="Keunggulan Service 2" type="text" name="main-materi-bootcamp[]" id="main-materi-bootcamp" autocomplete="main-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('main-materi-bootcamp[]') }}" required>--}}
 
-                                            {{--                                            <input placeholder="Keunggulan Service 3" type="text" name="main-materi-bootcamp[]" id="main-materi-bootcamp" autocomplete="main-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('main-materi-bootcamp[]') }}" required>--}}
+{{--                                            --}}{{--                                            <input placeholder="Keunggulan Service 3" type="text" name="main-materi-bootcamp[]" id="main-materi-bootcamp" autocomplete="main-materi-bootcamp" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="{{ old('main-materi-bootcamp[]') }}" required>--}}
 
-                                            <div id="newDetailMainMenuRow"></div>
+{{--                                            <div id="newDetailMainMenuRow"></div>--}}
 
-                                            <button type="button" class="inline-flex justify-center px-3 py-2 mt-3 text-xs font-medium text-gray-700 bg-gray-100 border border-transparent rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" id="addDetailMainMenuRow">
-                                                Tambahkan Detail Main Materi Bootcamp +
-                                            </button>
+{{--                                            <button type="button" class="inline-flex justify-center px-3 py-2 mt-3 text-xs font-medium text-gray-700 bg-gray-100 border border-transparent rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" id="addDetailMainMenuRow">--}}
+{{--                                                Tambahkan Detail Main Materi Bootcamp +--}}
+{{--                                            </button>--}}
 
 {{--                                            <div id="newMainMateriRow"></div>--}}
 {{--                                            <button type="button" class="inline-flex justify-center px-3 py-2 mt-3 text-xs font-medium text-gray-700 bg-gray-100 border border-transparent rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" id="addMainMenuRow">--}}
@@ -340,7 +352,7 @@
 {{--                                            </button>--}}
 
 
-                                        </div>
+{{--                                        </div>--}}
 
                                         </div>
 

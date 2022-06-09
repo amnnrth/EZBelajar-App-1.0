@@ -118,16 +118,9 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
-//    public function show(Post $post)
+    public function show($id)
     {
-//        $category = $post->category;
-//P
-//        $relatedPosts = Post::where('category_id', $category->id)->latest()->take(3)->get();
-//        return view('blog.show', compact('post', 'category', 'relatedPosts'));
-//        $post = Post::fi
-
-//        Post::all();
+        $post = Post::findOrFail($id);
 
         return view('pages.Dashboard.blog.show', compact('post'));
     }
@@ -138,11 +131,13 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
 //        if (auth()->user()->id !== $post->user_id) {
 //            return redirect()->route('admin.artikel.index')->with('error', 'You are not authorized to edit this post');
 //        }
+
+        $post = Post::findOrFail($id);
 
         return view('pages.Dashboard.blog.edit', compact('post'));
     }
@@ -156,20 +151,45 @@ class BlogController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        if (auth()->user()->id !== $post->user_id) {
-            return redirect()->route('blog.index')->with('error', 'You are not authorized to edit this post');
-        }
+//        if (auth()->user()->id !== $post->user_id) {
+//            return redirect()->route('blog.index')->with('error', 'You are not authorized to edit this post');
+//        }
 
         $request->validate([
             'title' => 'required',
-            'image' => 'required | image',
-            'body' => 'required'
+//            'imagePath' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'body' => 'required',
+//            'slug' => 'required',
         ]);
 
         $title = $request->input('title');
+        $body = $request->input('body');
+        $postId = Post::latest()->first()->id;
 
-        $postId = $post->id;
         $slug = Str::slug($title, '-') . '-' . $postId;
+
+        if ($request->hasFile('imagePath')) {
+            $imagePath = $request->file('imagePath')->store('public/assets/blog');
+            $post->imagePath = $imagePath;
+        }
+
+        $post->title = $title;
+        $post->body = $body;
+        $post->slug = $slug;
+        $post->user_id = auth()->user()->id;
+//        dd($post);
+        $post->save();
+
+        toast()->success('Artikel berhasil di update', 'Berhasil');
+        return redirect()->route('admin.artikel.index');
+
+//        $title = $request->input('title');
+//
+//        $postId = $post->id;
+//        $slug = Str::slug($title, '-') . '-' . $postId;
+//
+//        toast()->success('Artikel berhasil di update', 'Berhasil');
+//        return redirect()->route('admin.artikel.index');
     }
     /**
      * Remove the specified resource from storage.

@@ -46,10 +46,10 @@
                             Yang Akan Dipelajari </p>
                         <div class="flex-container text-starts">
                             <div class="container" data-aos="zoom-in">
-                                @foreach ($post->advantage_bootcamp as $advantage) <br>
+                                @foreach ($post->advantage_bootcamp as $advantage)
                                     <div class="flex gap-4">
                                         <img src="{{ asset('assets/check.svg')}}" class="w-6 h-6" alt="check">
-                                        <p class="text-black font-semibold mb-4">{{ $advantage->description ?? ''}}</p>
+                                        <p class="text-black font-semibold mb-4">{{ $advantage->description ?? ''}}</p><br>
                                     </div>
                                 @endforeach
 {{--                                <div class="flex gap-4">--}}
@@ -84,6 +84,7 @@
                                 <p class="text-black text-lg mb-3 font-bold">Nama: {{ $mentor_id->name ?? '' }}</p>
                                 <p class="text-black text-lg mb-3 font-bold">Pekerjaan: {{ $mentor_id->detail_user->occupation ?? '' }}</p>
                                 <p class="text-black text-lg mb-3 font-bold">Lulusan: Universitas Bina Nusantara</p>
+
                             </div>
                         </div>
 
@@ -95,85 +96,149 @@
                         <p class="sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black" data-aos="fade-up">
                             Materi yang akan Dipelajari </p>
                         <div class="w-full md:w-4/5">
+                            @foreach ($post->main_bootcamp as $main_materi)
+                            <button class="accordion block p-5 leading-normal cursor-pointer sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black" data-aos="fade-up">
+                                {{ $main_materi->description ?? '' }}</button>
+                            <div class="panel">
+                                @foreach($main_materi->detail_materi_bootcamp as $detail_materi)
+                                <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check">{{ $detail_materi->description ?? '' }}</p>
+{{--                                <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check"> maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>--}}
+                                @endforeach
+                            </div>
+                            @endforeach
+{{--                            <button class="accordion block p-5 leading-normal cursor-pointer sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black" data-aos="fade-up">Day 2</button>--}}
+{{--                            <div class="panel">--}}
+{{--                                <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum</p>--}}
+{{--                                <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check"> maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>--}}
+{{--                            </div>--}}
+{{--                            <button class="accordion block p-5 leading-normal cursor-pointer sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black" data-aos="fade-up">Day 3</button>--}}
+{{--                            <div class="panel">--}}
+{{--                                <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum</p>--}}
+{{--                                <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check"> maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>--}}
+{{--                            </div>--}}
+{{--                            <button class="accordion block p-5 leading-normal cursor-pointer sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black" data-aos="fade-up">Day 4</button>--}}
+{{--                            <div class="panel">--}}
+{{--                                <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum</p>--}}
+{{--                                <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check"> maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>--}}
+{{--                            </div>--}}
+{{--                            <button class="accordion block p-5 leading-normal cursor-pointer sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black" data-aos="fade-up">Day 5</button>--}}
+{{--                            <div class="panel">--}}
+{{--                                <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum</p>--}}
+{{--                                <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check"> maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>--}}
+{{--                            </div>--}}
 
-                            <div class="shadow-md">
-                                <div class="tab w-full overflow-hidden border-t">
-                                    <input class="absolute opacity-0" id="tab-single-one" type="radio" name="tabs2">
-                                    @foreach($post->main_bootcamp as $materi)
-                                    <label class="block p-5 leading-normal cursor-pointer sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black" for="tab-single-one">{{ $materi->description ?? '' }}</label>
 
-                                    <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
-                                        @foreach($materi->detail_materi_bootcamp as $detail_materi)
-                                        <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check">{{ $detail_materi->description ?? '' }}</p>
+                            <p class="sm:text-2xl text-xl text-start font-semibold mb-5 text-blue mt-11" data-aos="fade-up">
+                                Informasi dan Jadwal</p>
+                            <p class="text-start font-normal text-medium-black" data-aos="fade-up">
+                                Belajar lebih efektif dengan <br>
+                                jadwal yang telah disiapkan
+                            </p>
+                            @foreach($post->detail_bootcamp as $detail)
+                            <div class="flex gap-6 mt-11">
+                                <div class="flex-col justify-center px-4 py-2 bccard mt-9" data-aos="fade-up">
+                                    <img src="{{ asset('/assets/Regis.svg') }}" alt="regisicon" class="w-20 mb-5">
+                                    <h1 class="sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black">Registrasi</h1>
+                                    <p class="text-start font-normal mb-5 text-medium-black">Waktu Pendaftaran Bootcamp</p>
+                                    <p class="text-start font-normal mb-5 text-medium-black">{{ $detail->registration ?? '' }}</p>
+                                </div>
+                                <div class="flex-col justify-center px-4 py-2 bccard mt-9" data-aos="fade-up">
+                                    <img src="{{ asset('/assets/Durasi.svg') }}" alt="regisicon" class="w-20 mb-5">
+                                    <h1 class="sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black">Durasi</h1>
+                                    <p class="text-start font-normal mb-5 text-medium-black">Durasi Pelaksanaan Bootcamp</p>
+                                    <p class="text-start font-normal mb-5 text-medium-black">{{ $detail->duration ?? '' }}</p>
+                                </div>
+                                <div class="flex-col justify-center px-4 py-2 bccard mt-9" data-aos="fade-up">
+                                    <img src="{{ asset('/assets/Jadwal.svg') }}" alt="regisicon" class="w-20 mb-5">
+                                    <h1 class="sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black">Jadwal</h1>
+                                    <p class="text-start font-normal mb-5 text-medium-black">Jadwal Pelaksanaan Bootcamp</p>
+                                    <p class="text-start font-normal mb-5 text-medium-black">Senin,Selasa,Rabu (15:00-17:00)</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div class="flex-col justify-center px-4 py-2 bccard mt-9" data-aos="fade-up">
+                                    <img src="{{ asset('/assets/Tanggal.svg') }}" alt="regisicon" class="w-20 mb-5">
+                                    <h1 class="sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black">Waktu Mulai</h1>
+                                    <p class="text-start font-normal mb-5 text-medium-black">Tanggal dimulainya bootcamp</p>
+                                    <p class="text-start font-normal mb-5 text-medium-black">{{ $detail->schedule ?? '' }}</p>
+                                </div>
+                                <div class="flex-col justify-center px-4 py-2 bccard mt-9" data-aos="fade-up">
+                                    <img src="{{ asset('/assets/Media.svg') }}" alt="regisicon" class="w-20 mb-5">
+                                    <h1 class="sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black">Media</h1>
+                                    <p class="text-start font-normal mb-5 text-medium-black">Media Pelaksanaan Bootcamp</p>
+                                    <p class="text-start font-normal mb-5 text-medium-black">{{ $detail->media ?? '' }}</p>
+                                </div>
+                                <div class="flex-col justify-center px-4 py-2 bccard mt-9" data-aos="fade-up">
+                                    <img src="{{ asset('/assets/icondashboard/users.svg') }}" alt="regisicon" class="w-20 mb-5">
+                                    <h1 class="sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black">Partisipan</h1>
+                                    <p class="text-start font-normal mb-5 text-medium-black">Maksimal Partisipan pada Bootcamp</p>
+                                    <p class="text-start font-normal mb-5 text-medium-black">{{ $detail->participant ?? '' }} orang</p>
+                                </div>
+                            </div>
+                            @endforeach
+                            <div class="flex justify-center items-center">
+                                <div class="flex-col justify-center px-4 py-2 bootcampcard mt-9 pt-5 " data-aos="fade-up">
+                                    <h1 class="sm:text-2xl text-xl text-center font-semibold mb-5 text-medium-black">{{ $post->title }}</h1>
+                                    <p class="sm:text-2xl text-xl text-center font-semibold mb-5 disc-price blink mr-4" style="text-decoration-line: line-through;">
+                                       <span>Rp. 5.000.000</span> </p>
+                                    <p class="sm:text-2xl text-xl text-center font-semibold mb-5 text-medium-black">
+                                        {{ 'Rp. '.number_format($post->price) ?? ''}}</p>
+                                    <p class="text-lg leading-relaxed text-serv-text font-light tracking-wide mb-10 lg:mb-18">{{ substr($post->description, 0, 200) ?? '' }}</p>
+                                    <hr class="solid">
+
+
+                                    <div class="container mt-11">
+                                        @foreach($post->advantage_bootcamp as $advantage)
+                                        <div class="flex gap-4">
+                                            <img src="{{ asset('assets/check.svg')}}" class="w-6 h-6" alt="check">
+                                            <p class="text-black mb-4">{{ $advantage->description ?? '' }}</p> <br>
+                                        </div>
                                         @endforeach
+{{--                                        <div class="flex gap-4">--}}
+{{--                                            <img src="{{ asset('assets/check.svg')}}" class="w-6 h-6" alt="check">--}}
+{{--                                            <p class="text-black mb-4">Design project</p>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="flex gap-4">--}}
+{{--                                            <img src="{{ asset('assets/check.svg')}}" class="w-6 h-6" alt="check">--}}
+{{--                                            <p class="text-black mb-4">Konsultasi secara real-time</p>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="flex gap-4">--}}
+{{--                                            <img src="{{ asset('assets/check.svg')}}" class="w-6 h-6" alt="check">--}}
+{{--                                            <p class="text-black mb-4">Dan masih banyak lagi</p>--}}
+{{--                                        </div>--}}
+                                        <div class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">
+                                            <a href="https://api.whatsapp.com/send?phone=6285312727272">
+                                                <button class="lg:bg-serv-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg">
+                                                    Daftar Sekarang
+                                                </button>
+                                            </a>
+                                        </div>
                                     </div>
-                                    @endforeach
                                 </div>
-                                <div class="tab w-full overflow-hidden border-t">
-                                    <input class="absolute opacity-0" id="tab-single-two" type="radio" name="tabs2">
-                                    <label class="block p-5 leading-normal cursor-pointer sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black" for="tab-single-two">Day 2</label>
-                                    <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
-                                        <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum</p>
-                                        <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check"> maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
-                                    </div>
-                                </div>
-{{--                                <div class="tab w-full overflow-hidden border-t">--}}
-{{--                                    <input class="absolute opacity-0" id="tab-single-three" type="radio" name="tabs2">--}}
-{{--                                    <label class="block p-5 leading-normal cursor-pointer sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-blac" for="tab-single-three">Day 3</label>--}}
-{{--                                    <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">--}}
-{{--                                        <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum</p>--}}
-{{--                                        <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check"> maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="tab w-full overflow-hidden border-t">--}}
-{{--                                    <input class="absolute opacity-0" id="tab-single-four" type="radio" name="tabs2">--}}
-{{--                                    <label class="block p-5 leading-normal cursor-pointer sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-blac" for="tab-single-four">Day 4</label>--}}
-{{--                                    <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">--}}
-{{--                                        <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum</p>--}}
-{{--                                        <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check"> maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                                <div class="tab w-full overflow-hidden border-t">--}}
-{{--                                    <input class="absolute opacity-0" id="tab-single-five" type="radio" name="tabs2">--}}
-{{--                                    <label class="block p-5 leading-normal cursor-pointer sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-blac" for="tab-single-five">Day 5</label>--}}
-{{--                                    <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">--}}
-{{--                                        <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum</p>--}}
-{{--                                        <p class="p-5 flex gap-4"><img src="{{ asset('assets/check.svg')}}" class="w-6 h-5" alt="check"> maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-
                             </div>
                         </div>
-
-
-                    <!-- <div class="container flex mx-auto justify-center">
-    <div class="flex gap-6">
-{{--        <img src="{{ asset('/assets/images/FotoDepan.jpg') }}" alt="ProfileLecturer" data-aos="fade-right">--}}
-        <div class="flex-col">
-            <h1 class="text-black-1 lg:leading-normal sm:text-4xl lg:text-5xl text-3xl mb-5 font-semibold lg:mt-20" data-aos="zoom-in">UI & UX Design</h1>
-                <div class="grid grid-cols-1 md:grid-cols-2">
-                    <p>Kamu akan mempelajari secara menyeluruh berbagai keterampilan yang dibutuhkan seorang UI/UX Designer mulai dari fundamental UI/UX Design
-                        hingga mampu mendesain website atau aplikasi yang berorientasi pada kebutuhan pengguna.</p>
                     </div>
-                        <br>
-                    <p>Benefit yang didapatkan :</p>
-                    <br>
-                        <li>Sistem E-Learning yang Praktis dan Lengkap</li>
-                        <li>Keterampilan UI/UX Design Sesuai Kebutuhan Industri</li>
-                        <li>Praktisi Terbaik di Industri</li>
-                        <li>Praktisi Terbaik di Industr</li>
-                        <li>Praktisi Terbaik di Industr</li>
-                        <li>Praktisi Terbaik di Industr</li>
-{{--                    <a href="{{ route('kelas.bootcamp.navbar.pages') }}">--}}
-                    <button class="bg-serv-bg py-4 px-12">$9.99</button>
-                    </a>
+                </div>
+            </div>
         </div>
-    </div>-->
-                        <!-- <div class="w-full"> -->
-                    <!-- <img src="{{asset('assets/Vector8.png')}}" alt="Background"> -->
-                        <!-- </div> -->
-                        <!--</div> -->
+    </div>
 
 @endsection
+
+@push('after-script')
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+@endpush
