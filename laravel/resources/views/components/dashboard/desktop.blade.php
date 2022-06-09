@@ -102,7 +102,7 @@
                         <rect x="14" y="3" width="7" height="7" rx="2" fill="#082431" />
                         <rect x="14" y="14" width="7" height="7" rx="2" fill="#082431" />
                     </svg> -->
-                    <img src="{{ asset('/assets/icondashboard/film.svg') }}" alt="Video">
+                    <img src="{{ asset('/assets/icondashboard/quiz.svg') }}" alt="Quiz" class="w-6">
                     <span class="ml-4">Quiz</span>
                     {{--                    <span--}}
                     {{--                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">--}}
@@ -228,7 +228,7 @@
                         <line x1="7.75" y1="11.25" x2="16.25" y2="11.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
                       A  <line x1="7.75" y1="15.25" x2="16.25" y2="15.25" stroke="white" stroke-width="1.5" stroke-linecap="round" />
                     </svg> -->
-                    <img src="{{ asset('/assets/icondashboard/users.svg') }}" alt="users">
+                    <img src="{{ asset('/assets/icondashboard/user-check.svg') }}" alt="Role">
                     <span class="ml-4">Role</span>
                     {{--                    <span--}}
                     {{--                        class="inline-flex items-center justify-center px-3 py-2 ml-auto text-xs font-bold leading-none text-green-500 rounded-full bg-ezb-green-badge">--}}
@@ -276,7 +276,7 @@
                         <path d="M17.75 14.299C18.1642 13.5816 19.0816 13.3358 19.799 13.75C20.5165 14.1642 20.7623 15.0816 20.3481 15.799L19.5981 17.0981L17.9314 19.9848C17.715 20.3596 17.383 20.6541 16.985 20.8241L15.4217 21.4919C15.3603 21.518 15.2911 21.478 15.2831 21.4119L15.0797 19.7241C15.028 19.2944 15.117 18.8596 15.3333 18.4848L17 15.5981L17.75 14.299Z" fill="white" />
                         <path d="M17 15.5981L15.3333 18.4848C15.117 18.8596 15.028 19.2944 15.0797 19.7241L15.2831 21.4119C15.2911 21.478 15.3603 21.518 15.4217 21.4919L16.985 20.8241C17.383 20.6541 17.715 20.3596 17.9314 19.9848L19.5981 17.0981M17 15.5981L17.75 14.299C18.1642 13.5816 19.0816 13.3358 19.799 13.75V13.75C20.5165 14.1642 20.7623 15.0816 20.3481 15.799L19.5981 17.0981M17 15.5981L19.5981 17.0981" stroke="#082431" stroke-width="1.5" />
                     </svg> -->
-                    <img src="{{ asset('/assets/icondashboard/file-text.svg') }}" alt="Bootcamp">
+                    <img src="{{ asset('/assets/icondashboard/bootcamp.svg') }}" alt="Bootcamp" class="w-6">
                     <span class="ml-4">Bootcamp</span>
                 </a>
             </li>

@@ -17,11 +17,11 @@
                     <span class="text-black font-light">10</span></p>
                 <br>
                 <a href="{{ route('startQuiz') }}">
-                    <button class="lg:bg-ezb-services-bg py-2 px-10 my-3">Quizl</button>
+                    <button class="lg:bg-ezb-services-bg py-2 px-10 my-3 text-white">Quizl</button>
                 </a>
                 <br>
                 <a href="#">
-                    <button class="lg:bg-ezb-services-bg py-2 px-5 my-3">Download Jawaban</button>
+                    <button class="lg:bg-ezb-services-bg py-2 px-5 my-3 text-white">Download</button>
                 </a>
 {{--                <a href="{{ route('startQuiz')}}">--}}
 {{--                    <button class="lg:bg-ezb-services-bg py-2 px-5 my-3">Mulai Quiz</button>--}}

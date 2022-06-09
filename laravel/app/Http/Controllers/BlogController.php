@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 //use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
-    function __construct(){
-        $this->middleware('permission:post-list|post-create|post-edit|post-delete')->only(['index','show']);
-        $this->middleware('permission:post-create')->only(['create','store']);
-        $this->middleware('permission:post-edit')->only(['edit','update']);
-        $this->middleware('permission:post-delete')->only(['destroy']);
-    }
+//    function __construct(){
+//        $this->middleware('permission:post-list|post-create|post-edit|post-delete')->only(['index','show']);
+//        $this->middleware('permission:post-create')->only(['create','store']);
+//        $this->middleware('permission:post-edit')->only(['edit','update']);
+//        $this->middleware('permission:post-delete')->only(['destroy']);
+//    }
 
     /**
      * Display a listing of the resource.
@@ -107,10 +108,11 @@ class BlogController extends Controller
         $post->user_id = $user_id;
         $post->save();
 
+        toast()->success('Blog created successfully', 'Success');
         return redirect()->route('admin.artikel.index')->with('success', 'Post created successfully');
     }
 
-    /**
+    /**P
      * Display the specified resource.
      *
      * @param  int  $id
@@ -120,10 +122,12 @@ class BlogController extends Controller
 //    public function show(Post $post)
     {
 //        $category = $post->category;
-//
+//P
 //        $relatedPosts = Post::where('category_id', $category->id)->latest()->take(3)->get();
 //        return view('blog.show', compact('post', 'category', 'relatedPosts'));
-//        $post = Post::all();
+//        $post = Post::fi
+
+//        Post::all();
 
         return view('pages.Dashboard.blog.show', compact('post'));
     }
@@ -179,7 +183,12 @@ class BlogController extends Controller
 //            return redirect()->route('blog.index')->with('error', 'You are not authorized to delete this post');
 //        }
 
-        $post->delete();
-        return redirect()->route('pages.Dashboard.blog.index')->with('success', 'Post deleted successfully');
+        if ($post->imagePath) {
+            Storage::delete($post->imagePath);
+        }
+        Post::destroy($post->id);
+
+//        $post->delete();
+        return redirect()->route('admin.artikel.index')->with('success', 'Post deleted successfully');
     }
 }

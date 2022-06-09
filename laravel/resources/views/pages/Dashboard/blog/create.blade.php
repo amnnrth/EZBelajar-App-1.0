@@ -2,6 +2,15 @@
 
 @section('title', ' Create Artikel')
 
+@push('after-style')
+    <style>
+        trix-toolbar [data-trix-button-group="file-tools"]
+        {
+            display: none;
+        }
+    </style>
+@endpush
+
 @section('content')
 
     <main class="h-full overflow-y-auto">
@@ -61,7 +70,7 @@
                                             <label for="image" class="block mb-3 font-medium text-gray-700 text-md">Image</label>
                                             <img class="banner-preview img-fluid mb-3 col-sm-3">
 {{--                                            <input placeholder="image" type="file" name="image" id="image" autocomplete="image" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('image') }}" required>--}}
-                                            <input class="form-control block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewBanner()" value="{{ old('image') }}" required>
+                                            <input class="block w-full py-3 pl-5 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" type="file" id="image" name="image" onchange="previewBanner()" value="{{ old('image') }}" required>
                                             @if ($errors->has('image'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('image') }}</p>
                                             @endif
@@ -70,7 +79,7 @@
                                         <div class="col-span-6">
                                             <label for="body" class="block mb-3 font-medium text-gray-700 text-md">Description</label>
 
-                                            <input placeholder="body" type="text" name="body" id="body" autocomplete="body" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('body') }}" required>
+                                            <input placeholder="body" type="hidden" name="body" id="body" autocomplete="body" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('body') }}" required>
                                             <trix-editor input="body"></trix-editor>
 {{--                                            @trix(\App\Post::class, 'content')--}}
                                             @if ($errors->has('body'))
@@ -101,3 +110,26 @@
     </main>
 
 @endsection
+
+@push('after-script')
+    <script>
+			document.addEventListener('trix-file-accept', function(e){
+				e.preventDefault();
+			})
+
+			function previewBanner(){
+				const banner = document.querySelector('#banner');
+				const bannerPreview = document.querySelector('.banner-preview');
+
+				bannerPreview.style.display = 'block';
+
+				const oFReader = new FileReader();
+				oFReader.readAsDataURL(banner.files[0]);
+
+				oFReader.onload = function (oFREvent){
+					bannerPreview.src = oFREvent.target.result;
+				}
+			}
+    </script>
+@endpush
+

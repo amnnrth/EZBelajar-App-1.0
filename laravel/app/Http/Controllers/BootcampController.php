@@ -10,8 +10,10 @@ use App\Models\Bootcamp\Bootcamp;
 use App\Models\Bootcamp\DetailBootcamp;
 use App\Models\Bootcamp\MainMateriBootcamp;
 use App\Models\Bootcamp\DetailMateriBootcamp;
+use App\Models\User\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use function PHPUnit\Framework\stringContains;
 
 class BootcampController extends Controller
 {
@@ -43,7 +45,8 @@ class BootcampController extends Controller
      */
     public function create()
     {
-        return view('pages.Dashboard.bootcamp.create');
+        $users = User::all();
+        return view('pages.Dashboard.bootcamp.create', compact('users'));
     }
 
     /**
@@ -82,7 +85,8 @@ class BootcampController extends Controller
 //        ]);
 
         $data = $request->all();
-        $data['user_id'] = Auth::user()->id;
+//        $data['user_id'] = Auth::user()->id;
+        $mentor_id = $request->input('mentor_id');
 
         $title = $request->title;
         $description = $request->description;
@@ -105,6 +109,7 @@ class BootcampController extends Controller
         $bootcamp->thumbnail_bootcamp_study_case = $path_study_case;
         $bootcamp->price = $price;
         $bootcamp->user_id = Auth::user()->id;
+        $bootcamp->mentor_id = $mentor_id;
         $bootcamp->save();
 
         $bootcampDetail = new DetailBootcamp();
@@ -187,7 +192,11 @@ class BootcampController extends Controller
      */
     public function show($id)
     {
-        //
+        $bootcamp = Bootcamp::findOrFail($id);
+        // get mentor_id name from table user
+        $mentor_id = User::findOrFail($bootcamp->mentor_id);
+
+        return view('pages.Dashboard.bootcamp.show',compact('bootcamp','mentor_id'));
     }
 
     /**
@@ -216,6 +225,15 @@ class BootcampController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+    public function destroy($id)
+    {
+        $bootcamp = Bootcamp::findOrFail($id);
+        $bootcamp->delete();
+
+        toast()->success('Data Bootcamp berhasil dihapus', 'Berhasil');
+        return redirect()->route('admin.bootcamp.index');
     }
 
     /**

@@ -2327,3 +2327,8 @@ body {
 	background-color: #6574cd; /*.bg-indigo*/
 	color: #f8fafc; /*.text-grey-lightest*/
 }
+
+.profilelecture {
+	width: 500px;
+	height: 300px;
+}

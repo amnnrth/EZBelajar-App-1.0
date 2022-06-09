@@ -60,8 +60,9 @@
                     <button class="lg:bg-ezb-services-bg text-white text-lg ml-23 py-3 px-12 my-2 rounded-lg w-36 ml-21" type="submit">Masuk<br>
                     </button>
 
-                    <a href="#" class="ml-23 py-5">
-                        Belum Punya Akun ? <br><a href="#" class="text-blue-button ml-22" onclick="toggleModal('loginModal');toggleModal('registerModal')">Daftar</a>
+                    <a href="#" class="ml-23 py-5"> <br>
+                        Belum Punya Akun ? <br>
+                        <a href="#" class="text-blue-button ml-22" onclick="toggleModal('loginModal');toggleModal('registerModal')">Daftar</a>
                     </a>
                 </div>
 

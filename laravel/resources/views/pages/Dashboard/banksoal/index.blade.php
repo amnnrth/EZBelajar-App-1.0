@@ -115,15 +115,15 @@
                                         <td>
                                             <form action="{{ route('admin.banksoal.destroy',$bank_soal['id']) }}" method="POST">
                                             <a href="{{ route('admin.banksoal.show', $bank_soal['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
-                                                Show Bank Soal
+                                                Show
                                             </a>
                                             <a href="{{ route('admin.banksoal.edit', $bank_soal['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
-                                                Edit Bank Soal
+                                                Edit
                                             </a>
                                         @csrf
                                         @method('DELETE')
                                             <a>
-                                                Delete Bank Soal
+                                                <button onclick="return confirm('Hapus Bank Soal?')"><span data-feather="x-circle">DELETE</span></button>
                                             </a>
                                         </form>
                                         </td>

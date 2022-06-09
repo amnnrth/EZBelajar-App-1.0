@@ -4,6 +4,8 @@
 
 @section('content')
 
+    @dd($post)
+
     <main class="h-full overflow-y-auto">
         <div class="container mx-auto">
             <div class="grid w-full gap-5 px-10 mx-auto md:grid-cols-12">
