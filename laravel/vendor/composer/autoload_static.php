@@ -202,8 +202,8 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Whoops\\' => 
         array (
@@ -371,8 +371,8 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -617,12 +617,12 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         'App\\Http\\Controllers\\BankSoalController' => __DIR__ . '/../..' . '/app/Http/Controllers/BankSoalController.php',
         'App\\Http\\Controllers\\BelajarController' => __DIR__ . '/../..' . '/app/Http/Controllers/BelajarController.php',
         'App\\Http\\Controllers\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/BlogController.php',
+        'App\\Http\\Controllers\\BootcampController' => __DIR__ . '/../..' . '/app/Http/Controllers/BootcampController.php',
         'App\\Http\\Controllers\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
         'App\\Http\\Controllers\\LandingController' => __DIR__ . '/../..' . '/app/Http/Controllers/LandingController.php',
         'App\\Http\\Controllers\\QuestionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/QuestionsController.php',
-        'App\\Http\\Controllers\\SectionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/SectionsController.php',
         'App\\Http\\Controllers\\User\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/ProfileController.php',
         'App\\Http\\Controllers\\User\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/RoleController.php',
         'App\\Http\\Controllers\\User\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/UserController.php',
@@ -636,8 +636,8 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Http\\Request\\User\\UpdateDetailUserRequest' => __DIR__ . '/../..' . '/app/Http/Request/User/UpdateDetailUserRequest.php',
-        'App\\Http\\Request\\User\\UpdateProfileRequest' => __DIR__ . '/../..' . '/app/Http/Request/User/UpdateProfileRequest.php',
+        'App\\Http\\Requests\\Bootcamp\\StoreBootcampRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Bootcamp/StoreBootcampRequest.php',
+        'App\\Http\\Requests\\Bootcamp\\UpdateBootcampRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Bootcamp/UpdateBootcampRequest.php',
         'App\\Mail\\NewUserNotification' => __DIR__ . '/../..' . '/app/Mail/NewUserNotification.php',
         'App\\Models\\Answer' => __DIR__ . '/../..' . '/app/Models/Answer.php',
         'App\\Models\\BankSoal' => __DIR__ . '/../..' . '/app/Models/BankSoal.php',
@@ -869,6 +869,7 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         'Database\\Seeders\\CreateAdminUserSeeder' => __DIR__ . '/../..' . '/database/seeders/CreateAdminUserSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'Database\\Seeders\\DetailUserSeeder' => __DIR__ . '/../..' . '/database/seeders/DetailUserSeeder.php',
+        'Database\\Seeders\\MainMateriBootcampSeeder' => __DIR__ . '/../..' . '/database/seeders/MainMateriBootcampSeeder.php',
         'Database\\Seeders\\PermissionSeeder' => __DIR__ . '/../..' . '/database/seeders/PermissionSeeder.php',
         'Database\\Seeders\\QuoteSeeder' => __DIR__ . '/../..' . '/database/seeders/QuoteSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
