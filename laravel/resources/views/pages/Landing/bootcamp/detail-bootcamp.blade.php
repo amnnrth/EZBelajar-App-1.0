@@ -20,16 +20,75 @@
                         </p>
                         <div class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">
                             <a href="https://api.whatsapp.com/send?phone=6285312727272">
-                                <button class="lg:bg-serv-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" data-aos="zoom-in">
-                                    {{ 'Rp. '.number_format($post->price) ?? ''}} }}
+                                <button class="lg:bg-ezb-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" data-aos="zoom-in">
+                                    {{ 'Rp. '.number_format($post->price) ?? ''}}
                                 </button>
                             </a>
                         </div>
                     </div>
 
+{{--                    <div class="lg:flex-grow lg:w-1/2 flex flex-col lg:items-start lg:text-left mb-3 md:mb-12 lg:mb-0 items-center text-center">--}}
+{{--                        <h1 class="text-black-1 lg:leading-normal sm:text-4xl lg:text-5xl text-3xl mb-5 font-semibold lg:mt-20" data-aos="zoom-in">--}}
+{{--                            {{ $post->title ?? '' }}--}}
+{{--                        </h1>--}}
+{{--                        <p class="text-lg leading-relaxed text-serv-text font-light tracking-wide mb-10 lg:mb-18 " data-aos="zoom-in">--}}
+{{--                            {{ $post->description ?? '' }}--}}
+{{--                        </p>--}}
+{{--                        <div class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">--}}
+{{--                            <a href="https://api.whatsapp.com/send?phone=6285312727272">--}}
+{{--                                <button class="lg:bg-serv-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" data-aos="zoom-in">--}}
+{{--                                    {{ 'Rp. '.number_format($post->price) ?? ''}} }}--}}
+{{--                                </button>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
                     <div class="w-full lg:w-1/2 text-center lg:justify-start justify-center flex pr-0">
                         <img class="bottom-0 lg:block lg:right-24 md:right-16 sm:right-8 right-8 w-auto"
                              src="{{ Storage::url($post->thumbnail_bootcamp) ?? '' }}" alt="" data-aos="zoom-in"/>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="mx-auto flex pt-16 pb-16 lg:pb-20 lg:px-24 md:px-16 sm:px-8 px-8 lg:flex-row flex-col">
+                    <!-- Left Column -->
+                    <div class="lg:flex-grow lg:w-1/2 flex flex-col lg:items-start lg:text-left mb-3 md:mb-12 lg:mb-0 items-center text-center">
+                        <h1 class="text-black-1 lg:leading-normal sm:text-4xl lg:text-5xl text-3xl mb-5 font-semibold lg:mt-20" data-aos="zoom-in">
+                            <span><strong>STUDY CASE :</strong></span> {{ $post->title_study_case ?? '' }}
+                        </h1>
+                        <p class="text-lg leading-relaxed text-serv-text font-light tracking-wide mb-10 lg:mb-18 " data-aos="zoom-in">
+                            {{ $post->description_study_case ?? '' }}
+                        </p>
+{{--                        <div class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">--}}
+{{--                            <a href="https://api.whatsapp.com/send?phone=6285312727272">--}}
+{{--                                <button class="lg:bg-ezb-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" data-aos="zoom-in">--}}
+{{--                                    {{ 'Rp. '.number_format($post->price) ?? ''}}--}}
+{{--                                </button>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+                    </div>
+
+                    {{--                    <div class="lg:flex-grow lg:w-1/2 flex flex-col lg:items-start lg:text-left mb-3 md:mb-12 lg:mb-0 items-center text-center">--}}
+                    {{--                        <h1 class="text-black-1 lg:leading-normal sm:text-4xl lg:text-5xl text-3xl mb-5 font-semibold lg:mt-20" data-aos="zoom-in">--}}
+                    {{--                            {{ $post->title ?? '' }}--}}
+                    {{--                        </h1>--}}
+                    {{--                        <p class="text-lg leading-relaxed text-serv-text font-light tracking-wide mb-10 lg:mb-18 " data-aos="zoom-in">--}}
+                    {{--                            {{ $post->description ?? '' }}--}}
+                    {{--                        </p>--}}
+                    {{--                        <div class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">--}}
+                    {{--                            <a href="https://api.whatsapp.com/send?phone=6285312727272">--}}
+                    {{--                                <button class="lg:bg-serv-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" data-aos="zoom-in">--}}
+                    {{--                                    {{ 'Rp. '.number_format($post->price) ?? ''}} }}--}}
+                    {{--                                </button>--}}
+                    {{--                            </a>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+
+                    <div class="w-full lg:w-1/2 text-center lg:justify-start justify-center flex pr-0">
+                        <img class="bottom-0 lg:block lg:right-24 md:right-16 sm:right-8 right-8 w-auto"
+                             src="{{ Storage::url($post->thumbnail_bootcamp_study_case) ?? '' }}" alt="" data-aos="zoom-in"/>
                     </div>
 
                 </div>
@@ -208,7 +267,7 @@
 {{--                                        </div>--}}
                                         <div class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">
                                             <a href="https://api.whatsapp.com/send?phone=6285312727272">
-                                                <button class="lg:bg-serv-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg">
+                                                <button class="lg:bg-ezb-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg">
                                                     Daftar Sekarang
                                                 </button>
                                             </a>

@@ -48,9 +48,9 @@
                                     <div class="grid grid-cols-6 gap-6">
 
                                         <div class="col-span-6">
-                                            <label for="title" class="block mb-3 font-medium text-gray-700 text-md">Nama Soal</label>
+                                            <label for="title" class="block mb-3 font-medium text-gray-700 text-md">Title</label>
 
-                                            <input placeholder="Title" type="text" name="title" id="title" autocomplete="title" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ $banksoal->title }}" required>
+                                            <input placeholder="Title" type="text" name="title" id="title" autocomplete="title" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ $banksoal->title ?? '' }}" required>
 
                                             @if ($errors->has('title'))
                                                 <p class="text-red-500 mb-3 text-sm">{{ $errors->first('title') }}</p>
@@ -59,22 +59,47 @@
                                         </div>
 
                                         <div class="col-span-6">
-                                            <label for="soal" class="block mb-3 font-medium text-gray-700 text-md">Soal</label>
+                                            <label for="description" class="block mb-3 font-medium text-gray-700 text-md">Description</label>
 
-                                            <input placeholder="soal" type="file" name="soal" id="soal" autocomplete="soal" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('soal') }}" required>
+                                            {{--                                            <textarea name="" id="" cols="30" rows="10"></textarea>--}}
 
-                                            @if ($errors->has('soal'))
-                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('soal') }}</p>
+                                            <input name="description" value="{{ $banksoal->description ?? '' }}" type="text" id="description" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" required>
+
+                                            @if ($errors->has('description'))
+                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('description') }}</p>
                                             @endif
+
                                         </div>
 
+
+                                        {{--                                        <div class="col-span-6">--}}
+                                        {{--                                            <label for="jumlahSoal" class="block mb-3 font-medium text-gray-700 text-md">Bank Soal</label>--}}
+
+                                        {{--                                            <input placeholder="jumlahSoal" type="text" name="jumlahSoal" id="jumlahSoal" autocomplete="jumlahSoal" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('jumlahSoal') }}" required>--}}
+
+                                        {{--                                            @if ($errors->has('jumlahSoal'))--}}
+                                        {{--                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('jumlahSoal') }}</p>--}}
+                                        {{--                                            @endif--}}
+
+                                        {{--                                        </div>--}}
+
+                                        {{--                                        <div class="col-span-6">--}}
+                                        {{--                                            <label for="soal" class="block mb-3 font-medium text-gray-700 text-md">Soal</label>--}}
+
+                                        {{--                                            <input placeholder="soal" type="file" name="soal" id="soal" autocomplete="soal" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('cover') }}" required>--}}
+
+                                        {{--                                            @if ($errors->has('soal'))--}}
+                                        {{--                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('soal') }}</p>--}}
+                                        {{--                                            @endif--}}
+                                        {{--                                        </div>--}}
+
                                         <div class="col-span-6">
-                                            <label for="jawaban" class="block mb-3 font-medium text-gray-700 text-md">Jawaban</label>
+                                            <label for="filePath" class="block mb-3 font-medium text-gray-700 text-md">Soal & Jawaban</label>
 
-                                            <input placeholder="jawaban" type="file" name="jawaban" id="jawaban" autocomplete="jawaban" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('soal') }}" required>
+                                            <input placeholder="filePath" type="file" name="filePath" id="filePath" autocomplete="filePath" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" value="{{ old('filePath') }}" required>
 
-                                            @if ($errors->has('jawaban'))
-                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('jawaban') }}</p>
+                                            @if ($errors->has('filePath'))
+                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('filePath') }}</p>
                                             @endif
                                         </div>
 
@@ -87,7 +112,7 @@
                                     </a>
 
                                     <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-ezb-bg" onclick="return confirm('Are you sure want to submit this data ?')">
-                                        Create Service
+                                        Update
                                     </button>
                                 </div>
 

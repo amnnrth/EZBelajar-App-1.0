@@ -13,6 +13,8 @@ use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BootcampController;
 
+use App\Http\Controllers\PaymentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +54,9 @@ use App\Http\Controllers\BootcampController;
 
 // Testing
 
+Route::get('payment', [PaymentController::class,'index'])->name('payment');
+Route::post('/payment', [PaymentController::class, 'payment_post']);
+
 Route::get('/createQuestion/{section}', [QuestionsController::class, 'createQuestion'])
     ->name('createQuestion');
 
@@ -70,6 +75,7 @@ Route::get('detailbelajar/{title}', [LandingController::class, 'detailbelajar'])
 
 Route::get('banksoal', [LandingController::class, 'banksoal'])->name('banksoal.index');
 Route::get('detailbanksoal/{title}', [LandingController::class, 'detailbanksoal'])->name('detailbanksoal');
+Route::get('downloadFile/{title}', [LandingController::class, 'downnloadFile'])->name('downloadFile');
 
 Route::get('artikel', [LandingController::class, 'artikel'])->name('artikel');
 Route::get('detailartikel/{slug}', [LandingController::class, 'detailartikel'])->name('detailartikel');

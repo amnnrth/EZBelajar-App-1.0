@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Request\User\User;
+namespace App\Http\Requests\User;
 use Illuminate\App\Http\Request;
 use Illuminate\Foundation\Http\FormRequest;
 use Symfony\Component\HttpFoundaation\Response;
 
-//use Auth;
+use Auth;
 
 class UpdateDetailUserRequest extends FormRequest
 {
@@ -35,6 +35,12 @@ class UpdateDetailUserRequest extends FormRequest
             ],
             'sex' => [
                 'nullable', 'string',
+            ],
+            'link_experience' => [
+                'nullable', 'string',
+            ],
+            'contact_number' => [
+                'required', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'max:12',
             ],
         ];
     }

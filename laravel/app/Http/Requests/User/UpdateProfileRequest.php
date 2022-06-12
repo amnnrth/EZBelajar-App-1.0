@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Request\User\User;
+namespace App\Http\Requests\User;
 use Auth;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Symfony\Component\HttpFoundaation\Response;
 
-;
+//Use Illuminate\Http\Response;
 
 class UpdateProfileRequest extends FormRequest
 {

@@ -20,7 +20,7 @@
                     <button class="lg:bg-ezb-services-bg py-2 px-10 my-3 text-white">Quizl</button>
                 </a>
                 <br>
-                <a href="#">
+                <a href="{{ route('downloadFile',$post->title ?? '') }}" target="_blank">
                     <button class="lg:bg-ezb-services-bg py-2 px-5 my-3 text-white">Download</button>
                 </a>
 {{--                <a href="{{ route('startQuiz')}}">--}}

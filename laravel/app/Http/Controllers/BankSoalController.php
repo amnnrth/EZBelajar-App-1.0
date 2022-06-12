@@ -167,46 +167,37 @@ class BankSoalController extends Controller
     {
         $request->validate([
             'title' => 'required|unique:bank_soals|min:5|max:255',
+            'description' => 'required|min:5|max:255',
+            'filePath' => 'required|mimes:pdf,xlx,docs|max:2048',
         ]);
 
-        $input = $request->all();
-
-//        $soalFile = 'assets/soal/'.$banksoal->soal;
-//        if(File::exists($soalFile)){
-//            File::delete($soalFile);
-//        }else{
-//            File::delete('assets/soal/'.$banksoal->soal);
-//        }
-
-        if ($soal = $request->file('dokumen')) {
-            $destinationPath = 'assets/soal';
-            $soalFile = date('YmdHis') . "." . $soal->getClientOriginalExtension();
-            $soal->move($destinationPath, $soalFile);
-            $input['soal'] = "$soalFile";
-        }else{
-            unset($input['soal']);
+        // check and delete old filePath from storage
+        if (isset($request->filePath)) {
+            $data = explode('storage/', $banksoal->filePath);
+            if (File::exists(storage_path('app/public/assets/BankSoal/' . $data[1]))) {
+                File::delete(storage_path('app/public/assets/BankSoal/' . $data[1]));
+            }else{
+                File::delete(storage_path('app/public/assets/BankSoal/' . $data[1]));
+            }
         }
 
-//        $jawabanFile = 'assets/jawaban/'.$banksoal->jawaban;
-//        if(File::exists($jawabanFile)){
-//            File::delete($jawabanFile);
-//        }else{
-//            File::delete('assets/jawaban/'.$banksoal->jawaban);
-//        }
-
-        if ($jawaban = $request->file('jawaban')) {
-            $destinationPath = 'assets/jawaban';
-            $jawabanSoal = date('YmdHis') . "." . $jawaban->getClientOriginalExtension();
-            $jawaban->move($destinationPath, $jawabanSoal);
-            $input['jawaban'] = "$jawabanSoal";
+        // store filePath to storage
+        if(isset($request->filePath)) {
+            $pathFile = $request->file('filePath')->store('public/assets/BankSoal');
         }else{
-            unset($input['jawaban']);
+            $pathFile = $banksoal->filePath;
         }
 
-        $banksoal->update($input);
+        $user_id = auth()->user()->id;  // get the user id
 
-        return redirect()->route('admin.banksoal.index')->with('success', 'Data berhasil diubah');
+        $banksoal->title = $request->title;
+        $banksoal->description = $request->description;
+        $banksoal->filePath = $pathFile;
+        $banksoal->user_id = $user_id;
+        $banksoal->save();
 
+        toast()->success('Data Bank Soal berhasil diubah', 'Berhasil');
+        return redirect()->route('admin.banksoal.index')->withsuccess('success', 'Data berhasil diubah');
     }
 
     /**

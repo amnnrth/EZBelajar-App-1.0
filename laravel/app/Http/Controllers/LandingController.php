@@ -13,6 +13,10 @@ use App\Models\Quiz\QuizHeader;
 use App\Models\User\User;
 use Illuminate\Http\Request;
 
+
+use File;
+use Illuminate\Support\Facades\Storage;
+
 //use App\Models\Section;
 
 class LandingController extends Controller
@@ -151,6 +155,19 @@ class LandingController extends Controller
     {
         $post = BankSoal::where('title',$title)->first();
         return view('pages.Landing.banksoal.detail-bank-soal',compact('post'));
+    }
+
+    public function downnloadFile($title)
+    {
+        $post = BankSoal::where('title',$title)->first();
+
+//       if want to view/download
+        $file = Storage::get($post->filePath);
+        return response($file, 200)->header('Content-Type', 'application/pdf');
+
+//       if want to direct download
+//        return Storage::download($post->filePath);
+
     }
 
     public function startQuiz()

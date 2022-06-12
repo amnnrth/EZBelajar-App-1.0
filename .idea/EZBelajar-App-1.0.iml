@@ -133,6 +133,7 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/realrashid/sweet-alert" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/chartisan/php" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/consoletvs/charts" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/midtrans/midtrans-php" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

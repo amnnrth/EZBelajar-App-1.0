@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->longText('photo')->nullable();
-//            $table->foreignId('role_id')->references('id')->on('roles')->onDelete('cascade');
+            $table->string('contact_number')->nullable();
             $table->string('occupation')->nullable();
             $table->string('sex')->nullable();
+            $table->string('link_experience')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

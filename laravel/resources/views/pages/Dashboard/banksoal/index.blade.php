@@ -76,7 +76,7 @@
                                 <tr class="text-sm font-normal text-left text-gray-900 border-b border-b-gray-600">
                                     <th class="py-4" scope="">No</th>
                                     <th class="py-4" scope="">Nama Soal</th>
-                                    <th class="py-4 text-center" scope="">Quiz</th>
+{{--                                    <th class="py-4 text-center" scope="">Quiz</th>--}}
                                     <th class="py-4" scope="">Tanggal Input</th>
                                     <th class="py-4" scope="">User</th>
                                     <th class="py-4" scope="">Action</th>
@@ -98,14 +98,11 @@
                                         <td class="px-1 py-5 text-sm">
                                             {{ $bank_soal->title ?? '' }}
                                         </td>
-                                        <td class="px-1 py-5 text-sm">
-{{--                                            <a href="{{ route('admin.createQuestion',$bank_soal->id) }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">--}}
-{{--                                                Create--}}
+{{--                                        <td class="px-1 py-5 text-sm">--}}
+{{--                                            <a href="{{ route('admin.detailQuiz',$bank_soal->id) }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">--}}
+{{--                                                Detail--}}
 {{--                                            </a>--}}
-                                            <a href="{{ route('admin.detailQuiz',$bank_soal->id) }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">
-                                                Detail
-                                            </a>
-                                        </td>
+{{--                                        </td>--}}
                                         <td class="px-1 py-5 text-sm">
                                             {{ $bank_soal->created_at?? '' }}
                                         </td>
@@ -114,7 +111,8 @@
                                         </td>
                                         <td>
                                             <form action="{{ route('admin.banksoal.destroy',$bank_soal['id']) }}" method="POST">
-                                            <a href="{{ route('admin.banksoal.show', $bank_soal['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
+                                                <a href="{{ route('admin.detailQuiz',$bank_soal->id) }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">
+{{--                                            <a href="{{ route('admin.banksoal.show', $bank_soal['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">--}}
                                                 Show
                                             </a>
                                             <a href="{{ route('admin.banksoal.edit', $bank_soal['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
@@ -145,9 +143,9 @@
     @else
         <div class="flex h-screen">
             <div class="m-auto text-center">
-                <img src="{{ asset('/assets/images/empty-illustration.svg') }}" alt="" class="w-48 mx-auto">
+                <img src="{{ asset('/assets/images/no_data.png') }}" alt="" class="mx-auto">
                 <h2 class="mt-8 mb-1 text-2xl font-semibold text-gray-700">
-                    There is No Requests Yet
+                    There is No 'Bank Soal' Yet
                 </h2>
                 <p class="text-sm text-gray-400">
                     It seems that you haven’t provided any Bank Soal. <br>
@@ -155,7 +153,7 @@
                 </p>
 
                 <div class="relative mt-0 md:mt-6">
-                    <a href="{{ route('admin.banksoal.create') }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-button">
+                    <a href="{{ route('admin.banksoal.create') }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">
                         + Add Bank Soal
                     </a>
                 </div>

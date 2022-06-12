@@ -4,8 +4,9 @@ namespace App\Http\Controllers\User;
 
 use Alert;
 use App\Http\Controllers\Controller;
-use App\Http\Request\User\User\UpdateDetailUserRequest;
-use App\Http\Request\User\User\UpdateProfileRequest;
+use App\Http\Requests\User\UpdateProfileRequest;
+use App\Http\Requests\User\UpdateDetailUserRequest;
+use App\Models\User\ExpreienceUser;
 use App\Models\User\DetailUser;
 use App\Models\User\User;
 use Auth;
@@ -29,13 +30,12 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $user = User::where('id', Auth::user()->id)
-//            ->orWhereHas('detail_user', function ($query) {
-//                $query->where('user_id', Auth::user()->id);
-//            })
-            ->first();
+        $user = User::where('id', Auth::user()->id)->first();
+        $experience_user = ExpreienceUser::where('detail_user_id', $user->detail_user->id)
+            ->orderBy('id', 'asc')
+            ->get();
 
-        return view('pages.profile', compact('user'));
+        return view('pages.profile', compact('user', 'experience_user'));
     }
 
     /**
@@ -121,37 +121,32 @@ class ProfileController extends Controller
         $detail_user = DetailUser::find($user->detail_user->id);
         $detail_user->update($data_detail_user);
 
-//        dd($user);
-//        dd($detail_user);
+        // proses save to experience
+        $experience_user_id = ExpreienceUser::where('detail_user_id', $detail_user['id'])->first();
+        if(isset($experience_user_id)){
 
-//        // proses save to experience
-//        $experience_user_id = ExperienceUser::where('detail_user_id', $detail_user['id'])->first();
-//        if(isset($experience_user_id)){
-//
-//            foreach ($data_profile['experience'] as $key => $value) {
-//                $experience_user = ExperienceUser::find($key);
-//                $experience_user->detail_user_id = $detail_user['id'];
-//                $experience_user->experience = $value;
-//                $experience_user->save();
-//            }
-//
-//        }else{
-//
-//            foreach ($data_profile['experience'] as $key => $value) {
-//                if(isset($value)){
-//                    $experience_user = new ExperienceUser;
-//                    $experience_user->detail_user_id = $detail_user['id'];
-//                    $experience_user->experience = $value;
-//                    $experience_user->save();
-//                }
-//            }
-//
-//        }
+            foreach ($data_profile['experience'] as $key => $value) {
+                $experience_user = ExpreienceUser::find($key);
+                $experience_user->detail_user_id = $detail_user['id'];
+                $experience_user->experience = $value;
+                $experience_user->save();
+            }
 
-//        toast()->success('Update has been success');
-//        return back();
+        }else{
 
-        redirect()->route('admin.belajar.index')->with('success', 'Update has been success');
+            foreach ($data_profile['experience'] as $key => $value) {
+                if(isset($value)){
+                    $experience_user = new ExpreienceUser;
+                    $experience_user->detail_user_id = $detail_user['id'];
+                    $experience_user->experience = $value;
+                    $experience_user->save();
+                }
+            }
+
+        }
+
+        toast()->success('Update has been success');
+        return back();
     }
 
     /**
@@ -186,9 +181,7 @@ class ProfileController extends Controller
             File::delete('storage/app/public/'.$path_photo);
         }
 
-//        toast()->success('Delete has been success');
-//        return back();
-
-        redirect()->route('admin.profile.index')->with('success', 'Delete has been success');
+        toast()->success('Delete has been success');
+        return back();
     }
 }

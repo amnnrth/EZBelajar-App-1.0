@@ -188,7 +188,7 @@
             <div class="m-auto text-center">
                 <img src="{{ asset('/assets/images/no_data.png') }}" alt="" class="mx-auto">
                 <h2 class="mt-8 mb-1 text-2xl font-semibold text-gray-700">
-                    There is No Requests Yet
+                    There is No Bootcamp Yet
                 </h2>
                 <p class="text-sm text-gray-400">
                     It seems that you haven’t provided any Bootcamp. <br>
@@ -196,7 +196,7 @@
                 </p>
 
                 <div class="relative mt-0 md:mt-6">
-                    <a href="{{ route('admin.bootcamp.create') }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-button">
+                    <a href="{{ route('admin.bootcamp.create') }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">
                         + Add Bootcamp
                     </a>
                 </div>

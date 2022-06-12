@@ -40,8 +40,8 @@
                 <main class="col-span-12 p-4 md:pt-0">
                     <div class="px-2 py-2 mt-2 bg-white rounded-xl">
 
-{{--                        <form action="{{ route('admin.artikel.update', $post->id)}}" method="POST" enctype="multipart/form-data">--}}
-                        {!! Form::model($post, ['method' => 'PATCH','route' => ['admin.artikel.update', $post->id]]) !!}
+                        <form action="{{ route('admin.artikel.update', $post->id)}}" method="POST" enctype="multipart/form-data">
+{{--                        {!! Form::model($post, ['method' => 'PATCH','route' => ['admin.artikel.update', $post->id]]) !!}--}}
 
 
                             @csrf
@@ -98,8 +98,8 @@
                                 </div>
 
                             </div>
-{{--                        </form>--}}
-                        {{ Form::close() }}
+                        </form>
+{{--                        {{ Form::close() }}--}}
                     </div>
                 </main>
             </div>

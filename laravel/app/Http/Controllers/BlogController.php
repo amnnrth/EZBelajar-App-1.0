@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 //use App\Models\Category;
 use App\Models\Post;
+use Faker\Core\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -151,45 +152,45 @@ class BlogController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-//        if (auth()->user()->id !== $post->user_id) {
-//            return redirect()->route('blog.index')->with('error', 'You are not authorized to edit this post');
-//        }
-
         $request->validate([
             'title' => 'required',
-//            'imagePath' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
+//            'imagePath' => 'required | image',
             'body' => 'required',
-//            'slug' => 'required',
         ]);
 
         $title = $request->input('title');
+
+        $slug = Str::slug($title, ) . '-' . $post->id+1;
+        $user_id = auth()->user()->id;  // get the user id
         $body = $request->input('body');
-        $postId = Post::latest()->first()->id;
 
-        $slug = Str::slug($title, '-') . '-' . $postId;
+       // delete old imagePath from storage
+        if (isset($post->imagePath)) {
+            $data = explode('storage/', $post->imagePath);
+            if (File::exists(storage_path('app/public/assets/blog/' . $data[1]))) {
+                File::delete(storage_path('app/public/assets/blog/' . $data[1]));
+            }else{
+                File::delete(storage_path('app/public/assets/blog/' . $data[1]));
+            }
+        }
 
-        if ($request->hasFile('imagePath')) {
+        // store imagePath to storage
+        if(isset($request->imagePath)) {
             $imagePath = $request->file('imagePath')->store('public/assets/blog');
-            $post->imagePath = $imagePath;
+        }else{
+            $imagePath = $post->imagePath;
         }
 
         $post->title = $title;
-        $post->body = $body;
         $post->slug = $slug;
-        $post->user_id = auth()->user()->id;
+        $post->body = $body;
+        $post->user_id = $user_id;
+        $post->imagePath = $imagePath;
 //        dd($post);
         $post->save();
 
-        toast()->success('Artikel berhasil di update', 'Berhasil');
-        return redirect()->route('admin.artikel.index');
-
-//        $title = $request->input('title');
-//
-//        $postId = $post->id;
-//        $slug = Str::slug($title, '-') . '-' . $postId;
-//
-//        toast()->success('Artikel berhasil di update', 'Berhasil');
-//        return redirect()->route('admin.artikel.index');
+        toast()->success('Blog updated successfully', 'Success');
+        return redirect()->route('admin.artikel.index')->with('success', 'Post updated successfully');
     }
     /**
      * Remove the specified resource from storage.
@@ -197,11 +198,13 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
 //        if (auth()->user()->id !== $post->user_id) {
 //            return redirect()->route('blog.index')->with('error', 'You are not authorized to delete this post');
 //        }
+
+        $post = Post::findOrFail($id);
 
         if ($post->imagePath) {
             Storage::delete($post->imagePath);
@@ -209,6 +212,8 @@ class BlogController extends Controller
         Post::destroy($post->id);
 
 //        $post->delete();
+
+        toast()->success('Blog deleted successfully', 'Success');
         return redirect()->route('admin.artikel.index')->with('success', 'Post deleted successfully');
     }
 }

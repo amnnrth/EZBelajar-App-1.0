@@ -22,7 +22,9 @@ class DetailUser extends Model
         'users_id',
         'photo',
         'occupation',
+        'contact_number',
         'sex',
+        'link_experience',
         'updated_at',
         'created_at',
         'deleted_at',
@@ -36,5 +38,11 @@ class DetailUser extends Model
 
     public function role(){
         return $this->belongsTo('App/Models/Role', 'role', 'id');
+    }
+
+    // one to many
+    public function experience_user()
+    {
+        return $this->hasMany('App\Models\ExperienceUser', 'detail_user_id');
     }
 }

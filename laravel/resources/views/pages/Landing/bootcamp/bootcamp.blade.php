@@ -51,7 +51,7 @@
                                         </p>
                                     </div>
 
-                                    <div class="mt-6 flex items-center">
+                                    <div class="mt-6 flex items-center justify-center">
 {{--                                        <div class="flex-shrink-0">--}}
 
 {{--                                            @if($post->user->detail_user->first()->photo != null)--}}
