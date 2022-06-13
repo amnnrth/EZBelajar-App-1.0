@@ -22,6 +22,10 @@ class DatabaseSeeder extends Seeder
             CreateAdminUserSeeder::class,
             DetailUserSeeder::class,
             QuoteSeeder::class,
+            ArtikelSeeder::class,
+            BankSoalSeeder::class,
+            QuestionAnswerSeeder::class,
+            BootcampSeeder::class,
         ]);
     }
 }

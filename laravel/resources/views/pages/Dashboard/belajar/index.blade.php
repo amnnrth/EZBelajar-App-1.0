@@ -106,12 +106,12 @@
                                         </td>
                                             <td class="px-1 py-5 text-sm">
                                                 <a href="{{ route('admin.belajar.show', $belajar['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
-                                                    Show Belajar
+                                                    Show
                                                 </a>
                                             </td>
                                             <td class="px-1 py-5 text-sm">
                                                 <a href="{{ route('admin.belajar.edit', $belajar['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
-                                                    Edit Belajar
+                                                    Edit
                                                 </a>
                                             </td>
                                         <form action="{{ route('admin.belajar.destroy',$belajar['id']) }}" method="POST">
@@ -124,7 +124,7 @@
                                             </td>
                                         </form>
                                     </tr>
-                                    {{ $belajars->links() }}
+
                                 @empty
 
                                     {{-- empty --}}
@@ -133,6 +133,7 @@
 
                                 </tbody>
                             </table>
+                            {{ $belajars->links() }}
                         </div>
                     </main>
                 </div>

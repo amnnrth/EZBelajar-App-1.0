@@ -108,7 +108,6 @@
                                             </td>
                                         </form>
                                     </tr>
-                                    {{ $posts->links() }}
                                 @empty
 
                                     {{-- empty --}}
@@ -117,6 +116,7 @@
 
                                 </tbody>
                             </table>
+                            {{ $posts->links() }}
                         </div>
                     </main>
                 </div>

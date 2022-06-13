@@ -70,7 +70,7 @@ class BankSoalController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|unique:bank_soals|min:5|max:255',
+            'title' => 'required|unique:bank_soals|min:5',
 //            'description' => 'required|min:5|max:255',
             'filePath' => 'required|mimes:pdf,xlx,docs|max:2048',
         ]);

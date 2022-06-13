@@ -128,12 +128,12 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/paragonie/constant_time_encoding" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/livewire/livewire" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/laravelcollective/html" />
-      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/te7a-houdini/laravel-trix" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/realrashid/sweet-alert" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/chartisan/php" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/consoletvs/charts" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/midtrans/midtrans-php" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/composer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

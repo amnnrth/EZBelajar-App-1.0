@@ -23,22 +23,22 @@ class DetailUserSeeder extends Seeder
                 'created_at'        => date('Y-m-d h:i:s'),
                 'updated_at'        => date('Y-m-d h:i:s'),
             ],
-//            [
-//                'user_id'           => 2,
-//                'photo'             => '',
-//                'occupation'        => 'UI Designer',
-//                'sex'               => 'Laki-Laki',
-//                'created_at'        => date('Y-m-d h:i:s'),
-//                'updated_at'        => date('Y-m-d h:i:s'),
-//            ],
-//            [
-//                'user_id'           => 3,
-//                'photo'             => '',
-//                'occupation'        => 'Front-End Developer',
-//                'sex'               => 'laki-Laki',
-//                'created_at'        => date('Y-m-d h:i:s'),
-//                'updated_at'        => date('Y-m-d h:i:s'),
-//            ],
+            [
+                'user_id'           => 2,
+                'photo'             => '',
+                'occupation'        => 'UI Designer',
+                'sex'               => 'Laki-Laki',
+                'created_at'        => date('Y-m-d h:i:s'),
+                'updated_at'        => date('Y-m-d h:i:s'),
+            ],
+            [
+                'user_id'           => 3,
+                'photo'             => '',
+                'occupation'        => 'Front-End Developer',
+                'sex'               => 'laki-Laki',
+                'created_at'        => date('Y-m-d h:i:s'),
+                'updated_at'        => date('Y-m-d h:i:s'),
+            ],
         ];
 
         foreach ($detail_user as $key => $value) {

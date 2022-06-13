@@ -64,7 +64,9 @@ class QuestionsController extends Controller
         $question->delete();
 
 //        return redirect()->route('admin.banksoal.index');
-        return redirect()->route('admin.detailBankSoal', $question->banksoal->frist()->id)
-            ->withSuccess('Question with id: ' . $question->id . ' deleted successfully');
+        toast()->success('Question deleted successfully', 'Success');
+        return redirect()->back();
+//        return redirect()->route('admin.detailBankSoal', $question->banksoal->frist()->id)
+//            ->withSuccess('Question with id: ' . $question->id . ' deleted successfully');
     }
 }

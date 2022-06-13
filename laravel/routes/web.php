@@ -98,6 +98,13 @@ Route::post('/comment/reply', [CommentController::class, 'replyStore'])->name('r
 Route::get('/bootcamp', [LandingController::class, 'bootcamp'])->name('bootcamp.index');
 Route::get('detailBootcamp/{title}', [LandingController::class, 'detailBootcamp'])->name('detailBootcamp');
 
+//Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->group(function () {
+
+Route::middleware(['auth','verfied', 'role:admin'])->prefix('admin')->group(function () {
+    Route::get('/detailQuiz/{banksoal}', [BankSoalController::class, 'detailQuiz'])
+        ->name('detailQuiz');
+});
+
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'verified']], function() {
 
     // dashboard

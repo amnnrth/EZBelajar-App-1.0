@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Belajar;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -67,7 +68,7 @@ class VideoSeeder extends Seeder
         ];
 
         foreach ($video as $key => $value) {
-            DB::table('belajars')->insert($value);
+            Belajar::create($value);
         }
     }
 }
