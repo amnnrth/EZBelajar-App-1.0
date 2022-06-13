@@ -16,10 +16,11 @@ class BankSoalController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:bank-soal-list|bank_soal_create|bank_soal-edit|bank_soal-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:bank_soal-list|bank_soal_create|bank_soal-edit|bank_soal-delete', ['only' => ['index', 'show']]);
         $this->middleware('permission:bank_soal-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:bank_soal-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:bank_soal-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:detail_quiz', ['only' => ['detailQuiz']]);
     }
 
     /**

@@ -10,6 +10,14 @@ use Illuminate\Validation\Rule;
 
 class QuestionsController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:question-list|question_create|question-edit|question-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:question-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:question-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:question-delete', ['only' => ['destroy']]);
+    }
+
     public function createQuestion(BankSoal $banksoal)
     {
         $banksoal = $banksoal;

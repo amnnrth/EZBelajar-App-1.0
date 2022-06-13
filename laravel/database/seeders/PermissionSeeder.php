@@ -37,6 +37,10 @@ class PermissionSeeder extends Seeder
             'post-create',
             'post-edit',
             'post-delete',
+            'question-list',
+            'question-create',
+            'question-edit',
+            'question-delete',
         ];
 
         foreach ($permissions as $permission) {

@@ -13,6 +13,11 @@ use http\Env;
 
 class PaymentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
 // Set your Merchant Server Key

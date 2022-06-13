@@ -23,6 +23,15 @@ class BootcampController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    function __construct()
+    {
+        $this->middleware('permission:bootcamp-list|bootcamp_create|bootcamp-edit|bootcamp-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:bootcamp-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:bootcamp-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:bootcamp-delete', ['only' => ['destroy']]);
+    }
+
     public function index(Request $request)
     {
         if ($request->search) {
