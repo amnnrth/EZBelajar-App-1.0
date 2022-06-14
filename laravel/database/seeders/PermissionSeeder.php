@@ -41,6 +41,11 @@ class PermissionSeeder extends Seeder
             'question-create',
             'question-edit',
             'question-delete',
+            'bootcamp-list',
+            'bootcamp-create',
+            'bootcamp-edit',
+            'bootcamp-delete',
+            'user-list',
         ];
 
         foreach ($permissions as $permission) {

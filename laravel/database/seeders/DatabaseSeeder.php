@@ -20,12 +20,15 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PermissionSeeder::class,
             CreateAdminUserSeeder::class,
+            RoleUserSeeder::class,
+            CreateUserSeeder::class,
             DetailUserSeeder::class,
             QuoteSeeder::class,
             ArtikelSeeder::class,
             BankSoalSeeder::class,
             QuestionAnswerSeeder::class,
             BootcampSeeder::class,
+            VideoSeeder::class,
         ]);
     }
 }

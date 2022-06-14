@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '52241a103b85398397eec00db5bcaae73c21106a',
+        'reference' => '2f7c25bb45e391e0eb030f6a18153332a20a300e',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -451,7 +451,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '52241a103b85398397eec00db5bcaae73c21106a',
+            'reference' => '2f7c25bb45e391e0eb030f6a18153332a20a300e',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -650,12 +650,12 @@
             'dev_requirement' => true,
         ),
         'paragonie/constant_time_encoding' => array(
-            'pretty_version' => 'v2.6.1',
-            'version' => '2.6.1.0',
+            'pretty_version' => 'v2.6.3',
+            'version' => '2.6.3.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../paragonie/constant_time_encoding',
             'aliases' => array(),
-            'reference' => 'd6e1d5d0fb2458dfdd7018ec2f74be120353a3b9',
+            'reference' => '58c3f47f650c94ec05a151692652a868995d2938',
             'dev_requirement' => false,
         ),
         'phar-io/manifest' => array(
@@ -776,12 +776,12 @@
             'dev_requirement' => true,
         ),
         'pragmarx/google2fa' => array(
-            'pretty_version' => '8.0.0',
-            'version' => '8.0.0.0',
+            'pretty_version' => 'v8.0.1',
+            'version' => '8.0.1.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../pragmarx/google2fa',
             'aliases' => array(),
-            'reference' => '26c4c5cf30a2844ba121760fd7301f8ad240100b',
+            'reference' => '80c3d801b31fe165f8fe99ea085e0a37834e1be3',
             'dev_requirement' => false,
         ),
         'psr/container' => array(
@@ -871,8 +871,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(

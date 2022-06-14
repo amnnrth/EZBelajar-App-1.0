@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\User\DetailUser;
 use App\Models\User\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -80,6 +81,16 @@ class UserController extends Controller
 
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
+
+        // store detail user to NULL
+        $detail_user = new DetailUser;
+        $detail_user->user_id = $user->id;
+        $detail_user->photo = NULL;
+        $detail_user->occupation = NULL;
+        $detail_user->contact_number = NULL;
+        $detail_user->sex = NULL;
+        $detail_user->link_experience = NULL;
+
 
         toast()->success('Berhasil Memebuat User Baru', 'Berhasil');
         return redirect()->route('admin.user.index');

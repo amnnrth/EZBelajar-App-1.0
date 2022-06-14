@@ -106,6 +106,19 @@
                                 </p>
                             </div>
                         </div>
+                        <div class="flex flex-col justify-center px-4 py-4 mb-4 bg-white rounded-xl">
+                            <div>
+                                <div>
+                                    <img src="{{ asset('/assets/icondashboard/book-open.svg') }}" alt=""
+                                         class="w-8 h-8">
+                                </div>
+                                <p class="mt-2 text-2xl font-semibold text-left text-gray-800">{{ $quizesTaken ?? ''}}
+                                </p>
+                                <p class="text-sm text-left text-gray-500">
+                                    Quiz Taken
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div class="p-6 mt-8 bg-white rounded-xl">
                         <div>

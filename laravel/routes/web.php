@@ -88,7 +88,7 @@ Route::get('/userQuizDetails/{id}', [LandingController::class, 'userQuizDetails'
     ->name('userQuizDetails');
 
 //comment
-//    Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+//    Route::post('/comment/store', 'CommentControllFFer@store')->name('comment.add');
 Route::post('/comment/storeArtikel', [CommentController::class, 'storeArtikel'])->name('comment.addArtikel');
 Route::post('/comment/storeBelajar', [CommentController::class, 'storeBelajar'])->name('comment.addBelajar');
 //    Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');

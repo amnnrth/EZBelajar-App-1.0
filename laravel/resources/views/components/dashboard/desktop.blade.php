@@ -31,6 +31,7 @@
             </div>
         </div>
 
+        @can('dashboard-access')
         <ul class="mt-6">
             <li class="relative px-6 py-3">
 
@@ -46,7 +47,9 @@
                 </a>
             </li>
         </ul>
+        @endcan
 
+        @can('belajar-list')
         <ul>
             <li class="relative px-6 py-3">
 
@@ -79,6 +82,7 @@
 
                 </a>
             </li>
+            @endcan
 
             <li class="relative px-6 py-3">
 
@@ -144,6 +148,7 @@
 {{--                </a>--}}
 {{--            </li>--}}
 
+            @can('banksoal-list')
             <li class="relative px-6 py-3">
 
                                 @if (request()->is('admin/banksoal') || request()->is('admin/banksoal/*') || request()->is('admin/*/banksoal') || request()->is('admin/*/banksoal/*'))
@@ -173,7 +178,9 @@
 
                 </a>
             </li>
+            @endcan
 
+            @can('user-list')
             <li class="relative px-6 py-3">
 
                 @if (request()->is('admin/user') || request()->is('admin/user/*') || request()->is('admin/*/user') || request()->is('admin/*/user/*'))
@@ -205,7 +212,9 @@
 
                 </a>
             </li>
+            @endcan
 
+            @can('role-list')
             <li class="relative px-6 py-3">
 
                 @if (request()->is('admin/role') || request()->is('admin/role/*') || request()->is('admin/*/role') || request()->is('admin/*/role/*'))
@@ -238,7 +247,9 @@
 
                 </a>
             </li>
+            @endcan
 
+            @can('post-list')
             <li class="relative px-6 py-3">
 
                                 @if (request()->is('admin/artikel') || request()->is('admin/artikel/*') || request()->is('admin/*/artikel') || request()->is('admin/*/artikel/*'))
@@ -259,7 +270,9 @@
                     <span class="ml-4">Artikel</span>
                 </a>
             </li>
+            @endcan
 
+            @can('bootcamp-list')
             <li class="relative px-6 py-3">
 
                 @if (request()->is('admin/bootcamp') || request()->is('admin/bootcamp/*') || request()->is('admin/*/bootcamp') || request()->is('admin/*/bootcamp/*'))
@@ -280,6 +293,7 @@
                     <span class="ml-4">Bootcamp</span>
                 </a>
             </li>
+            @endcan
 
             <li class="relative px-6 py-3">
 

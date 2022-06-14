@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Belajar;
+use App\Models\Quiz\QuizHeader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,8 +22,8 @@ class DashboardController extends Controller
     public function index()
     {
 //        $belajar = Belajar::where('user_id', Auth::user()->id)->get();
-
-        return view('pages.Dashboard.index');
+        $quizesTaken = QuizHeader::count();
+        return view('pages.Dashboard.index',compact('quizesTaken'));
     }
 
     /**

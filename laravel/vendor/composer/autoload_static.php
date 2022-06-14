@@ -203,8 +203,8 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Whoops\\' => 
         array (
@@ -372,8 +372,8 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -882,12 +882,14 @@ class ComposerStaticInit7730c407edfabe1de6d99b0c52b157fe
         'Database\\Seeders\\BankSoalSeeder' => __DIR__ . '/../..' . '/database/seeders/BankSoalSeeder.php',
         'Database\\Seeders\\BootcampSeeder' => __DIR__ . '/../..' . '/database/seeders/BootcampSeeder.php',
         'Database\\Seeders\\CreateAdminUserSeeder' => __DIR__ . '/../..' . '/database/seeders/CreateAdminUserSeeder.php',
+        'Database\\Seeders\\CreateUserSeeder' => __DIR__ . '/../..' . '/database/seeders/CreateUserSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'Database\\Seeders\\DetailUserSeeder' => __DIR__ . '/../..' . '/database/seeders/DetailUserSeeder.php',
         'Database\\Seeders\\MainMateriBootcampSeeder' => __DIR__ . '/../..' . '/database/seeders/MainMateriBootcampSeeder.php',
         'Database\\Seeders\\PermissionSeeder' => __DIR__ . '/../..' . '/database/seeders/PermissionSeeder.php',
         'Database\\Seeders\\QuestionAnswerSeeder' => __DIR__ . '/../..' . '/database/seeders/QuestionAnswerSeeder.php',
         'Database\\Seeders\\QuoteSeeder' => __DIR__ . '/../..' . '/database/seeders/QuoteSeeder.php',
+        'Database\\Seeders\\RoleUserSeeder' => __DIR__ . '/../..' . '/database/seeders/RoleUserSeeder.php',
         'Database\\Seeders\\VideoSeeder' => __DIR__ . '/../..' . '/database/seeders/VideoSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',

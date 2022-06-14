@@ -146,7 +146,7 @@
                                         @foreach($banksoals as $banksoal)
                                             @if($banksoal->questions_count>0)
 {{--                                                <option value="{{$banksoal->id}}">{{$banksoal->name}}</option>--}}
-                                                <option class="text-black font-semibold" value="{{$banksoal->first()->id ?? ''}}">{{$banksoal->first()->title ?? ''}}</option>
+                                                <option class="text-black font-semibold" value="{{$banksoal->id ?? ''}}">{{$banksoal->title ?? ''}}</option>
                                             @endif
                                         @endforeach
                                     @endif

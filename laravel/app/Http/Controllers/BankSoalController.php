@@ -235,7 +235,6 @@ class BankSoalController extends Controller
         $activeUsers = User::count();
 
         $questionsCount = Question::where('is_active', '1')->count();
-
         $banksoals = BankSoal::withCount('questions')
             ->where('is_active', '1')
             ->orderBy('title', 'asc')
