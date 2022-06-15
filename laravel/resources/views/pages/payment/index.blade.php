@@ -5,7 +5,10 @@
     <!-- @TODO: replace SET_YOUR_CLIENT_KEY_HERE with your client key -->
     <script type="text/javascript"
             src="{{ url('https://app.sandbox.midtrans.com/snap/snap.js')}}"
-            data-client-key="SB-Mid-client-ojEypI047x7sFX1T"></script>
+            data-client-key="SB-Mid-client-qkjuM68WlYI8qkl7"></script>
+{{--    <script type="text/javascript"--}}
+{{--            src="{{ url('https://app.sandbox.midtrans.com/snap/snap.js')}}"--}}
+{{--            data-client-key="SB-Mid-client-qkjuM68WlYI8qkl7"></script>--}}
     <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
     <script src="{{ url('https://code.jquery.com/jquery-3.6.0.min.js')}}" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
@@ -53,3 +56,4 @@
 </script>
 </body>
 </html>
+

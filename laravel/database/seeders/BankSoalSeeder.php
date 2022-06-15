@@ -29,7 +29,7 @@ class BankSoalSeeder extends Seeder
             ],
             [
                 'title' => 'Computer Network',
-                'description' =>'Relasi dapat diartikan sebagai hubungan. Hubungan yang dimaksud yaitu hubungan antara daerah asal (domain) dan daerah kawan (kodomain).',
+                'description' =>'Jaringan komputer adalah sebuah sistem yang terdiri dari dua atau lebih komputer yang saling terhubung satu sama lain melalui media transmisi dan media komunikasi sehingga dapat saling berbagi data aplikasi maupun berbagi perangkat keras komputer.',
                 'filePath' => 'public/assets/BankSoal/2.pdf',
                 'user_id'=>1,
                 'is_active'=>1,
@@ -38,7 +38,7 @@ class BankSoalSeeder extends Seeder
             ],
             [
                 'title' => 'Algoritma dan Pemrograman',
-                'description' =>'Relasi dapat diartikan sebagai hubungan. Hubungan yang dimaksud yaitu hubungan antara daerah asal (domain) dan daerah kawan (kodomain).',
+                'description' =>'Algoritma adalah langkah-langkah menyelesaikan masalah, sedangkan program adalah realisasi algoritma dalam bahasa pemrograman. Program ditulis dalam salah satu bahasa pemrograman dan kegiatan membuat program disebut pemrograman (programming).',
                 'filePath' => 'public/assets/BankSoal/3.pdf',
                 'user_id'=>1,
                 'is_active'=>1,

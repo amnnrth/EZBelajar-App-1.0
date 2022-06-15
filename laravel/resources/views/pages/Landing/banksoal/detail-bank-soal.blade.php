@@ -13,14 +13,24 @@
             <div>
                 <p class="text-black font-semibold">Nama : <br>
                     <span class="text-black font-light">{{ $post->title }}</span></p>
-                <p class="text-black font-semibold">Jumlah soal : <br>
-                    <span class="text-black font-light">10</span></p>
+                <p class="text-black font-semibold">Description : <br>
+                    <span class="text-black font-light">{{ $post->body ?? '' }}</span></p>
                 <br>
                 <a href="{{ route('startQuiz') }}">
-                    <button class="lg:bg-ezb-services-bg py-2 px-10 my-3 text-white">Quizl</button>
+
+                    @if (Auth::guest())
+                        <a href="#" onclick="toggleModal('loginModal')">
+                    @else
+                        <a href="{{ route('startQuiz') }}">
+                    @endif
+                        <button class="lg:bg-ezb-services-bg py-2 px-10 my-3 text-white">Quiz</button>
                 </a>
                 <br>
-                <a href="{{ route('downloadFile',$post->title ?? '') }}" target="_blank">
+                   @if(Auth::guest())
+                        <a href="#" onclick="toggleModal('loginModal')">
+                    @else
+                        <a href="{{ route('downloadFile',$post->title ?? '') }}" target="_blank">
+                    @endif
                     <button class="lg:bg-ezb-services-bg py-2 px-5 my-3 text-white">Download</button>
                 </a>
 {{--                <a href="{{ route('startQuiz')}}">--}}

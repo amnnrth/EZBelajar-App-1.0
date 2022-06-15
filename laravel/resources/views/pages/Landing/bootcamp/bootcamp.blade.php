@@ -27,7 +27,11 @@
 
                 <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
                     @foreach ($posts as $post)
-                        <a href="{{ route('detailBootcamp',$post->title) }}">
+                        @if(Auth::guest())
+                        <a href="#" onclick="toggleModal('loginModal')">
+                            @else
+                                <a href="{{ route('detailBootcamp',$post->title) }}">
+                            @endif
                             {{-- Post --}}
                             <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
                                 {{-- Header --}}

@@ -30,7 +30,11 @@
 
                 <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
                     @foreach ($posts as $post)
-                        <a href="{{ route('detailartikel',$post->slug) }}">
+                        @if (Auth::guest())
+                        <a href="#" onclick="toggleModal('loginModal')">
+                            @else
+                                <a href="{{ route('detailartikel',$post->slug) }}">
+                            @endif
                             {{-- Post --}}
                             <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
                                 {{-- Header --}}
@@ -85,48 +89,6 @@
                     @endforeach
                 </div>
 
-
-
-{{--                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">--}}
-{{--                    @foreach($posts as $post)--}}
-{{--                    <div class="flex justify-center px-4 py-2">--}}
-{{--                        <a href="{{ route('detailartikel',$post->slug) }}">--}}
-{{--                            <img src="{{ Storage::url($post->imagePath) }}" style="height: 300px" alt="">--}}
-{{--                            <div class="text-center py-4">--}}
-{{--                                <h1 class="text-3xl font-semibold">{{ $post->title}}</h1>--}}
-{{--                                <p class="text-base font-semibold">{{ $post->body }}.</p>--}}
-{{--                            </div>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    @endforeach--}}
-{{--                    <div class="flex justify-center px-4 py-2">--}}
-{{--                        <a href="#">--}}
-{{--                            <img src="{{ asset('/assets/images/article/article-2.png') }}" style="height: 300px" alt="">--}}
-{{--                            <div class="text-center py-4">--}}
-{{--                                <h1 class="text-3xl font-semibold">AVL Tree</h1>--}}
-{{--                                <p class="text-base font-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.--}}
-{{--                                    Eget donec vel vitae rhoncus--}}
-{{--                                    ullamcorper id enim hendrerit. Praesent ultrices porttitor velit consequat adipiscing--}}
-{{--                                    morbi habitasse diam. Lorem vulputate a commodo vel sapien sed augue. Hendrerit turpis--}}
-{{--                                    diam cursus amet, tortor a. Pellentesque tempor, non accumsan neque, morbi ac massa--}}
-{{--                                    cursus interdum. Duis condimentum sed interdum commodo mauris mus.</p>--}}
-{{--                            </div>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    <div class="flex justify-center px-4 py-2">--}}
-{{--                        <a href="#">--}}
-{{--                            <img src="{{ asset('/assets/images/article/article-3.png') }}" style="height: 300px" alt="">--}}
-{{--                            <div class="text-center py-4">--}}
-{{--                                <h1 class="text-3xl font-semibold">AVL Tree</h1>--}}
-{{--                                <p class="text-base font-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.--}}
-{{--                                    Eget donec vel vitae rhoncus--}}
-{{--                                    ullamcorper id enim hendrerit. Praesent ultrices porttitor velit consequat adipiscing--}}
-{{--                                    morbi habitasse diam. Lorem vulputate a commodo vel sapien sed augue. Hendrerit turpis--}}
-{{--                                    diam cursus amet, tortor a. Pellentesque tempor, non accumsan neque, morbi ac massa--}}
-{{--                                    cursus interdum. Duis condimentum sed interdum commodo mauris mus.</p>--}}
-{{--                            </div>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
                 </div>
             </div>
         </div>

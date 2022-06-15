@@ -30,7 +30,11 @@
 
                 <div class="flex justify-center my-3 md:flex gap-4">
                     @foreach ($posts as $post)
+                        @if (Auth::guest())
+                            <a href="#" onclick="toggleModal('loginModal')">
+                        @else
                         <a href="{{ route('detailbanksoal',$post->title) }}">
+                            @endif
                             {{-- Post --}}
                             <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
                                 {{-- Header --}}

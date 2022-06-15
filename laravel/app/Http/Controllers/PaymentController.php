@@ -57,6 +57,30 @@ class PaymentController extends Controller
 //        dd($params);
         $snapToken = \Midtrans\Snap::getSnapToken($params);
             return view('pages.payment.index', compact('snapToken', 'bootcamp', 'user'));
+
+//        // Set your Merchant Server Key
+//        \Midtrans\Config::$serverKey = env('SERVER_KEY_MIDTRANS');
+//// Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+//        \Midtrans\Config::$isProduction = false;
+//// Set sanitization on (default)
+//        \Midtrans\Config::$isSanitized = true;
+//// Set 3DS transaction for credit card to true
+//        \Midtrans\Config::$is3ds = true;
+//
+//        $params = array(
+//            'transaction_details' => array(
+//                'order_id' => rand(),
+//                'gross_amount' => 10000,
+//            ),
+//            'customer_details' => array(
+//                'first_name' => 'budi',
+//                'last_name' => 'pratama',
+//                'email' => 'budi.pra@example.com',
+//                'phone' => '08111222333',
+//            ),
+//        );
+//
+//        $snapToken = \Midtrans\Snap::getSnapToken($params);
     }
 
     public function payment_post(Request $request){
@@ -72,7 +96,7 @@ class PaymentController extends Controller
         $order->transaction_id = $json->transaction_id;
         $order->order_id = $json->order_id;
         $order->gross_amount = $json->gross_amount;
-//        $order->payment_type = $json->payment_type;
+        $order->payment_type = $json->payment_type;
 //        $order->payment_code = isset($json->payment_code) ? $json->payment_code : null;
         $order->payment_code = $json->payment_code ?? '';
         $order->pdf_url = $json->pdf_url ?? '';

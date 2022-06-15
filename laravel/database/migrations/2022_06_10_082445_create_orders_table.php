@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('status');
             $table->foreignId('user_id')->constrained();
             $table->foreignId('bootcamp_id')->constrained();
-            $table->string('number');
+//            $table->string('number');
             $table->string('transaction_id');
             $table->string('order_id');
             $table->string('gross_amount');
-//            $table->string('payment_type');
+            $table->string('payment_type');
             $table->string('payment_code')->nullable();
             $table->string('pdf_url')->nullable();
             $table->timestamps();

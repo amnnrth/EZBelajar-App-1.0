@@ -54,7 +54,7 @@ class CommentController extends Controller
         $post = Post::find($request->get('post_id'));
 //        $post = Post::find($request->input('post_id'));
 //        $post = Post::find($request->get('id', 'post_id'));
-        dd($post);
+//        dd($post);
         $post->comments()->save($comment);
 
 //        $belajar = Belajar::find($request->get('belajar_id'));

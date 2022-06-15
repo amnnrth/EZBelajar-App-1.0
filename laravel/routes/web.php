@@ -57,16 +57,16 @@ use App\Http\Controllers\PaymentController;
 Route::get('payment', [PaymentController::class,'index'])->name('payment');
 Route::post('/payment', [PaymentController::class, 'payment_post']);
 
-Route::get('/createQuestion/{section}', [QuestionsController::class, 'createQuestion'])
-    ->name('createQuestion');
-
-Route::get('/detailQuestion/{question}', [QuestionsController::class, 'detailQuestion'])
-    ->name('detailQuestion');
-
-Route::post('/storeQuestion/{section}', [QuestionsController::class, 'storeQuestion'])
-    ->name('storeQuestion');
-Route::post('/deleteQuestion/{id}', [QuestionsController::class, 'deleteQuestion'])
-    ->name('deleteQuestion');
+//Route::get('/createQuestion/{section}', [QuestionsController::class, 'createQuestion'])
+//    ->name('createQuestion');
+//
+//Route::get('/detailQuestion/{question}', [QuestionsController::class, 'detailQuestion'])
+//    ->name('detailQuestion');
+//
+//Route::post('/storeQuestion/{section}', [QuestionsController::class, 'storeQuestion'])
+//    ->name('storeQuestion');
+//Route::post('/deleteQuestion/{id}', [QuestionsController::class, 'deleteQuestion'])
+//    ->name('deleteQuestion');
 
 Route::get('/', [LandingController::class, 'index'])->name('index');
 
@@ -83,7 +83,7 @@ Route::get('detailartikel/{slug}', [LandingController::class, 'detailartikel'])-
 Route::get('tentangkami', [LandingController::class, 'tentangkami'])->name('tentangkami');
 
 Route::get('/startQuiz', [LandingController::class, 'startQuiz'])
-    ->name('startQuiz')->middleware('auth');
+    ->name('startQuiz');
 Route::get('/userQuizDetails/{id}', [LandingController::class, 'userQuizDetails'])
     ->name('userQuizDetails');
 
