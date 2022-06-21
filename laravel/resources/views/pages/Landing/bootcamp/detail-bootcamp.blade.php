@@ -21,7 +21,8 @@
                         <div class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0">
                             <a href="https://api.whatsapp.com/send?phone=6285312727272">
                                 <button class="lg:bg-ezb-services-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg" data-aos="zoom-in">
-                                    {{ 'Rp. '.number_format($post->price) ?? ''}}
+                                    Daftar Sekarang
+{{--                                    {{ 'Rp. '.number_format($post->price) ?? ''}}--}}
                                 </button>
                             </a>
                         </div>
@@ -97,6 +98,7 @@
 
 
             <div class="content">
+                <div class="hero">
                 <!-- services -->
                 <!-- <div class="bg-serv-services-bg overflow-hidden"> -->
                 <div class="mx-auto flex pt-16 pb-16 lg:pb-20 lg:px-24 md:px-16 sm:px-8 px-8 lg:flex-row flex-col">
@@ -132,24 +134,52 @@
 {{--                                    <p class="text-black font-semibold mb-4">Mendesain Website dengan Cepat dan Menyenangkan</p>--}}
 {{--                                </div>--}}
                             </div>
-                            <div class="flex-col justify-center px-4 py-2 profilelecture" data-aos="fade-left">
-                                @if($mentor_id->detail_user->first()->photo != null)
-                                    <img class="inline ml-3 h-10 w-10 rounded-full" src="{{ Storage::url($mentor_id->detail_user->first()->photo) ?? '' }}" alt="" loading="lazy" />
-                                @else
-                                    <svg class="inline ml-3 h-10 w-10 rounded-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                                    </svg>
-                                @endif
+
+
+                            <div class="flex-col justify-center px-4 py-2 carddetailbc flex items-center justify-center" data-aos="fade-left">
+                                <img class="profilelecture mb-3 " src="{{ Storage::url($mentor_id->detail_user->photo) ?? '' }}" alt="" loading="lazy" />
+{{--                                @if($mentor_id->detail_user->first()->photo)--}}
+{{--                                    <img class="inline ml-3 h-10 w-10 rounded-full" src="{{ Storage::url($mentor_id->detail_user->photo) ?? '' }}" alt="" loading="lazy" />--}}
+{{--                                @else--}}
+{{--                                    <svg class="inline ml-3 h-10 w-10 rounded-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">--}}
+{{--                                        <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />--}}
+{{--                                    </svg>--}}
+{{--                                @endif--}}
                                 <p class="text-black text-lg mb-3 font-bold">Nama: {{ $mentor_id->name ?? '' }}</p>
                                 <p class="text-black text-lg mb-3 font-bold">Pekerjaan: {{ $mentor_id->detail_user->occupation ?? '' }}</p>
                                 <p class="text-black text-lg mb-3 font-bold">Lulusan: Universitas Bina Nusantara</p>
+
+                                        <p class="text-black text-lg mb-3 font-bold">Mentor Experience : </p>
+                                    @foreach($mentor_id->detail_user->experience_user as $key => $experience)
+                                        <div class="flex gap-4">
+                                            <img src="{{ asset('assets/check.svg')}}" class="w-6 h-6" alt="check">
+                                            <p class="text-black font-semibold mb-4">{{ $experience->experience ?? '' }}</p><br>
+                                        </div>
+{{--                                    <p>{{ $experience->experience ?? '' }}</p>--}}
+                                    @endforeach
+                                <a href="{{ $mentor_id->detail_user->link_experience ?? ''  }}" target="_blank">
+                                    <button class="lg:bg-ezb-services-bg py-2 px-10 my-3 text-white rounded-lg font-semibold">
+                                        SOCIAL MEDIA
+                                    </button>
+                                </a>
+
+                                    {{--                                    <div class="md:flex contents items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2 space-x-0 mb-3">--}}
+{{--                                        <a href="https://id.linkedin.com/in/azharu-anwar/en?trk=people-guest_people_search-card&original_referer=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank">--}}
+{{--                                        <button class="lg:bg-Linkedin-bg text-white text-lg font-semibold py-4 px-12 my-2 rounded-lg">--}}
+{{--                                            <img src="{{asset('assets/Linkedin.png')}}" alt="Linkedin" class="w-12 mb-3">--}}
+{{--                                            </button>--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+
 
                             </div>
                         </div>
 
                     </div>
                 </div>
+                </div>
 
+                <div class="hero">
                 <div class="mx-auto flex pt-16 pb-16 lg:pb-20 lg:px-24 md:px-16 sm:px-8 px-8 lg:flex-row flex-col">
                     <div class="flex flex-col w-full h-auto">
                         <p class="sm:text-2xl text-xl text-start font-semibold mb-5 text-medium-black" data-aos="fade-up">
@@ -277,6 +307,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

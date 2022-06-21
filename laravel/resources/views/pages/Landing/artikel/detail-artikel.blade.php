@@ -37,7 +37,7 @@
                 </div>
 
                         <div class="mt-4 rounded-sm overflow-hidden">
-                            <img class="w-full object-cover" src="{{ Storage::url($post->imagePath) ?? '' }}" alt="blog image">
+                            <img class="w-full object-cover" src="{{ Storage::url($post->cover) ?? '' }}" alt="blog image">
                         </div>
 
                         <h2 class="mt-6 md:text-4xl leading-10 tracking-tight font-bold text-gray-900 text-center">{{ $post->title ?? ''}}</h2>

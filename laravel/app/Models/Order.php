@@ -12,4 +12,11 @@ class Order extends Model
     protected $guarded = [];
 
     public $table = 'orders';
+
+    // one to one with bootcmap
+    public function bootcamp()
+    {
+        return $this->belongsTo('App\Models\Bootcamp', 'bootcamp_id', 'id');
+    }
+
 }

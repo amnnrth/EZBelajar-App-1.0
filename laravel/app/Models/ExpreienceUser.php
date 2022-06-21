@@ -15,4 +15,5 @@ class ExpreienceUser extends Model
     {
         return $this->belongsTo('App\Models\DetailUser', 'detail_user_id', 'id');
     }
+
 }

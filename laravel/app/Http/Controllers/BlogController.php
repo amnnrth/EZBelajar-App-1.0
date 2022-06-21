@@ -97,13 +97,13 @@ class BlogController extends Controller
         $body = $request->input('body');
 
         // file upload
-//        $imagePath = 'storage/' . $request->file('image')->store('public/assets/soal');
-        $imagePath = $request->file('image')->store('public/assets/blog');
+//        $cover = 'storage/' . $request->file('image')->store('public/assets/soal');
+        $cover = $request->file('image')->store('public/assets/blog');
 
         $post = new Post();
         $post->title = $title;
         $post->slug = $slug;
-        $post->imagePath = $imagePath;
+        $post->cover = $cover;
         $post->body = $body;
 //        $post->category_id = $category_id;
         $post->user_id = $user_id;
@@ -154,7 +154,7 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required',
-//            'imagePath' => 'required | image',
+//            'cover' => 'required | image',
             'body' => 'required',
         ]);
 
@@ -164,9 +164,9 @@ class BlogController extends Controller
         $user_id = auth()->user()->id;  // get the user id
         $body = $request->input('body');
 
-       // delete old imagePath from storage
-        if (isset($post->imagePath)) {
-            $data = explode('storage/', $post->imagePath);
+       // delete old cover from storage
+        if (isset($post->cover)) {
+            $data = explode('storage/', $post->cover);
             if (File::exists(storage_path('app/public/assets/blog/' . $data[1]))) {
                 File::delete(storage_path('app/public/assets/blog/' . $data[1]));
             }else{
@@ -174,18 +174,18 @@ class BlogController extends Controller
             }
         }
 
-        // store imagePath to storage
-        if(isset($request->imagePath)) {
-            $imagePath = $request->file('imagePath')->store('public/assets/blog');
+        // store cover to storage
+        if(isset($request->cover)) {
+            $cover = $request->file('cover')->store('public/assets/blog');
         }else{
-            $imagePath = $post->imagePath;
+            $cover = $post->cover;
         }
 
         $post->title = $title;
         $post->slug = $slug;
         $post->body = $body;
         $post->user_id = $user_id;
-        $post->imagePath = $imagePath;
+        $post->cover = $cover;
 //        dd($post);
         $post->save();
 
@@ -206,8 +206,8 @@ class BlogController extends Controller
 
         $post = Post::findOrFail($id);
 
-        if ($post->imagePath) {
-            Storage::delete($post->imagePath);
+        if ($post->cover) {
+            Storage::delete($post->cover);
         }
         Post::destroy($post->id);
 

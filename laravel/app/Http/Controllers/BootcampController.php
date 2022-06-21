@@ -286,7 +286,8 @@ class BootcampController extends Controller
     public function detailBootcamp(Bootcamp $bootcamp)
     {
         $main_materi = $bootcamp->main_bootcamp()->paginate(10);
-        return view('pages.Dashboard.bootcamp.show', compact('bootcamp', 'main_materi'));
+        $mentor_id = User::findOrFail($bootcamp->mentor_id);
+        return view('pages.Dashboard.bootcamp.show', compact('bootcamp', 'main_materi','mentor_id'));
     }
 
     public function createMateriBootcamp(Bootcamp $bootcamp)

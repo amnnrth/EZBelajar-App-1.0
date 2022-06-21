@@ -78,9 +78,9 @@
                                         <td class="px-1 py-5 text-sm">
                                             {{ $role->name ?? '' }}
                                         <td class="px-1 py-5 text-sm">
-                                            <a class="btn btn-info" href="{{ route('admin.role.show',$role->id) }}">Show</a>
+                                            <a class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email" href="{{ route('admin.role.show',$role->id) }}">Show</a>
                                             @can('role-edit')
-                                                <a class="btn btn-primary" href="{{ route('admin.role.edit',$role->id) }}">Edit</a>
+                                                <a class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email" href="{{ route('admin.role.edit',$role->id) }}">Edit</a>
                                             @endcan
                                             @can('role-delete')
                                                 {!! Form::open(['method' => 'DELETE','route' => ['admin.role.destroy', $role->id],'style'=>'display:inline']) !!}

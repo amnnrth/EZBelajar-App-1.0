@@ -39,7 +39,7 @@
                             <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
                                 {{-- Header --}}
                                 <div class="flex-shrink-0">
-                                    <img class="h-48 w-full object-cover" src="{{ Storage::url($post->imagePath) }}" alt="blog image">
+                                    <img class="h-48 w-full object-cover" src="{{ Storage::url($post->cover) }}" alt="blog image">
                                 </div>
 
                                 {{-- Contet --}}

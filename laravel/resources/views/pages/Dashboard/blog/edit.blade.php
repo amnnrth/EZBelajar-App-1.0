@@ -63,13 +63,13 @@
                                         </div>
 
                                         <div class="col-span-6">
-                                            <label for="imagePath" class="block mb-3 font-medium text-gray-700 text-md">Cover</label>
+                                            <label for="cover" class="block mb-3 font-medium text-gray-700 text-md">Cover</label>
 
-                                            <img src="{{ url(Storage::url($post->imagePath) ?? '') }}" alt="thumbnail bootcamp" class="inline object-cover w-20 h-20 rounded" for="choose">
-                                            <input placeholder="imagePath" type="file" name="imagePath" id="imagePath" autocomplete="imagePath" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" required>
+                                            <img src="{{ url(Storage::url($post->cover) ?? '') }}" alt="thumbnail bootcamp" class="inline object-cover w-20 h-20 rounded" for="choose">
+                                            <input placeholder="cover" type="file" name="cover" id="cover" autocomplete="cover" class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-green-500 sm:text-sm" required>
 
-                                            @if ($errors->has('imagePath'))
-                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('imagePath') }}</p>
+                                            @if ($errors->has('cover'))
+                                                <p class="text-red-500 mb-3 text-sm">{{ $errors->first('cover') }}</p>
                                             @endif
                                         </div>
 

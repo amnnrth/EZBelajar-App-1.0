@@ -165,7 +165,9 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <div class="text-sm text-gray-900">{{ $mentor_id->name ?? ''}}</div>
+                                    <div class="text-sm text-gray-900">
+                                        {{ $mentor_id->name ?? ''}}
+                                    </div>
                                 </td>
                             </tr>
                             </tbody>
@@ -227,16 +229,16 @@
                                             </a>
                                         </td>
                                         <td class="px-1 py-5 text-sm">
-                                            <div class="text-sm text-gray-900">{{ $materi->is_active === '1'  ? 'Yes' : 'No' }}</div>
+                                            <div class="text-sm text-gray-900">{{ $materi->is_active === '1'  ? 'No' : 'Yes' }}</div>
                                         </td>
                                         <td class="px-1 py-5 text-sm flex flex-shrink-0">
                                             <a href="{{ route('admin.createMateriBootcamp', $bootcamp->id )}}" class="text-green-500 hover:text-green-700">
                                                 <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-ezb-bg">
                                                     Create
                                                 </button>
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-500 hover:text-blue-700 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
-                                                </svg>
+{{--                                                <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-500 hover:text-blue-700 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">--}}
+{{--                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />--}}
+{{--                                                </svg>--}}
                                             </a>
 {{--                                            <a href="{{ route('admin.banksoal.index')}}  " class="text-green-500 hover:text-green-700">--}}
 {{--                                                <p>Back</p>--}}
@@ -248,14 +250,14 @@
                                             <form action="{{route('admin.deleteMateriBootcamp',$materi->id)}}" method="post">
                                                 @csrf
                                                 <a class="text-red-500 hover:text-red-700">
-                                                    <button type="submit" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white  border border-transparent rounded-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 bg-ezb-bg" onclick="return confirm('Are you sure want to delete this data ?')">
+                                                    <button type="submit" class="px-1 py-5 text-sm" onclick="return confirm('Are you sure want to delete this data ?')">
                                                         Delete
                                                     </button>
-                                                    <button type="submit">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 pt-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                                    </svg>
-                                                    </button>
+{{--                                                    <button type="submit">--}}
+{{--                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 pt-1" viewBox="0 0 20 20" fill="currentColor">--}}
+{{--                                                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />--}}
+{{--                                                    </svg>--}}
+{{--                                                    </button>--}}
                                                 </a>
                                             </form>
 {{--                                        </td>--}}

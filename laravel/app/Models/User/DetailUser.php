@@ -5,6 +5,7 @@ namespace App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Permission\Traits\HasRoles;
+use App\Models\User\ExpreienceUser;
 
 class DetailUser extends Model
 {
@@ -43,6 +44,6 @@ class DetailUser extends Model
     // one to many
     public function experience_user()
     {
-        return $this->hasMany('App\Models\ExperienceUser', 'detail_user_id');
+        return $this->hasMany('App\Models\User\ExpreienceUser', 'detail_user_id');
     }
 }

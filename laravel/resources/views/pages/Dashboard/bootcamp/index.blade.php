@@ -112,7 +112,7 @@
                                 <tr class="text-sm font-normal text-left text-gray-900 border-b border-b-gray-600">
                                     <th class="py-4" scope="">No</th>
                                     <th class="py-4" scope="">Judul Bootcamp</th>
-                                    <th class="py-4 text-center" scope="">Bootcamp</th>
+{{--                                    <th class="py-4 text-center" scope="">Bootcamp</th>--}}
                                     <th class="py-4" scope="">Tanggal Input</th>
                                     <th class="py-4" scope="">User</th>
                                     <th class="py-4" scope="">Action</th>
@@ -134,14 +134,11 @@
                                         <td class="px-1 py-5 text-sm">
                                             {{ $bootcamp->title ?? '' }}
                                         </td>
-                                        <td class="px-1 py-5 text-sm">
-                                            {{--                                            <a href="{{ route('admin.createQuestion',$bank_soal->id) }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">--}}
-                                            {{--                                                Create--}}
-                                            {{--                                            </a>--}}
-                                            <a href="{{ route('admin.detailBootcamp',$bootcamp->id) }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">
-                                                Detail
-                                            </a>
-                                        </td>
+{{--                                        <td class="px-1 py-5 text-sm">--}}
+{{--                                            <a href="{{ route('admin.detailBootcamp',$bootcamp->id) }}" class="inline-block px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-bg">--}}
+{{--                                                Detail--}}
+{{--                                            </a>--}}
+{{--                                        </td>--}}
                                         <td class="px-1 py-5 text-sm">
                                             {{ $bootcamp->created_at?? '' }}
                                         </td>
@@ -150,7 +147,7 @@
                                         </td>
                                         <form action="{{ route('admin.bootcamp.destroy',$bootcamp['id']) }}" method="POST">
                                             <td class="px-1 py-5 text-sm">
-                                                <a href="{{ route('admin.bootcamp.show', $bootcamp['id']) }}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
+                                                <a href="{{ route('admin.detailBootcamp',$bootcamp->id)}}" class="px-4 py-2 mt-2 text-left text-white rounded-xl bg-ezb-email">
                                                     Show
                                                 </a>
                                             </td>

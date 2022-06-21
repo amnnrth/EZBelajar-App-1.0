@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('slug');
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
 //            $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->string('imagePath');
+            $table->text('cover');
             $table->text('body');
+            $table->enum('is_active', ['0', '1'])->default('1')->nullable();
             $table->timestamps();
         });
     }

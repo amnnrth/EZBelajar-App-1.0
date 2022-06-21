@@ -88,7 +88,7 @@
                                 </div>
                             </td>
                             <td class="px-6 py-4">
-                                <img src="{{ Storage::url($post->imagePath) ?? ''}}" width="100" alt="" />
+                                <img src="{{ Storage::url($post->cover) ?? ''}}" width="100" alt="" />
                             </td>
                         </tr>
                         <tr>

@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        @can('dashboard-access')
+{{--        @can('dashboard-access')--}}
         <ul class="mt-6">
             <li class="relative px-6 py-3">
 
@@ -46,7 +46,7 @@
                 </a>
             </li>
         </ul>
-        @endcan
+{{--        @endcan--}}
 
         @can('belajar-list')
         <ul>
@@ -85,7 +85,7 @@
 
             <li class="relative px-6 py-3">
 
-                @if (request()->is('admin/quiz') || request()->is('admin/quiz/*') || request()->is('admin/*/quiz') || request()->is('admin/*/quiz/*'))
+                @if (request()->is('admin/quizz') || request()->is('admin/quizz/*') || request()->is('admin/*/quizz') || request()->is('admin/*/quizz/*'))
                     <span class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-ezb-bg"
                           aria-hidden="true"></span>
                 @endif

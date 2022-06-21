@@ -2329,8 +2329,11 @@ body {
 }
 
 .profilelecture {
-	width: 500px;
-	height: 300px;
+	clip-path: circle();
+	/*width: 500px;*/
+	/*height: 250px;*/
+	width: 250px;
+	height: 250px;
 }
 
 input[type="search"] {
@@ -2489,3 +2492,9 @@ hr.solid {
 	-webkit-animation-timing-function:ease-in-out;
 	-webkit-animation-direction: alternate;
 }
+
+.w-13 {
+	width: 7rem;
+}
+
+
