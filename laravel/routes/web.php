@@ -25,32 +25,12 @@ use App\Http\Controllers\PaymentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-//
-//Auth::routes();
-//
-//Route::get('/home', [LandingController::class, 'index'])->name('home');
-//
-//Route::group(['middleware' => ['auth']], function() {
-//    Route::resource('roles', RoleController::class);
-//    Route::resource('users', UserController::class);
-//    Route::resource('products', BelajarController::class);
-//});
-//
-//Route::middleware([
-//    'auth:sanctum',
-//    config('jetstream.auth_session'),
-//    'verified'
-//])->group(function () {
-//    Route::get('/dashboard', function () {
-//        return view('dashboard');
-//    })->name('dashboard');
-//});
 
-//testing
-//Route::get('test',[LandingController::class, 'test']);
+// testing for testing
+Route::resource('belajar', BelajarController::class);
+Route::get('find', [BelajarController::class, 'find'])->name('find-belajar');
+
+
 
 // Testing
 
@@ -93,6 +73,7 @@ Route::post('/comment/storeArtikel', [CommentController::class, 'storeArtikel'])
 Route::post('/comment/storeBelajar', [CommentController::class, 'storeBelajar'])->name('comment.addBelajar');
 //    Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
 Route::post('/comment/reply', [CommentController::class, 'replyStore'])->name('reply.add');
+Route::post('/comment/replyBelajar', [CommentController::class, 'replyStoreVideo'])->name('reply.addVideo');
 
 //Bootcamo
 Route::get('/bootcamp', [LandingController::class, 'bootcamp'])->name('bootcamp.index');

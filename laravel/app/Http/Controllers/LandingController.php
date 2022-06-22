@@ -30,7 +30,7 @@ class LandingController extends Controller
     {
         $posts = Belajar::get()->take(1);
 
-        return view('pages.landing.index', compact('posts'));
+        return view('pages.Landing.index', compact('posts'));
     }
 
     /**

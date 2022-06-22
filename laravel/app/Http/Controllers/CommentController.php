@@ -32,7 +32,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+        abort(404);
     }
 
     /**
@@ -120,6 +120,33 @@ class CommentController extends Controller
 
     }
 
+    public function replyStoreVideo(Request $request)
+    {
+
+//        $request->validate([
+//            'comment' => 'required',
+//        ]);
+
+        $reply = new Comment();
+        $reply->comment = $request->get('comment');
+        $reply->user()->associate($request->user());
+        $reply->parent_id = $request->get('comment_id');
+
+//        dd($reply);
+
+//        $post = Post::find($request->get('id'));
+        $post = Belajar::find($request->get('belajar_id'));
+
+//        dd($post);
+        $post->comments()->save($reply);
+
+//        $belalajar = Belajar::find($request->get('id'));
+//        $belalajar->comments()->save($reply);
+
+        return back();
+
+    }
+
 
     /**
      * Display the specified resource.
@@ -129,7 +156,7 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -140,7 +167,7 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -152,7 +179,7 @@ class CommentController extends Controller
      */
     public function update(Request $request)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -163,7 +190,7 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        abort(404);
     }
 
 }
