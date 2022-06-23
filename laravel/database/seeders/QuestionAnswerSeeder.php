@@ -170,7 +170,7 @@ class QuestionAnswerSeeder extends Seeder
             // id 1
             [
                 'answer' => '{(3, 5), (4, 6), (5, 7)}',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 1,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -184,14 +184,14 @@ class QuestionAnswerSeeder extends Seeder
             ],
             [
                 'answer' => '{(3, 1), (4, 2), (5, 3)}',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 1,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => '{(3, 2), (4, 2), (5, 2)}',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 1,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -206,21 +206,21 @@ class QuestionAnswerSeeder extends Seeder
             ],
             [
                 'answer' => '64',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 2,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => '16',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 2,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => '8',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 2,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -228,14 +228,14 @@ class QuestionAnswerSeeder extends Seeder
             //id 3
             [
                 'answer' => '27',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 3,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => '8',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 3,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -249,7 +249,7 @@ class QuestionAnswerSeeder extends Seeder
             ],
             [
                 'answer' => '2',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 3,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -264,21 +264,21 @@ class QuestionAnswerSeeder extends Seeder
             ],
             [
                 'answer' => 'Switch',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 4,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Hub',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 4,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Access Point',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 4,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -286,7 +286,7 @@ class QuestionAnswerSeeder extends Seeder
             //id 5
             [
                 'answer' => 'Ohm (Ω)',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 5,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -300,14 +300,14 @@ class QuestionAnswerSeeder extends Seeder
             ],
             [
                 'answer' => ' Watt (W)',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 5,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Volt (V)',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 5,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -315,21 +315,21 @@ class QuestionAnswerSeeder extends Seeder
             //id 6
             [
                 'answer' => 'Topologi Bus',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 6,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Topologi Ring',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 6,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Topologi Tree',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 6,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -344,21 +344,21 @@ class QuestionAnswerSeeder extends Seeder
             //id 7
             [
                 'answer' => 'Linux Debian',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 7,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'FreeBSD',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 7,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Fedora',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 7,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -380,21 +380,21 @@ class QuestionAnswerSeeder extends Seeder
             ],
             [
                 'answer' => 'Pivot',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 8,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Sorting',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 8,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Filtering',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 8,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -409,21 +409,21 @@ class QuestionAnswerSeeder extends Seeder
             ],
             [
                 'answer' => 'Mudah Dipahami',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 9,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Mudah Dibaca',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 9,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Memiliki Rancangan Sistem',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 9,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -431,21 +431,21 @@ class QuestionAnswerSeeder extends Seeder
             //id 10
             [
                 'answer' => 'Rogerian',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 10,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Turning Test',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 10,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'ELIZA',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 10,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -460,7 +460,7 @@ class QuestionAnswerSeeder extends Seeder
             //id 11
             [
                 'answer' => 'Bioinformatika',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 11,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -474,14 +474,14 @@ class QuestionAnswerSeeder extends Seeder
             ],
             [
                 'answer' => 'farmatika',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 11,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => ' Robotika',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 11,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -489,7 +489,7 @@ class QuestionAnswerSeeder extends Seeder
             //id 12
             [
                 'answer' => 'Dasar',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 12,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -503,14 +503,14 @@ class QuestionAnswerSeeder extends Seeder
             ],
             [
                 'answer' => 'Atomik',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 12,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Salah Semua',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 12,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -518,7 +518,7 @@ class QuestionAnswerSeeder extends Seeder
             //id 13
             [
                 'answer' => 'Deskripsi data yang digunakan dan dihasilkan',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 13,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -532,14 +532,14 @@ class QuestionAnswerSeeder extends Seeder
             ],
             [
                 'answer' => 'Kebutuhan tambahan lainnya untuk aplikasi database yang baru',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 13,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Rincian bagaimana data digunakan dan dihasilkan',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 13,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
@@ -547,21 +547,21 @@ class QuestionAnswerSeeder extends Seeder
             //id 14
             [
                 'answer' => 'Konseptual',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 14,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Prosedural',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 14,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),
             ],
             [
                 'answer' => 'Atribut',
-                'is_checked' => 0,
+                'is_checked' => '0',
                 'question_id' => 14,
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s'),

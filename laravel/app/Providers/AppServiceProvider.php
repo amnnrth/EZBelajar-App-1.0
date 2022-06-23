@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
+
     /**
      * Bootstrap any application services.
      *
@@ -29,5 +30,9 @@ class AppServiceProvider extends ServiceProvider
             \App\Charts\GlobalQuizzes::class,
 //            \App\Charts\MonthlyUsers::class,
         ]);
+
+//        $this->app->bind('path.public', function() {
+//            return base_path().'/../public_html';
+//        });
     }
 }
